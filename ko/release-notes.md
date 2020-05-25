@@ -1,5 +1,19 @@
 ## Management > Service Monitoring > 릴리스 노트
 
+### 2020. 05. 26.
+
+#### 기능 개선
+* 웹 모니터링 테스트가 30초 이상 걸릴 경우 실패하는 문제 수정
+* 웹 모니터링 텍스트 검증 시 시나리오 타입, 응답 콘텐츠 타입에 따라 사용할 수 있는 연산자 추가
+  * API
+    * 응답이 _HTML_, _XML_일 경우 contain, !contain만 사용 가능
+    * 응답이 _JSON_일 경우 _JsonPath_를 활용하여 (==, !=, >, >=, <, <=) 사용 가능
+  * Browser, Module
+    * 응답이 _HTML_, _XML_일 경우 contain, !contain, _xPath_를 활용하여 (==, !=, >, >=, <, <=) 사용 가능
+    * 응답이 _JSON_일 경우 _JsonPath_를 활용하여 (==, !=, >, >=, <, <=) 사용 가능
+* TOAST CloudTrail 서비스 연동
+  * Service Monitoring 콘솔에서 발생한 사용자 이벤트를 TOAST CloudTrail에서 확인 가능
+
 ### 2020. 03. 24.
 
 #### 기능 개선

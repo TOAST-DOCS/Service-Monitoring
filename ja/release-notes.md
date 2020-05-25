@@ -1,5 +1,19 @@
 ## Management > Service Monitoring > リリースノート
 
+### 2020. 05. 26.
+
+#### 機能改善
+* Webモニタリングテストが30秒以上かかる場合、失敗する問題を修正
+* Webモニタリングテキスト検証時、シナリオタイプ、レスポンスコンテンツタイプに応じて使用できる演算子を追加
+  * API
+    * レスポンスが_HTML_、_XML_の場合、contain、!containのみ使用可能
+    * レスポンスが_JSON_の場合、_JsonPath_を活用して(==, !=, >, >=, <, <=)使用可能
+  * Browser, Module
+    * レスポンスが_HTML_、_XML_の場合、contain、!contain、_xPath_を活用して(==, !=, >, >=, <, <=)使用可能
+    * レスポンスが_JSON_の場合、_JsonPath_を活用して(==, !=, >, >=, <, <=)使用可能
+* TOAST CloudTrailサービス連携
+  * Service Monitoringコンソールで発生したユーザーイベントをTOAST CloudTrailで確認可能
+  
 ### 2020. 01. 21.
 
 #### 機能改善

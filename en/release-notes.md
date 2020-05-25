@@ -1,12 +1,20 @@
 ## Management > Service Monitoring > Release Notes
 
-### Jan. 21, 2020
+### March 24, 2020
+
+#### Feature Updates 
+* Provides [JsonPath Method](/ko/Management/Service%20Monitoring/ko/console-guide/#_9) to validate web monitoring data
+* _Organization Name_ and _Project Name_ are added to an email error message
+* Supports [Validate Multiple Batch Monotoring API](/ko/Management/Service%20Monitoring/ko/api-guide/) 
+* Emphasizes failures from batch monitoring validation results 
+
+### January 21, 2020
 
 #### Feature Updates
 * Supports the US Region for Web/TCP monitoring 
 * Added the option of monitoring region for the search of monitoring history
 
-### Dec. 24, 2019
+### December 24, 2019
 
 #### Feature Updates
 * Updated detail history messages when it fails to transmit failure 
@@ -15,7 +23,7 @@
 #### Bug Fixes
 * Fixed the transmission status page which did not properly show transmission history to users 
 
-### Nov. 26, 2019
+### November 26, 2019
 
 #### Feature Updates
 * Separated transmission status information from the transmission status page. 
