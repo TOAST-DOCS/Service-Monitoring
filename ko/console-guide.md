@@ -76,6 +76,8 @@ HTTP, HTTPS를 통해 서비스를 제공하는 모든 웹 서비스를 모니�
 | avg() | 배열 데이터 평균값 | double | 
 | stddev() | 배열 데이터 표준 편차 | double | 
 | length() | 배열 데이터 개수 | integer | 
+> 응답 바디에 포함된 배열 데이터만 함수 사용 가능
+
 
 ## TCP 모니터링
 
