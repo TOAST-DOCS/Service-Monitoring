@@ -45,12 +45,12 @@ You can monitor all web services which serve via HTTP and HTTPS.
 ### Scenario Type
 - **API Type** 
     - Monitors REST API.
-    - You can register a scenario at every 60 seconds or higher.
+    - You can register a scenario at every 30 seconds or higher.
 - **Virtual browser type** 
     - Monitors the web page with a virtual browser. 
     - You can register the page behavior by registering a customized JavaScript.
     - Module-type scenario can be included; if a module-type scenario is included, it is executed first sequentially and then the other scenarios are executed. Sessions and cookies of the module and the virtual browser scenarios are shared. With those, you can test whether or not the page is working after logging in.
-    - You can register a scenario at every 120 seconds or higher.
+    - You can register a scenario at every 60 seconds or higher.
 - **Module Type** 
     - Provides common features (such as login) for several scenarios. 
     - The module type cannot operate by itself; it only operates as part of the virtual browser type.
@@ -75,7 +75,8 @@ Scenario is verified in the following way.
 | sum() | Sum of Array Data | double | 
 | avg() | Average Value of Array Data | double | 
 | stddev() | Standard Deviation of Array Data | double | 
-| length() | Array Data Count | integer | 
+| length() | Array Data Count | integer |
+> 응답 바디에 포함된 배열 데이터만 함수 사용 가능
 
 ## TCP monitoring
 
