@@ -21,7 +21,7 @@ Content-Type: application/json
 
 | 값 |	타입 | 필수 여부 |	설명 |
 |---|---|---|--|
-| appKey | String | Required | 서비스 앱키(서비스 관리 탭에서 확인 가능) |
+| appKey | String | Required | 서비스 앱키(**서비스 관리** 탭에서 확인 가능) |
 | scenarioId | String | Required | 서비스 ID |
 
 [Request Body]
@@ -72,7 +72,7 @@ Content-Type: application/json
 
 ## 다중 배치 모니터링
 - 한 번의 요청으로 다중 서비스, 시나리오를 검증할 수 있습니다.
-- 비정상적인 앱키, 시나리오 아이디가 존재할 경우 검증을 진행하지 않습니다.
+- 비정상적인 앱키, 시나리오 ID 존재할 경우 검증을 진행하지 않습니다.
 
 ### 데이터 전송
 - 배치 모니터링 서버로 검증이 필요한 데이터를 전송합니다.
