@@ -21,7 +21,7 @@ Content-Type: application/json
 
 | 値 |	タイプ | 必須かどうか |	説明 |
 |---|---|---|--|
-| appKey | String | Required | サービスアプリケーションキー(サービス管理タブで確認可能) |
+| appKey | String | Required | サービスアプリケーションキー(**サービス管理**タブで確認可能) |
 | scenarioId | String | Required | サービスID |
 
 [Request Body]
