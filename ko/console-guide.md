@@ -1,8 +1,7 @@
 ## Management > Service Monitoring > 콘솔 사용 가이드
 
 ## 동영상 가이드
-[![Service Monitroing Guide](https://img.youtube.com/vi/cdJ1aXLjqcE/0.jpg)](https://youtu.be/cdJ1aXLjqcE)
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cdJ1aXLjqcE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 서비스 관리
 
