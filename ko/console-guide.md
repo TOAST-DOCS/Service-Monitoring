@@ -1,5 +1,9 @@
 ## Management > Service Monitoring > 콘솔 사용 가이드
 
+## 동영상 가이드
+[![Service Monitroing Guide](https://img.youtube.com/vi/cdJ1aXLjqcE/0.jpg)](https://youtu.be/cdJ1aXLjqcE)
+
+
 ## 서비스 관리
 
 모니터링할 서비스, 장애를 전파할 대상과 채널 등을 관리할 수 있습니다.
