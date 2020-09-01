@@ -5,6 +5,148 @@
 API Endpoint: https://api-service-monitoring.cloud.toast.com
 ```
 
+## 시나리오 생성
+
+### 데이터 전송
+- 서비스 모니터링 서버로 시나리오 생성 요청시 필요한 데이터를 전송합니다.
+
+[URL]
+```http
+POST /open-api/v1.0/service/{appKey}/scenario
+Content-Type: application/json
+```
+
+[Path Variables]
+
+| 값 |	타입 | 필수 여부 |	설명 |
+|---|---|---|--|
+| appKey | String | Required | 서비스 앱키(**서비스 관리** 탭에서 확인 가능) |
+
+[Request Body]
+```json
+{
+   "url":"http://nhn.com",
+   "httpMethod":"GET",
+   "validation":{
+      "responseCode":200,
+      "textValidationType":"JSON",
+      "textValidations":[
+         {
+            "expression":"$.isSuccess",
+            "operator":"EQ",
+            "operand":"true"
+         }
+      ],
+      "timeout":5000
+   },
+   "browserOption":{
+      "OPT_LOCALE":"ko"
+   },
+   "ip":"nhn.com",
+   "scenarioType":"API",
+   "scenarioName":"API시나리오 테스트",
+   "description":"API시나리오 테스트",
+   "monitoringRegion":[
+      "KOR"
+   ],
+   "monitoringInterval":30,
+   "errorLimitCount":0
+}
+```
+
+타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
+---|---|---|---|---|---|---
+String | url | API | http또는 https로 시작하는 url | Y |  | 모니터링을 진행할 api의 url
+Map<String, String> | headers | API |  | N |  | api를 보낼 때 사용할 header값
+Enum | httpMethod | API | GET, POST, DELETE, PUT | Y |  | api의 httpMethod
+String | requestBody | API |  | N |  | api의 requestBody
+Map<String, String> | browserOption | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
+Object | validation | API |  | Y |  | api의 검증 정보
+Enum | validation.textValidationType | API | JSON, HTML, XML | N |  | 문자열 검증을 할 때 기반이 되는 body 타입
+List<Object> | validation.textValidations | API |  | N |  | 문자열 검증 정보
+Enum | validation.textValidations.operator | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | 문자열 연산자
+String | validation.textValidations.expression | API |  | Y |  | 검증이 필요한 문자열
+String | validation.textValidations.operand | API |  | Y(N) |  | 기댓값
+Integer | validation.timeout | API | 0이상의 정수(ms 단위) | N |  | 타임아웃 threshold
+Integer | validation.responseCode | API | HTTP response code | N |  | 허용된 responseCode
+String | validation.avoidingValidationText | API |  | N |  | body 포함되어있을 경우 전파 제외 할 문자열
+Enum | scenarioType | API | API | Y |  | 시나리오 타입
+String | scenarioName | API |  | Y |  | 시나리오 이름
+String | description | API |  | N |  | 시나리오 설명
+Set<Enum> | monitoringRegion | API | KOR, US | Y | KOR | 시나리오를 모니터링 할 지역
+Integer | monitoringInterval | API |  | N |  | 모니터링 간격 (초)
+String | monitoringCron | API | 5자리의 Cron표현식 | N |  | 모니터링 간격 (Cron표현식)
+Integer | errorLimitCount | API | 0이상의 정수 | Y | 0 | 연속 에러 허용 횟수
+
+#### 응답
+```json
+{
+    "message": "",
+    "success": true,
+    "data": {
+        "scenarioId": "41e2f710-ec00-11ea-a9a2-852f2b809e7b",
+        "url": "http://nhn.com",
+        "httpMethod": "GET",
+        "validation": {
+            "textValidationType": "JSON",
+            "textValidations": [
+                {
+                    "operator": "EQ",
+                    "expression": "$.isSuccess",
+                    "operand": "true"
+                }
+            ],
+            "timeout": 5000,
+            "responseCode": 200
+        },
+        "browserOption": {
+            "OPT_LOCALE": "ko"
+        },
+        "ip": "nhn.com",
+        "scenarioType": "API",
+        "scenarioName": "API시나리오 테스트",
+        "description": "API시나리오 테스트",
+        "monitoringRegion": [
+            "KOR"
+        ],
+        "registerTime": "2020-09-01T03:07:23.857+0000",
+        "amendtime": "2020-09-01T03:07:23.857+0000",
+        "monitoringInterval": 30,
+        "status": "enable",
+        "errorLimitCount": 0
+    }
+}
+```
+
+타입 | 필드명(경로명) | 필드 설명
+--- | --- | ---
+UUID | scenarioId | 시나리오의 ID
+String | url | 모니터링을 진행할 api의 url
+Map<String, String> | headers | api를 보낼 때 사용할 header값
+Enum | httpMethod | api의 httpMethod
+Object | validation | api의 검증 정보
+Enum | validation.textValidationType | 문자열 검증을 할 때 기반이 되는 body 타입
+List<Object> | validation.textValidations | 문자열 검증 정보
+Enum | operator | 문자열 연산자
+String | expression | 검증이 필요한 문자열
+String | operand | 기댓값
+Integer | validation.timeout | 타임아웃 threshold
+Integer | validation.responseCode | 허용된 responseCode
+String | validation.avoidingValidationText | body 포함되어있을 경우 전파 제외 할 문자열
+String | requestBody | api의 requestBody
+Map<String, String> | browserOption | 
+String | ip | 모니터링을 진행할 api의 ip
+Enum | scenarioType | 시나티오 타입
+String | scenarioName | 시나리오 이름
+String | description | 시나리오 설명
+Set<Enum> | monitoringRegion | 시나리오 모니터링 지역
+Date | registerTime | 등록 시각
+Date | amendtime | 수정 시각
+String | status | 시나리오의 현재 상태
+Integer | errorLimitCount | 연속 에러 허용 횟수
+Integer | monitoringInterval | 모니터링 간격(초단위)
+String | monitoringCron | 모니터링 간격(Cron 표현식)
+
 ## 단일 배치 모니터링
 
 ### 데이터 전송
@@ -20,7 +162,7 @@ Content-Type: application/json
 [Path Variables]
 
 | 값 |	타입 | 필수 여부 |	설명 |
-|---|---|---|--|
+|---|---|---|---|
 | appKey | String | Required | 서비스 앱키(**서비스 관리** 탭에서 확인 가능) |
 | scenarioId | String | Required | 서비스 ID |
 
