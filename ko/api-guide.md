@@ -81,23 +81,21 @@ Integer | errorLimitCount | API | 0이상의 정수 | Y | 0 | 연속 에러 허�
 #### 응답
 ```json
 {
-    "message": "",
-    "success": true,
-    "data": {
-        "scenarioId": "41e2f710-ec00-11ea-a9a2-852f2b809e7b",
+    "header": {
+        "isSuccessful": true,
+        "resultCode": 0,
+        "resultMessage": "SUCCESS"
+    },
+    "body": {
+        "scenarioId": "c0853b80-ec2a-11ea-ac23-87d32e8a7512",
         "url": "http://nhn.com",
         "httpMethod": "GET",
         "validation": {
-            "textValidationType": "JSON",
-            "textValidations": [
-                {
-                    "operator": "EQ",
-                    "expression": "$.isSuccess",
-                    "operand": "true"
-                }
-            ],
-            "timeout": 5000,
-            "responseCodes":["200", "201"]
+            "textValidations": [],
+            "responseCodes": [
+                "200",
+                "201"
+            ]
         },
         "browserOption": {
             "OPT_LOCALE": "ko"
@@ -109,8 +107,8 @@ Integer | errorLimitCount | API | 0이상의 정수 | Y | 0 | 연속 에러 허�
         "monitoringRegion": [
             "KOR"
         ],
-        "registeredTime": "2020-09-01T03:07:23.857+0000",
-        "amendedTime": "2020-09-01T03:07:23.857+0000",
+        "registeredTime": "2020-09-01T08:11:35.160+0000",
+        "amendedTime": "2020-09-01T08:11:35.160+0000",
         "monitoringInterval": 30,
         "status": "enable",
         "errorLimitCount": 0
@@ -165,9 +163,12 @@ Content-Type: application/json
 #### 응답
 ```json
 {
-    "message": "",
-    "success": true,
-    "data": {
+    "header": {
+        "isSuccessful": true,
+        "resultCode": 0,
+        "resultMessage": "SUCCESS"
+    },
+    "body": {
         "scenarioId": "be50d2a0-e353-11ea-a3c2-ebd9a267dbb2",
         "validation": {
             "timeout": 5000,
@@ -177,7 +178,7 @@ Content-Type: application/json
                     "validationText": "Hello world!"
                 },
                 {
-                    "position": 13,
+                    "position": 15,
                     "validationText": "OK!"
                 }
             ],
@@ -191,7 +192,7 @@ Content-Type: application/json
         "ip": "127.0.0.1",
         "scenarioType": "TCP",
         "scenarioName": "Example Scenario",
-        "description": "Example Scenario description",
+        "description": "Example Scenario",
         "monitoringRegion": [
             "KOR"
         ],
