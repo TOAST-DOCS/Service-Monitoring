@@ -27,8 +27,8 @@ Content-Type: application/json
 {
    "url":"http://nhn.com",
    "httpMethod":"GET",
-   "validation":{
-      "responseCode":200,
+   "validation": {
+      "responseCodes":["200", "201"],
       "textValidationType":"JSON",
       "textValidations":[
          {
@@ -68,7 +68,7 @@ Enum | validation.textValidations.operator | API | CONTAINS, NOT_CONTAINS, EQ, N
 String | validation.textValidations.expression | API |  | Y |  | 검증이 필요한 문자열
 String | validation.textValidations.operand | API |  | Y(N) |  | 기댓값
 Integer | validation.timeout | API | 0이상의 정수(ms 단위) | N |  | 타임아웃 threshold
-Integer | validation.responseCode | API | HTTP response code | N |  | 허용된 responseCode
+Set<String> | validation.responseCodes | API | HTTP response code | N |  | 허용된 responseCode
 String | validation.avoidingValidationText | API |  | N |  | body 포함되어있을 경우 전파 제외 할 문자열
 Enum | scenarioType | API | API | Y |  | 시나리오 타입
 String | scenarioName | API |  | Y |  | 시나리오 이름
@@ -97,7 +97,7 @@ Integer | errorLimitCount | API | 0이상의 정수 | Y | 0 | 연속 에러 허�
                 }
             ],
             "timeout": 5000,
-            "responseCode": 200
+            "responseCodes":["200", "201"]
         },
         "browserOption": {
             "OPT_LOCALE": "ko"
@@ -131,7 +131,7 @@ Enum | operator | 문자열 연산자
 String | expression | 검증이 필요한 문자열
 String | operand | 기댓값
 Integer | validation.timeout | 타임아웃 threshold
-Integer | validation.responseCode | 허용된 responseCode
+Set<String> | validation.responseCodes | 허용된 responseCode
 String | validation.avoidingValidationText | body 포함되어있을 경우 전파 제외 할 문자열
 String | requestBody | api의 requestBody
 Map<String, String> | browserOption | 
