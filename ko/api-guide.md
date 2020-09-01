@@ -109,8 +109,8 @@ Integer | errorLimitCount | API | 0이상의 정수 | Y | 0 | 연속 에러 허�
         "monitoringRegion": [
             "KOR"
         ],
-        "registerTime": "2020-09-01T03:07:23.857+0000",
-        "amendtime": "2020-09-01T03:07:23.857+0000",
+        "registeredTime": "2020-09-01T03:07:23.857+0000",
+        "amendedTime": "2020-09-01T03:07:23.857+0000",
         "monitoringInterval": 30,
         "status": "enable",
         "errorLimitCount": 0
@@ -140,8 +140,8 @@ Enum | scenarioType | 시나티오 타입
 String | scenarioName | 시나리오 이름
 String | description | 시나리오 설명
 Set<Enum> | monitoringRegion | 시나리오 모니터링 지역
-Date | registerTime | 등록 시각
-Date | amendtime | 수정 시각
+Date | registeredTime | 등록 시각
+Date | amendedTime | 수정 시각
 String | status | 시나리오의 현재 상태
 Integer | errorLimitCount | 연속 에러 허용 횟수
 Integer | monitoringInterval | 모니터링 간격(초단위)
@@ -195,7 +195,7 @@ Content-Type: application/json
         "monitoringRegion": [
             "KOR"
         ],
-        "amendtime": "2020-09-01T05:54:58.861+0000",
+        "amendedTime": "2020-09-01T05:54:58.861+0000",
         "monitoringCron": "9 * * * * ? *",
         "status": "temporary",
         "errorLimitCount": 0,
@@ -232,8 +232,8 @@ Enum | scenarioType | - | 시나티오 타입
 String | scenarioName | - | 시나리오 이름
 String | description | - | 시나리오 설명
 Set<Enum> | monitoringRegion | - | 시나리오 모니터링 지역
-Date | registerTime | - | 등록 시각
-Date | amendtime | - | 수정 시각
+Date | registeredTime | - | 등록 시각
+Date | amendedTime | - | 수정 시각
 Integer | monitoringInterval | - | 모니터링 간격(초단위)
 String | monitoringCron | - | 모니터링 간격(Cron 표현식)
 String | status | - | 시나리오의 현재 상태
