@@ -239,6 +239,7 @@ Integer | monitoringInterval | - | 모니터링 간격(초단위)
 String | monitoringCron | - | 모니터링 간격(Cron 표현식)
 String | status | - | 시나리오의 현재 상태
 Integer | errorLimitCount | - | 연속 에러 허용 횟수
+String | request | TCP, UDP | TCP, UDP요청시 리퀘스트 문자열
 Integer | port | TCP,UDP | TCP, UDP요청시 포트 번호
 
 ## 단일 배치 모니터링
