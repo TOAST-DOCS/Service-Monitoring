@@ -86,7 +86,7 @@ String | avoidingValidationText | API |  | N |  | body 포함되어있을 경우
 Enum | textValidationType | API | JSON, HTML, XML | N |  | 문자열 검증을 할 때 기반이 되는 body 타입
 List \<Object\> | [textValidationInfos](#textValidationInfo) | API | | N |  | 문자열 검증정보
 
-# textValidationInfo
+#### textValidationInfo
 타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
 ---|---|---|---|---|---|---
 Enum | operator | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | 문자열 연산자
