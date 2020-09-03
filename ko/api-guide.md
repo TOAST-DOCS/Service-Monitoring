@@ -54,7 +54,7 @@ Content-Type: application/json
 }
 ```
 
-[RequestBody 설명]
+[RequestBody 설명]  
 -RequestBody
 타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
 ---|---|---|---|---|---|---
@@ -75,14 +75,26 @@ Integer | errorLimitCount | API | 0이상의 정수 | Y | 0 | 연속 에러 허�
 -RequestBody.validation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
 ---|---|---|---|---|---|---
-Enum | validation.textValidationType | API | JSON, HTML, XML | N |  | 문자열 검증을 할 때 기반이 되는 body 타입
-List<Object> | validation.textValidations | API |  | N |  | 문자열 검증 정보
-Enum | validation.textValidations.operator | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | 문자열 연산자
-String | validation.textValidations.expression | API |  | Y |  | 검증이 필요한 문자열
-String | validation.textValidations.operand | API |  | Y(N) |  | 기댓값
-Integer | validation.timeout | API | 0이상의 정수(ms 단위) | N |  | 타임아웃 threshold
-Set<String> | validation.responseCodes | API | HTTP response code | N |  | 허용된 responseCode
-String | validation.avoidingValidationText | API |  | N |  | body 포함되어있을 경우 전파 제외 할 문자열
+Object | textValidation | API |  | N |  | 문자열 검증 정보
+Enum | textValidations.operator | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | 문자열 연산자
+String | textValidations.expression | API |  | Y |  | 검증이 필요한 문자열
+String | textValidations.operand | API |  | Y(N) |  | 기댓값
+Integer | timeout | API | 0이상의 정수(ms 단위) | N |  | 타임아웃 threshold
+Set<String> | responseCodes | API | HTTP response code | N |  | 허용된 responseCode
+String | avoidingValidationText | API |  | N |  | body 포함되어있을 경우 전파 제외 할 문자열
+
+-RequestBody.validation.textValidation
+타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
+---|---|---|---|---|---|---
+Enum | textValidationType | API | JSON, HTML, XML | N |  | 문자열 검증을 할 때 기반이 되는 body 타입
+List<Object> | textValidationInfos | API | | N |  | 문자열 검증정보
+
+-RequestBody.validation.textValidation.textValidationInfos
+타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
+---|---|---|---|---|---|---
+Enum | operator | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | 문자열 연산자
+String | expression | API |  | Y |  | 검증이 필요한 문자열
+String | operand | API |  | Y(N) |  | 기댓값
 
 #### 응답
 ```json
