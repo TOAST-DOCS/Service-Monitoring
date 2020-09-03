@@ -63,7 +63,7 @@ Map \<String, String\> | headers | API |  | N |  | api를 보낼 때 사용할 h
 Enum | httpMethod | API | GET, POST, DELETE, PUT | Y |  | api의 httpMethod
 String | requestBody | API |  | N |  | api의 requestBody
 Map \<String, String\> | browserOption | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
-Object | validation | API |  | Y |  | api의 검증 정보
+Object | [validation](#validation_pos) | API |  | Y |  | api의 검증 정보
 Enum | scenarioType | API | API | Y |  | 시나리오 타입
 String | scenarioName | API |  | Y |  | 시나리오 이름
 String | description | API |  | N |  | 시나리오 설명
@@ -72,20 +72,23 @@ Integer | monitoringInterval | API |  | N |  | 모니터링 간격 (초)
 String | monitoringCron | API | 5자리의 Cron표현식 | N |  | 모니터링 간격 (Cron표현식)
 Integer | errorLimitCount | API | 0이상의 정수 | Y | 0 | 연속 에러 허용 횟수
 
+#validation_pos
 -RequestBody.validation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
 ---|---|---|---|---|---|---
-Object | textValidation | API |  | N |  | 문자열 검증 정보
+Object | [textValidation](#text_validation_pos) | API |  | N |  | 문자열 검증 정보
 Integer | timeout | API | 0이상의 정수(ms 단위) | N |  | 타임아웃 threshold
 Set \<String\> | responseCodes | API | HTTP response code | N |  | 허용된 responseCode
 String | avoidingValidationText | API |  | N |  | body 포함되어있을 경우 전파 제외 할 문자열
 
+#text_validation_pos
 -RequestBody.validation.textValidation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
 ---|---|---|---|---|---|---
 Enum | textValidationType | API | JSON, HTML, XML | N |  | 문자열 검증을 할 때 기반이 되는 body 타입
-List \<Object\> | textValidationInfos | API | | N |  | 문자열 검증정보
+List \<Object\> | [textValidationInfos](#text_validation_info_pos) | API | | N |  | 문자열 검증정보
 
+#text_validation_info_pos
 -RequestBody.validation.textValidation.textValidationInfos
 타입 | 필드명(경로명) | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 필드 설명
 ---|---|---|---|---|---|---
