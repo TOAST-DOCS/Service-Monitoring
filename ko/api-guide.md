@@ -27,25 +27,29 @@ Content-Type: application/json
 {
    "url":"http://nhn.com",
    "httpMethod":"GET",
-   "validation": {
-      "responseCodes":["200", "201"],
-      "textValidationType":"JSON",
-      "textValidations":[
-         {
-            "expression":"$.isSuccess",
-            "operator":"EQ",
-            "operand":"true"
-         }
-      ],
-      "timeout":5000
+   "validation":{
+      "textValidation":{
+         "textValidationType":"JSON",
+         "textValidationInfos":[
+            {
+               "expression":"$.isSuccess",
+               "operator":"EQ",
+               "operand":"true"
+            }
+         ]
+      },
+      "responseCodes":[
+         "200",
+         "201"
+      ]
    },
    "browserOption":{
       "OPT_LOCALE":"ko"
    },
    "ip":"nhn.com",
    "scenarioType":"API",
-   "scenarioName":"API시나리오 테스트",
-   "description":"API시나리오 테스트",
+   "scenarioName":"API test",
+   "description":"API test",
    "monitoringRegion":[
       "KOR"
    ],
@@ -102,11 +106,20 @@ String | operand | API |  | Y(N) |  | 기댓값
         "resultMessage": "SUCCESS"
     },
     "body": {
-        "scenarioId": "c0853b80-ec2a-11ea-ac23-87d32e8a7512",
+        "scenarioId": "0c96cff0-edc2-11ea-9760-8d94f461e6d4",
         "url": "http://nhn.com",
         "httpMethod": "GET",
         "validation": {
-            "textValidations": [],
+            "textValidation": {
+                "textValidationType": "JSON",
+                "textValidationInfos": [
+                    {
+                        "operator": "EQ",
+                        "expression": "$.isSuccess",
+                        "operand": "true"
+                    }
+                ]
+            },
             "responseCodes": [
                 "200",
                 "201"
@@ -117,15 +130,14 @@ String | operand | API |  | Y(N) |  | 기댓값
         },
         "ip": "nhn.com",
         "scenarioType": "API",
-        "scenarioName": "API시나리오 테스트",
-        "description": "API시나리오 테스트",
+        "scenarioName": "API test",
+        "description": "API test",
         "monitoringRegion": [
             "KOR"
         ],
-        "registeredTime": "2020-09-01T08:11:35.160+0000",
-        "amendedTime": "2020-09-01T08:11:35.160+0000",
-        "monitoringInterval": 30,
-        "status": "enable",
+        "amendedTime": "2020-09-03T08:49:01.197+0000",
+        "monitoringCron": "7 * * * * ? *",
+        "status": "temporary",
         "errorLimitCount": 0
     }
 }
