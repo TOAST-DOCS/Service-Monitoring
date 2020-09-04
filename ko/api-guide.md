@@ -12,7 +12,7 @@ API Endpoint: https://api-service-monitoring.cloud.toast.com
 
 [URL]
 ```http
-POST /open-api/v1.0/services/{appKey}/scenario
+POST /open-api/v1.0/appkey/{appKey}/scenario
 Content-Type: application/json
 ```
 
@@ -194,7 +194,7 @@ String  |  operand  |  기댓값
 
 [URL]
 ```http
-GET /open-api/v1.0/services/{appKey}/scenarios/{ScenarioId}
+GET /open-api/v1.0/appkey/{appKey}/scenarios/{ScenarioId}
 Content-Type: application/json
 ```
 
@@ -313,7 +313,7 @@ String | validationText | TCP,UDP | Response에서 검증할 문자열
 
 [URL]
 ```http
-DELETE /open-api/v1.0/services/{appKey}/scenarios/{ScenarioId}
+DELETE /open-api/v1.0/appkey/{appKey}/scenarios/{ScenarioId}
 Content-Type: application/json
 ```
 
