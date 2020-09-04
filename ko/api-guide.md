@@ -22,6 +22,11 @@ Content-Type: application/json
 |---|---|---|--|
 | appKey | String | Required | 서비스 앱키(**서비스 관리** 탭에서 확인 가능) |
 
+[Request Header]
+ 헤더 이름 | 헤더 값
+ --- | ---
+ TOAST_PRODUCT_APPKEY | 서비스모니터링의 서비스 관리 -> 우측상단 Url&Appkey 클릭 시 확인 가능한 Appkey
+
 [Request Body]
 ```json
 {
@@ -193,6 +198,11 @@ GET /open-api/v1.0/services/{appKey}/scenarios/{ScenarioId}
 Content-Type: application/json
 ```
 
+[Request Header]
+ 헤더 이름 | 헤더 값
+ --- | ---
+ TOAST_PRODUCT_APPKEY | 서비스모니터링의 서비스 관리 -> 우측상단 Url&Appkey 클릭 시 확인 가능한 Appkey
+
 [Path Variables]
 
 | 값 |	타입 | 필수 여부 |	설명 |
@@ -299,13 +309,18 @@ String  |  operand  |  기댓값
 Integer | position | TCP,UDP | Response에서 검증할 문자열이 시작하는 위치
 String | validationText | TCP,UDP | Response에서 검증할 문자열
 
-## 등록된 시나리오 삭제
+## 등록된 시나오 삭제
 
 [URL]
 ```http
 DELETE /open-api/v1.0/services/{appKey}/scenarios/{ScenarioId}
 Content-Type: application/json
 ```
+
+[Request Header]
+ 헤더 이름 | 헤더 값
+ --- | ---
+ TOAST_PRODUCT_APPKEY | 서비스모니터링의 서비스 관리 -> 우측상단 Url&Appkey 클릭 시 확인 가능한 Appkey
 
 [Path Variables]
 
