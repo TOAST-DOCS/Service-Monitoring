@@ -143,40 +143,46 @@ String | operand | API |  | Y(N) |  | 기댓값
 }
 ```
 
-타입 | 필드명(경로명) | 필드 설명
+#### data
+타입  |  필드명(경로명)  |  해당하는 scenarioType 
 --- | --- | ---
-UUID | scenarioId | 시나리오의 ID
-String | url | 모니터링을 진행할 api의 url
-Map<String, String> | headers | api를 보낼 때 사용할 header값
-Enum | httpMethod | api의 httpMethod
-Object | validation | api의 검증 정보
-Enum | validation.textValidationType | 문자열 검증을 할 때 기반이 되는 body 타입
-List<Object> | validation.textValidations | 문자열 검증 정보
-Enum | operator | 문자열 연산자
-String | expression | 검증이 필요한 문자열
-String | operand | 기댓값
-Integer | validation.timeout | 타임아웃 threshold
-Set<String> | validation.responseCodes | 허용된 responseCode
-String | validation.avoidingValidationText | body 포함되어있을 경우 전파 제외 할 문자열
-String | requestBody | api의 requestBody
-Map<String, String> | browserOption | 
-String | ip | 모니터링을 진행할 api의 ip
-Enum | scenarioType | 시나티오 타입
-String | scenarioName | 시나리오 이름
-String | description | 시나리오 설명
-Set<Enum> | monitoringRegion | 시나리오 모니터링 지역
-Date | registeredTime | 등록 시각
-Date | amendedTime | 수정 시각
-String | status | 시나리오의 현재 상태
-Integer | errorLimitCount | 연속 에러 허용 횟수
-Integer | monitoringInterval | 모니터링 간격(초단위)
-String | monitoringCron | 모니터링 간격(Cron 표현식)
+UUID | scenarioId |  API 
+String  |  url  |  API 
+Map \<String, String\>  |  headers  |  API 
+Enum  |  httpMethod  |  API 
+String  |  requestBody  |  API 
+Map \<String, String\>  |  browserOption  |  API 
+Object  |  [validation](#validation)  |  API 
+Enum  |  scenarioType  |  API 
+String  |  scenarioName  |  API 
+String  |  description  |  API 
+Set \<Enum\>  |  monitoringRegion  |  API 
+Integer  |  monitoringInterval  |  API 
+String  |  monitoringCron  |  API 
+Integer  |  errorLimitCount  |  API 
+Date | registeredTime |  API 
+Date | amendedTime |  API 
+String | status |  API 
+
+#### validation
+타입  |  필드명(경로명)  |  해당하는 scenarioType 
+--- | --- | ---
+Object  |  [textValidation](#textValidation)  |  API 
+Integer  |  timeout  |  API 
+Set \<String\>  |  responseCodes  |  API 
+String  |  avoidingValidationText  |  API 
+
+#### textValidation
+타입  |  필드명(경로명)  |  해당하는 scenarioType 
+--- | --- | ---
+Enum  |  textValidationType  |  API 
+List \<Object\>  |  [textValidationInfos](#textValidationInfo)  |  API 
 
 ## 등록된 시나리오 조회
 
 [URL]
 ```http
-GET /open-api/v1.0/services/{appKey}/scenario/{ScenarioId}
+GET /open-api/v1.0/services/{appKey}/scenarios/{ScenarioId}
 Content-Type: application/json
 ```
 
