@@ -157,7 +157,7 @@ Map\<String, String\>  |  headers  |  api를 보낼 때 사용할 header값
 Enum  |  httpMethod  |  api의 httpMethod
 String  |  requestBody  |  api의 requestBody
 Map\<String, String\>  |  browserOption  |  
-Object  |  [validation](#result-type-validation)  |  api의 검증 정보
+Object  |  [validation](#post-validation)  |  api의 검증 정보
 Enum  |  scenarioType  |  시나리오 타입
 String  |  scenarioName  |  시나리오 이름
 String  |  description  |  시나리오 설명
@@ -169,21 +169,21 @@ Date | registeredTime | 등록 시각
 Date | amendedTime | 수정 시각
 String | status | 시나리오의 현재 상태
 
-#### result type validation
+#### post validation
 타입  |  필드명(경로명)  |  필드 설명
 --- | --- | ---
-Object  |  [textValidation](#result-type-textvalidation)  |  문자열 검증 정보
+Object  |  [textValidation](#post-textvalidation)  |  문자열 검증 정보
 Integer  |  timeout  |  타임아웃 threshold
 Set\<String\>  |  responseCodes  |  허용된 responseCode
 String  |  avoidingValidationText  |  body 포함되어있을 경우 전파 제외 할 문자열
 
-#### result type textValidation
+#### post textValidation
 타입  |  필드명(경로명)  |  필드 설명
 --- | --- | ---
 Enum  |  textValidationType  |  문자열 검증을 할 때 기반이 되는 body 타입
-List\<Object\>  |  [textValidationInfos](#result-type-textvalidationinfo)  |  문자열 검증정보
+List\<Object\>  |  [textValidationInfos](#post-textvalidationinfo)  |  문자열 검증정보
 
-#### result type textValidationInfo
+#### post textValidationInfo
 타입  |  필드명(경로명)  |  필드 설명
 --- | --- | ---
 Enum  |  operator  |  문자열 연산자
@@ -262,7 +262,7 @@ UUID | scenarioId | - | 시나리오의 ID
 String | url | API, WEB, MODULE | 모니터링을 진행할 api의 url
 Map\<String, String\> | headers | API, WEB, MODULE | api를 보낼 때 사용할 header값
 Enum | httpMethod | API, WEB, MODULE | api의 httpMethod
-Object | [validation](#type-validation) | - | 시나리오의 검증 정보
+Object | [validation](#get-validation) | - | 시나리오의 검증 정보
 String | requestBody | API, WEB, MODULE | api의 requestBody
 Map\<String, String\> | browserOption | API, WEB, MODULE | 
 String | ip | - | 모니터링을 진행할 대상의 ip
@@ -279,31 +279,31 @@ Integer | errorLimitCount | - | 연속 에러 허용 횟수
 String | request | TCP, UDP | TCP, UDP요청시 리퀘스트 문자열
 Integer | port | TCP,UDP | TCP, UDP요청시 포트 번호
 
-#### type validation
+#### get validation
 타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
-Object  |  [textValidation](#type-textvalidation) | API, WEB, MODULE |  문자열 검증 정보
+Object  |  [textValidation](#get-textvalidation) | API, WEB, MODULE |  문자열 검증 정보
 Integer  |  timeout | - | 타임아웃 threshold
 Set\<String\>  |  responseCodes  | - | 허용된 responseCode
 String  |  avoidingValidationText  | API, WEB, MODULE | body 포함되어있을 경우 전파 제외 할 문자열
 List\<String\> | imageValidationPaths | API, WEB, MODULE | 이미지 검증 경로
-List\<Object\> | [responseValidation](#type-responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
+List\<Object\> | [responseValidation](#get-responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
 Map\<String, String\> | lengthValidation | TCP,UDP | Response의 길이 검증
 
-#### type textValidation
+#### get textValidation
 타입  |  필드명(경로명) | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
 Enum  |  textValidationType  | API, WEB, MODULE |  문자열 검증을 할 때 기반이 되는 body 타입
-List\<Object\>  | [textValidationInfos](#type-textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
+List\<Object\>  | [textValidationInfos](#get-textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
 
-#### type textValidationInfo
+#### get textValidationInfo
 타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
 Enum  |  operator | API, WEB, MODULE | 문자열 연산자
 String  |  expression | API, WEB, MODULE |  검증이 필요한 문자열
 String  |  operand | API, WEB, MODULE |  기댓값
 
-#### type responseValidation
+#### get responseValidation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 필드 설명
 --- | --- | --- | ---
 Integer | position | TCP,UDP | Response에서 검증할 문자열이 시작하는 위치
@@ -381,7 +381,7 @@ UUID | scenarioId | - | 시나리오의 ID
 String | url | API, WEB, MODULE | 모니터링을 진행할 api의 url
 Map\<String, String\> | headers | API, WEB, MODULE | api를 보낼 때 사용할 header값
 Enum | httpMethod | API, WEB, MODULE | api의 httpMethod
-Object | [validation](#type-validation) | - | 시나리오의 검증 정보
+Object | [validation](#delete-validation) | - | 시나리오의 검증 정보
 String | requestBody | API, WEB, MODULE | api의 requestBody
 Map\<String, String\> | browserOption | API, WEB, MODULE | 
 String | ip | - | 모니터링을 진행할 대상의 ip
@@ -398,31 +398,31 @@ Integer | errorLimitCount | - | 연속 에러 허용 횟수
 String | request | TCP, UDP | TCP, UDP요청시 리퀘스트 문자열
 Integer | port | TCP,UDP | TCP, UDP요청시 포트 번호
 
-#### type validation
+#### delete validation
 타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
-Object  |  [textValidation](#type-textvalidation) | API, WEB, MODULE |  문자열 검증 정보
+Object  |  [textValidation](#delete-textvalidation) | API, WEB, MODULE |  문자열 검증 정보
 Integer  |  timeout | - | 타임아웃 threshold
 Set\<String\>  |  responseCodes  | - | 허용된 responseCode
 String  |  avoidingValidationText  | API, WEB, MODULE | body 포함되어있을 경우 전파 제외 할 문자열
 List\<String\> | imageValidationPaths | API, WEB, MODULE | 이미지 검증 경로
-List\<Object\> | [responseValidation](#type-responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
+List\<Object\> | [responseValidation](#delete-responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
 Map\<String, String\> | lengthValidation | TCP,UDP | Response의 길이 검증
 
-#### type textValidation
+#### delete textValidation
 타입  |  필드명(경로명) | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
 Enum  |  textValidationType  | API, WEB, MODULE |  문자열 검증을 할 때 기반이 되는 body 타입
-List\<Object\>  | [textValidationInfos](#type-textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
+List\<Object\>  | [textValidationInfos](#delete-textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
 
-#### type textValidationInfo
+#### delete textValidationInfo
 타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
 Enum  |  operator | API, WEB, MODULE | 문자열 연산자
 String  |  expression | API, WEB, MODULE |  검증이 필요한 문자열
 String  |  operand | API, WEB, MODULE |  기댓값
 
-#### type responseValidation
+#### delete responseValidation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 필드 설명
 --- | --- | --- | ---
 Integer | position | TCP,UDP | Response에서 검증할 문자열이 시작하는 위치
