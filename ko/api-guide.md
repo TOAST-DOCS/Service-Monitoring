@@ -280,28 +280,28 @@ String | request | TCP, UDP | TCP, UDP요청시 리퀘스트 문자열
 Integer | port | TCP,UDP | TCP, UDP요청시 포트 번호
 
 #### type validation
-타입  |  필드명(경로명)  |  필드 설명
---- | --- | ---
-Object  |  [textValidation](#type-textvalidation)  |  문자열 검증 정보
-Integer  |  timeout  |  타임아웃 threshold
-Set\<String\>  |  responseCodes  |  허용된 responseCode
-String  |  avoidingValidationText  |  body 포함되어있을 경우 전파 제외 할 문자열
+타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
+--- | --- | --- | ---
+Object  |  [textValidation](#type-textvalidation) | API, WEB, MODULE |  문자열 검증 정보
+Integer  |  timeout | - | 타임아웃 threshold
+Set\<String\>  |  responseCodes  | - | 허용된 responseCode
+String  |  avoidingValidationText  | API, WEB, MODULE | body 포함되어있을 경우 전파 제외 할 문자열
 List\<String\> | imageValidationPaths | API, WEB, MODULE | 이미지 검증 경로
 List\<Object\> | [responseValidation](#type-responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
 Map\<String, String\> | lengthValidation | TCP,UDP | Response의 길이 검증
 
 #### type textValidation
-타입  |  필드명(경로명)  |  필드 설명
---- | --- | ---
-Enum  |  textValidationType  |  문자열 검증을 할 때 기반이 되는 body 타입
-List\<Object\>  |  [textValidationInfos](#type-textvalidationinfo)  |  문자열 검증정보
+타입  |  필드명(경로명) | 해당하는 scenarioType |  필드 설명
+--- | --- | --- | ---
+Enum  |  textValidationType  | API, WEB, MODULE |  문자열 검증을 할 때 기반이 되는 body 타입
+List\<Object\>  | [textValidationInfos](#type-textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
 
 #### type textValidationInfo
-타입  |  필드명(경로명)  |  필드 설명
---- | --- | ---
-Enum  |  operator  |  문자열 연산자
-String  |  expression  |  검증이 필요한 문자열
-String  |  operand  |  기댓값
+타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
+--- | --- | --- | ---
+Enum  |  operator | API, WEB, MODULE | 문자열 연산자
+String  |  expression | API, WEB, MODULE |  검증이 필요한 문자열
+String  |  operand | API, WEB, MODULE |  기댓값
 
 #### type responseValidation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 필드 설명
@@ -399,28 +399,28 @@ String | request | TCP, UDP | TCP, UDP요청시 리퀘스트 문자열
 Integer | port | TCP,UDP | TCP, UDP요청시 포트 번호
 
 #### type validation
-타입  |  필드명(경로명)  |  필드 설명
---- | --- | ---
-Object  |  [textValidation](#type-textvalidation)  |  문자열 검증 정보
-Integer  |  timeout  |  타임아웃 threshold
-Set\<String\>  |  responseCodes  |  허용된 responseCode
-String  |  avoidingValidationText  |  body 포함되어있을 경우 전파 제외 할 문자열
+타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
+--- | --- | --- | ---
+Object  |  [textValidation](#type-textvalidation) | API, WEB, MODULE |  문자열 검증 정보
+Integer  |  timeout | - | 타임아웃 threshold
+Set\<String\>  |  responseCodes  | - | 허용된 responseCode
+String  |  avoidingValidationText  | API, WEB, MODULE | body 포함되어있을 경우 전파 제외 할 문자열
 List\<String\> | imageValidationPaths | API, WEB, MODULE | 이미지 검증 경로
 List\<Object\> | [responseValidation](#type-responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
 Map\<String, String\> | lengthValidation | TCP,UDP | Response의 길이 검증
 
 #### type textValidation
-타입  |  필드명(경로명)  |  필드 설명
---- | --- | ---
-Enum  |  textValidationType  |  문자열 검증을 할 때 기반이 되는 body 타입
-List\<Object\>  |  [textValidationInfos](#type-textvalidationinfo)  |  문자열 검증정보
+타입  |  필드명(경로명) | 해당하는 scenarioType |  필드 설명
+--- | --- | --- | ---
+Enum  |  textValidationType  | API, WEB, MODULE |  문자열 검증을 할 때 기반이 되는 body 타입
+List\<Object\>  | [textValidationInfos](#type-textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
 
 #### type textValidationInfo
-타입  |  필드명(경로명)  |  필드 설명
---- | --- | ---
-Enum  |  operator  |  문자열 연산자
-String  |  expression  |  검증이 필요한 문자열
-String  |  operand  |  기댓값
+타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
+--- | --- | --- | ---
+Enum  |  operator | API, WEB, MODULE | 문자열 연산자
+String  |  expression | API, WEB, MODULE |  검증이 필요한 문자열
+String  |  operand | API, WEB, MODULE |  기댓값
 
 #### type responseValidation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 필드 설명
