@@ -3,7 +3,7 @@
 ### 2020. 09. 22.
 
 #### 기능 추가
-* 시나리오 관리를 위한 [생성](/Management/Service%20Monitoring/ko/api-guide/시나리오-생성), [조회](/Management/Service%20Monitoring/ko/api-guide/등록된-시나리오-조회), [삭제](/Management/Service%20Monitoring/ko/api-guide/등록된-시나리오-삭제) Open Api 기능 추가.
+* 시나리오 관리를 위한 [생성](/Management/Service%20Monitoring/ko/api-guide/#_8), [조회](/Management/Service%20Monitoring/ko/api-guide/#_19), [삭제](/Management/Service%20Monitoring/ko/api-guide/#_25) Open Api 기능 추가.
 
 ### 2020. 08. 25.
 
