@@ -228,8 +228,8 @@ Enum | scenarioType | API | API | Y |  | 시나리오 타입
 String | scenarioName | API |  | Y |  | 시나리오 이름
 String | description | API |  | N |  | 시나리오 설명
 Set\<Enum\> | monitoringRegion | API | KOR, US | Y | KOR | 시나리오를 모니터링 할 지역
-Integer | monitoringInterval | API |  | N |  | 모니터링 간격 (초)
-String | monitoringCron | API | 5자리의 Cron표현식 | N |  | 모니터링 간격 (Cron표현식)
+Integer | monitoringInterval | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격 (초)
+String | monitoringCron | API | 5자리의 Cron표현식 | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격 (Cron표현식)
 Integer | errorLimitCount | API | 0이상의 정수 | Y | 0 | 연속 에러 허용 횟수
 
 #### validation
