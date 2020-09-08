@@ -182,7 +182,7 @@ Content-Type: application/json
 [Request Body]
 ```json
 {
-   "url":"http://nhn.com",
+   "url":"http://toast.com",
    "httpMethod":"GET",
    "validation":{
       "textValidation":{
@@ -203,7 +203,7 @@ Content-Type: application/json
    "browserOption":{
       "OPT_LOCALE":"ko"
    },
-   "ip":"nhn.com",
+   "ip":"toast.com",
    "scenarioType":"API",
    "scenarioName":"API test",
    "description":"API test",
@@ -264,7 +264,7 @@ String | operand | API |  | Y(N) |  | 기댓값
     },
     "body": {
         "scenarioId": "0c96cff0-edc2-11ea-9760-8d94f461e6d4",
-        "url": "http://nhn.com",
+        "url": "http://toast.com",
         "httpMethod": "GET",
         "validation": {
             "textValidation": {
@@ -285,7 +285,7 @@ String | operand | API |  | Y(N) |  | 기댓값
         "browserOption": {
             "OPT_LOCALE": "ko"
         },
-        "ip": "nhn.com",
+        "ip": "toast.com",
         "scenarioType": "API",
         "scenarioName": "API test",
         "description": "API test",
@@ -303,44 +303,44 @@ String | operand | API |  | Y(N) |  | 기댓값
 #### data 
 타입  |  필드명(경로명)  |  필드 설명
 --- | --- | ---
-UUID | scenarioId | 시나리오의 ID
-String  |  url  |  모니터링을 진행할 api의 url
+UUID | body.scenarioId | 시나리오의 ID
+String  |  body.url  |  모니터링을 진행할 api의 url
 Map\<String, String\>  |  headers  |  api를 보낼 때 사용할 header값
-Enum  |  httpMethod  |  api의 httpMethod
-String  |  requestBody  |  api의 requestBody
-Map\<String, String\>  |  browserOption  |  
-Object  |  [validation](#post-validation)  |  api의 검증 정보
-Enum  |  scenarioType  |  시나리오 타입
-String  |  scenarioName  |  시나리오 이름
-String  |  description  |  시나리오 설명
-Set\<Enum\>  |  monitoringRegion  |  시나리오를 모니터링 할 지역
-Integer  |  monitoringInterval  |  모니터링 간격 (초)
-String  |  monitoringCron  |  모니터링 간격 (Cron표현식)
-Integer  |  errorLimitCount  |  연속 에러 허용 횟수
-Date | registeredTime | 등록 시각
-Date | amendedTime | 수정 시각
-String | status | 시나리오의 현재 상태
+Enum  |  body.httpMethod  |  api의 httpMethod
+String  |  body.requestBody  |  api의 requestBody
+Map\<String, String\>  |  body.browserOption  |  
+Object  |  [body.validation](#validation)  |  api의 검증 정보
+Enum  |  body.scenarioType  |  시나리오 타입
+String  |  body.scenarioName  |  시나리오 이름
+String  |  body.description  |  시나리오 설명
+Set\<Enum\>  |  body.monitoringRegion  |  시나리오를 모니터링 할 지역
+Integer  |  body.monitoringInterval  |  모니터링 간격 (초)
+String  |  body.monitoringCron  |  모니터링 간격 (Cron표현식)
+Integer  |  body.errorLimitCount  |  연속 에러 허용 횟수
+Date | body.registeredTime | 등록 시각
+Date | body.amendedTime | 수정 시각
+String | body.status | 시나리오의 현재 상태
 
-#### post validation
+#### validation
 타입  |  필드명(경로명)  |  필드 설명
 --- | --- | ---
-Object  |  [textValidation](#post-textvalidation)  |  문자열 검증 정보
-Integer  |  timeout  |  타임아웃 threshold
-Set\<String\>  |  responseCodes  |  허용된 responseCode
-String  |  avoidingValidationText  |  body 포함되어있을 경우 전파 제외 할 문자열
+Object  |  [body.validation.textValidation](#textvalidation)  |  문자열 검증 정보
+Integer  |  body.validation.timeout  |  타임아웃 threshold
+Set\<String\>  |  body.validation.responseCodes  |  허용된 responseCode
+String  |  body.validation.avoidingValidationText  |  body 포함되어있을 경우 전파 제외 할 문자열
 
-#### post textValidation
+#### textValidation
 타입  |  필드명(경로명)  |  필드 설명
 --- | --- | ---
 Enum  |  textValidationType  |  문자열 검증을 할 때 기반이 되는 body 타입
-List\<Object\>  |  [textValidationInfos](#post-textvalidationinfo)  |  문자열 검증정보
+List\<Object\>  |  [body.validation.textValidation.textValidationInfos](#textvalidationinfo)  |  문자열 검증정보
 
-#### post textValidationInfo
+#### textValidationInfo
 타입  |  필드명(경로명)  |  필드 설명
 --- | --- | ---
-Enum  |  operator  |  문자열 연산자
-String  |  expression  |  검증이 필요한 문자열
-String  |  operand  |  기댓값
+Enum  |  body.validation.textValidation.textValidationInfo.operator  |  문자열 연산자
+String  |  body.validation.textValidation.textValidationInfo.expression  |  검증이 필요한 문자열
+String  |  body.validation.textValidation.textValidationInfo.operand  |  기댓값
 
 ## 등록된 시나리오 조회
 
@@ -414,7 +414,7 @@ UUID | scenarioId | - | 시나리오의 ID
 String | url | API, WEB, MODULE | 모니터링을 진행할 api의 url
 Map\<String, String\> | headers | API, WEB, MODULE | api를 보낼 때 사용할 header값
 Enum | httpMethod | API, WEB, MODULE | api의 httpMethod
-Object | [validation](#get-validation) | - | 시나리오의 검증 정보
+Object | [validation](#validation) | - | 시나리오의 검증 정보
 String | requestBody | API, WEB, MODULE | api의 requestBody
 Map\<String, String\> | browserOption | API, WEB, MODULE | 
 String | ip | - | 모니터링을 진행할 대상의 ip
@@ -431,31 +431,31 @@ Integer | errorLimitCount | - | 연속 에러 허용 횟수
 String | request | TCP, UDP | TCP, UDP요청시 리퀘스트 문자열
 Integer | port | TCP,UDP | TCP, UDP요청시 포트 번호
 
-#### get validation
+#### validation
 타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
-Object  |  [textValidation](#get-textvalidation) | API, WEB, MODULE |  문자열 검증 정보
+Object  |  [textValidation](#textvalidation) | API, WEB, MODULE |  문자열 검증 정보
 Integer  |  timeout | - | 타임아웃 threshold
 Set\<String\>  |  responseCodes  | - | 허용된 responseCode
 String  |  avoidingValidationText  | API, WEB, MODULE | body 포함되어있을 경우 전파 제외 할 문자열
 List\<String\> | imageValidationPaths | API, WEB, MODULE | 이미지 검증 경로
-List\<Object\> | [responseValidation](#get-responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
+List\<Object\> | [responseValidation](#responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
 Map\<String, String\> | lengthValidation | TCP,UDP | Response의 길이 검증
 
-#### get textValidation
+#### textValidation
 타입  |  필드명(경로명) | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
 Enum  |  textValidationType  | API, WEB, MODULE |  문자열 검증을 할 때 기반이 되는 body 타입
-List\<Object\>  | [textValidationInfos](#get-textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
+List\<Object\>  | [textValidationInfos](#textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
 
-#### get textValidationInfo
+#### textValidationInfo
 타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
 Enum  |  operator | API, WEB, MODULE | 문자열 연산자
 String  |  expression | API, WEB, MODULE |  검증이 필요한 문자열
 String  |  operand | API, WEB, MODULE |  기댓값
 
-#### get responseValidation
+#### responseValidation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 필드 설명
 --- | --- | --- | ---
 Integer | position | TCP,UDP | Response에서 검증할 문자열이 시작하는 위치
@@ -533,7 +533,7 @@ UUID | scenarioId | - | 시나리오의 ID
 String | url | API, WEB, MODULE | 모니터링을 진행할 api의 url
 Map\<String, String\> | headers | API, WEB, MODULE | api를 보낼 때 사용할 header값
 Enum | httpMethod | API, WEB, MODULE | api의 httpMethod
-Object | [validation](#delete-validation) | - | 시나리오의 검증 정보
+Object | [validation](#validation) | - | 시나리오의 검증 정보
 String | requestBody | API, WEB, MODULE | api의 requestBody
 Map\<String, String\> | browserOption | API, WEB, MODULE | 
 String | ip | - | 모니터링을 진행할 대상의 ip
@@ -550,31 +550,31 @@ Integer | errorLimitCount | - | 연속 에러 허용 횟수
 String | request | TCP, UDP | TCP, UDP요청시 리퀘스트 문자열
 Integer | port | TCP,UDP | TCP, UDP요청시 포트 번호
 
-#### delete validation
+#### validation
 타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
-Object  |  [textValidation](#delete-textvalidation) | API, WEB, MODULE |  문자열 검증 정보
+Object  |  [textValidation](#textvalidation) | API, WEB, MODULE |  문자열 검증 정보
 Integer  |  timeout | - | 타임아웃 threshold
 Set\<String\>  |  responseCodes  | - | 허용된 responseCode
 String  |  avoidingValidationText  | API, WEB, MODULE | body 포함되어있을 경우 전파 제외 할 문자열
 List\<String\> | imageValidationPaths | API, WEB, MODULE | 이미지 검증 경로
-List\<Object\> | [responseValidation](#delete-responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
+List\<Object\> | [responseValidation](#responsevalidation) | TCP,UDP | TCP, UDP요청시 Resoponse 검증 목록
 Map\<String, String\> | lengthValidation | TCP,UDP | Response의 길이 검증
 
-#### delete textValidation
+#### textValidation
 타입  |  필드명(경로명) | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
 Enum  |  textValidationType  | API, WEB, MODULE |  문자열 검증을 할 때 기반이 되는 body 타입
-List\<Object\>  | [textValidationInfos](#delete-textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
+List\<Object\>  | [textValidationInfos](#textvalidationinfo) | API, WEB, MODULE | 문자열 검증정보
 
-#### delete textValidationInfo
+#### textValidationInfo
 타입  |  필드명(경로명)  | 해당하는 scenarioType |  필드 설명
 --- | --- | --- | ---
 Enum  |  operator | API, WEB, MODULE | 문자열 연산자
 String  |  expression | API, WEB, MODULE |  검증이 필요한 문자열
 String  |  operand | API, WEB, MODULE |  기댓값
 
-#### delete responseValidation
+#### responseValidation
 타입 | 필드명(경로명) | 해당하는 scenarioType | 필드 설명
 --- | --- | --- | ---
 Integer | position | TCP,UDP | Response에서 검증할 문자열이 시작하는 위치
