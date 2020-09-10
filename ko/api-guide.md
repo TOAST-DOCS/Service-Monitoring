@@ -164,7 +164,7 @@ Content-Type: application/json
 
 [URL]
 ```http
-POST /open-api/v1.0/appkey/{appKey}/scenario
+POST /open-api/v1.0/appkey/{appKey}/scenarios
 Content-Type: application/json
 ```
 
