@@ -21,7 +21,7 @@ Content-Type: application/json
 
 | 값 |	타입 | 필수 여부 |	설명 |
 |---|---|---|---|
-| appKey | String | Required | 서비스 앱키(**서비스 관리** 탭에서 확인 가능) |
+| appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
 | scenarioId | String | Required | 서비스 ID |
 
 [Request Body]
@@ -172,12 +172,12 @@ Content-Type: application/json
 
 | 값 |	타입 | 필수 여부 |	설명 |
 |---|---|---|--|
-| appKey | String | Required | 서비스 앱키(**서비스 관리** 탭에서 확인 가능) |
+| appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
 
 [Request Header]
  헤더 이름 | 헤더 값
  --- | ---
- TOAST_PRODUCT_APPKEY | 서비스모니터링의 서비스 관리 -> 우측상단 Url&Appkey 클릭 시 확인 가능한 Appkey
+ TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
 
 [Request Body]
 ```json
@@ -229,14 +229,14 @@ scenarioName | String | API |  | Y |  | 시나리오 이름
 description | String | API |  | Y |  | 시나리오 설명
 monitoringRegion | Set\<Enum\> | API | KOR, US | Y | KOR | 시나리오를 모니터링할 지역
 monitoringInterval | Integer | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격(초)
-monitoringCron | String | API | 5자리의 Cron 표현식 | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron표현식)
+monitoringCron | String | API | 5자리의 Cron 표현식 | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
 errorLimitCount | Integer | API | 0 이상의 정수 | Y | 0 | 연속 오류 허용 횟수
 
 #### validation
 값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
 ---|---|---|---|---|---|---
 [validation.textValidation](#textValidation) | Object | API |  | N |  | 문자열 검증 정보
-validation.timeout | Integer | API | 0 이상의 정수(ms 단위) | N |  | 타임아웃 threshold
+validation.timeout | Integer | API | 0 이상의 정수(ms 단위) | N |  | 타임아웃 임곗값
 validation.responseCodes | Set\<String\> | API | HTTP response code | N |  | 허용된 responseCode
 validation.avoidingValidationText | String | API |  | N |  | body에 포함된 경우 전파를 제외할 문자열
 
@@ -244,7 +244,7 @@ validation.avoidingValidationText | String | API |  | N |  | body에 포함된 �
 값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
 ---|---|---|---|---|---|---
 validation.textValidation.textValidationType | Enum | API | JSON, HTML, XML | N |  | 문자열을 검증할 때 기반이 되는 body 타입
-[validation.textValidation.textValidationInfos](#textValidationInfo) | List\<Object\> | API | | N |  | 문자열 검증정보
+[validation.textValidation.textValidationInfos](#textValidationInfo) | List\<Object\> | API | | N |  | 문자열 검증 정보
 
 #### textValidationInfo
 값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
@@ -316,7 +316,7 @@ body.scenarioName  |  String  |  시나리오 이름
 body.description  |  String  |  시나리오 설명
 body.monitoringRegion  |  Set\<Enum\>  |  시나리오를 모니터링할 지역
 body.monitoringInterval  |  Integer  |  모니터링 간격(초)
-body.monitoringCron  |  String  |  모니터링 간격(Cron표현식)
+body.monitoringCron  |  String  |  모니터링 간격(Cron 표현식)
 body.errorLimitCount  |  Integer  |  연속 오류 허용 횟수
 body.registeredTime | Date | 등록 시각
 body.amendedTime | Date | 수정 시각
@@ -326,7 +326,7 @@ body.status | String | 시나리오의 현재 상태
 값  |  타입  | 설명
 --- | --- | ---
 [body.validation.textValidation](#textvalidation)  |  Object  |  문자열 검증 정보
-body.validation.timeout  |  Integer  |  타임아웃 threshold
+body.validation.timeout  |  Integer  |  타임아웃 임곗값
 body.validation.responseCodes  | Set\<String\>  |  허용된 responseCode
 body.validation.avoidingValidationText  |  String  |  body에 포함된 경우 전파를 제외할 문자열
 
@@ -334,7 +334,7 @@ body.validation.avoidingValidationText  |  String  |  body에 포함된 경우 �
 필드명(경로명)  |  타입  |  설명
 --- | --- | ---
 textValidationType  |  Enum  |  문자열을 검증할 때 기반이 되는 body 타입
-[body.validation.textValidation.textValidationInfos](#textvalidationinfo)  |  List\<Object\>  |  문자열 검증정보
+[body.validation.textValidation.textValidationInfos](#textvalidationinfo)  |  List\<Object\>  |  문자열 검증 정보
 
 #### textValidationInfo
 값  |  타입  |  설명
@@ -354,13 +354,13 @@ Content-Type: application/json
 [Request Header]
  헤더 이름 | 헤더 값
  --- | ---
- TOAST_PRODUCT_APPKEY | 서비스모니터링의 서비스 관리 -> 우측상단 Url&Appkey 클릭 시 확인 가능한 Appkey
+ TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
 
 [Path Variables]
 
 | 값 |	타입 | 필수 여부 |	설명 |
 |---|---|---|---|
-| appKey | String | Required | 서비스 앱키(**서비스 관리** 탭에서 확인 가능) |
+| appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
 | scenarioId | String | Required | 시나리오 ID |
 
 #### 응답
@@ -439,7 +439,7 @@ body.port | Integer | TCP,UDP | TCP, UDP 요청 시 포트 번호
 값  | 타입  |  해당하는 scenarioType |  설명
 --- | --- | --- | ---
 [body.validation.textValidation](#textvalidation) | Object  |  API, WEB, MODULE |  문자열 검증 정보
-body.validation.timeout | Integer  |  - | 타임아웃 threshold
+body.validation.timeout | Integer  |  - | 타임아웃 임곗값
 body.validation.responseCodes  | Set\<String\>  |  - | 허용된 responseCode
 body.validation.avoidingValidationText  | String  | API, WEB, MODULE | body에 포함된 경우 전파를 제외할 문자열
 body.validation.imageValidationPaths | List\<String\> | API, WEB, MODULE | 이미지 검증 경로
@@ -450,7 +450,7 @@ body.validation.lengthValidation | Map\<String, String\> | TCP,UDP | Response의
 값 | 타입  |  해당하는 scenarioType |  설명
 --- | --- | --- | ---
 body.validation.textValidation.textValidationType  | Enum  |  API, WEB, MODULE |  문자열을 검증할 때 기반이 되는 body 타입
-[body.validation.textValidation.textValidationInfos](#textvalidationinfo) | List\<Object\>  | API, WEB, MODULE | 문자열 검증정보
+[body.validation.textValidation.textValidationInfos](#textvalidationinfo) | List\<Object\>  | API, WEB, MODULE | 문자열 검증 정보
 
 #### textValidationInfo
 값  | 타입  |  해당하는 scenarioType | 설명
@@ -476,13 +476,13 @@ Content-Type: application/json
 [Request Header]
  헤더 이름 | 헤더 값
  --- | ---
- TOAST_PRODUCT_APPKEY | 서비스모니터링의 서비스 관리 -> 우측상단 Url&Appkey 클릭 시 확인 가능한 Appkey
+ TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
 
 [Path Variables]
 
 | 값 |	타입 | 필수 여부 |	설명 |
 |---|---|---|---|
-| appKey | String | Required | 서비스 앱키(**서비스 관리** 탭에서 확인 가능) |
+| appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
 | scenarioId | String | Required | 시나리오 ID |
 
 #### 응답
@@ -561,7 +561,7 @@ body.port | Integer | TCP,UDP | TCP, UDP 요청 시 포트 번호
 값  | 타입  |  해당하는 scenarioType |  설명
 --- | --- | --- | ---
 [body.validation.textValidation](#textvalidation) | Object  |  API, WEB, MODULE |  문자열 검증 정보
-body.validation.timeout | Integer  |  - | 타임아웃 threshold
+body.validation.timeout | Integer  |  - | 타임아웃 임곗값
 body.validation.responseCodes  | Set\<String\>  |  - | 허용된 responseCode
 body.validation.avoidingValidationText  | String  | API, WEB, MODULE | body에 포함된 경우 전파를 제외할 문자열
 body.validation.imageValidationPaths | List\<String\> | API, WEB, MODULE | 이미지 검증 경로
@@ -572,7 +572,7 @@ body.validation.lengthValidation | Map\<String, String\> | TCP,UDP | Response의
 값 | 타입  |  해당하는 scenarioType |  설명
 --- | --- | --- | ---
 body.validation.textValidation.textValidationType  | Enum  |  API, WEB, MODULE |  문자열을 검증할 때 기반이 되는 body 타입
-[body.validation.textValidation.textValidationInfos](#textvalidationinfo) | List\<Object\>  | API, WEB, MODULE | 문자열 검증정보
+[body.validation.textValidation.textValidationInfos](#textvalidationinfo) | List\<Object\>  | API, WEB, MODULE | 문자열 검증 정보
 
 #### textValidationInfo
 값  | 타입  |  해당하는 scenarioType | 설명
