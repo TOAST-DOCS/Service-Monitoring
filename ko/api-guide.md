@@ -170,11 +170,12 @@ Content-Type: application/json
 
 [Path Variables]
 
-| 값 |	타입 | 필수 여부 |	설명 |
-|---|---|---|--|
+| 값 |	타입 | 필수 여부 |	설명 
+|---|---|---|---|
 | appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
 
 [Request Header]
+
  헤더 이름 | 헤더 값
  --- | ---
  TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
@@ -352,6 +353,7 @@ Content-Type: application/json
 ```
 
 [Request Header]
+
  헤더 이름 | 헤더 값
  --- | ---
  TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
@@ -474,6 +476,7 @@ Content-Type: application/json
 ```
 
 [Request Header]
+
  헤더 이름 | 헤더 값
  --- | ---
  TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
