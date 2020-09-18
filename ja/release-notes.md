@@ -1,5 +1,10 @@
 ## Management > Service Monitoring > リリースノート
 
+### 2020. 09. 22.
+
+#### 機能追加
+* シナリオ管理用の[作成](/Management/Service%20Monitoring/ko/api-guide/#_8)、[照会](/Management/Service%20Monitoring/ko/api-guide/#_19)、[削除](/Management/Service%20Monitoring/ko/api-guide/#_25) Open API機能を追加
+
 ### 2020. 08. 25.
 
 #### バグ修正
