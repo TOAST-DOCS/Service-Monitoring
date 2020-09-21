@@ -326,8 +326,8 @@ body.monitoringRegion  |  Set&lt;String&gt;  |  시나리오를 모니터링할 
 body.monitoringInterval  |  Integer  |  모니터링 간격(초)
 body.monitoringCron  |  String  |  모니터링 간격(Cron 표현식)
 body.errorLimitCount  |  Integer  |  연속 오류 허용 횟수
-body.registeredTime | Date | 등록 시각
-body.amendedTime | Date | 수정 시각
+body.registeredTime | String | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
+body.amendedTime | String | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.status | String | 시나리오의 현재 상태
 
 <div id='validation2'></div>
@@ -441,8 +441,8 @@ body.scenarioType | String | - | 시나티오 타입
 body.scenarioName | String | - | 시나리오 이름
 body.description | String | - | 시나리오 설명
 body.monitoringRegion | Set&lt;String&gt; | - | 시나리오 모니터링 지역
-body.registeredTime | Date | - | 등록 시각
-body.amendedTime | Date | - | 수정 시각
+body.registeredTime | String | - | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
+body.amendedTime | String | - | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | 모니터링 간격(초 단위)
 body.monitoringCron | String | - | 모니터링 간격(Cron 표현식)
 body.status | String | - | 시나리오의 현재 상태
@@ -572,8 +572,8 @@ body.scenarioType | String | - | 시나티오 타입
 body.scenarioName | String | - | 시나리오 이름
 body.description | String | - | 시나리오 설명
 body.monitoringRegion | Set&lt;String&gt; | - | 시나리오 모니터링 지역
-body.registeredTime | Date | - | 등록 시각
-body.amendedTime | Date | - | 수정 시각
+body.registeredTime | String | - | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
+body.amendedTime | String | - | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | 모니터링 간격(초 단위)
 body.monitoringCron | String | - | 모니터링 간격(Cron 표현식)
 body.status | String | - | 시나리오의 현재 상태

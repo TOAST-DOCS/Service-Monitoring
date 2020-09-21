@@ -240,8 +240,8 @@ body.monitoringRegion  |  Set&lt;String&gt;  | シナリオをモニタリング
 body.monitoringInterval  |  Integer  | モニタリング間隔(秒)
 body.monitoringCron  |  String  | モニタリング間隔(Cron式)
 body.errorLimitCount  |  Integer  | 連続エラー許容回数
-body.registeredTime | Date | 登録時刻
-body.amendedTime | Date | 修正時刻
+body.registeredTime | String | 登録時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
+body.amendedTime | String | 修正時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.status | String | シナリオの現在状態
 
 <div id='validation2'></div>
@@ -355,8 +355,8 @@ body.scenarioType | String | - | シナリオタイプ
 body.scenarioName | String | - | シナリオ名
 body.description | String | - | シナリオの説明
 body.monitoringRegion | Set&lt;String&gt; | - | シナリオモニタリング地域
-body.registeredTime | Date | - | 登録時刻
-body.amendedTime | Date | - | 修正時刻
+body.registeredTime | String | - | 登録時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
+body.amendedTime | String | - | 修正時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | モニタリング間隔(秒単位)
 body.monitoringCron | String | - | モニタリング間隔(Cron式)
 body.status | String | - | シナリオの現在状態
@@ -486,8 +486,8 @@ body.scenarioType | String | - | シナリオタイプ
 body.scenarioName | String | - | シナリオ名
 body.description | String | - | シナリオの説明
 body.monitoringRegion | Set&lt;String&gt; | - | シナリオモニタリング地域
-body.registeredTime | Date | - | 登録時刻
-body.amendedTime | Date | - | 修正時刻
+body.registeredTime | String | - | 登録時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
+body.amendedTime | String | - | 修正時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | モニタリング間隔(秒単位)
 body.monitoringCron | String | - | モニタリング間隔(Cron式)
 body.status | String | - | シナリオの現在状態
