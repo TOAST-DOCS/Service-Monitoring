@@ -76,7 +76,7 @@ Scenario is verified in the following way.
 | avg() | Average Value of Array Data | double | 
 | stddev() | Standard Deviation of Array Data | double | 
 | length() | Array Data Count | integer |
-> 응답 바디에 포함된 배열 데이터만 함수 사용 가능
+> Functions are available only for such sequence data that are included to a response body 
 
 ## TCP monitoring
 
