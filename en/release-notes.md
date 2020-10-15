@@ -1,28 +1,28 @@
 ## Management > Service Monitoring > Release Notes
 
-### 2020. 07. 28.
+### July 28, 2020
 
-#### 기능 개선
-* 웹 모니터링 동작 최소 단위 변경
-  * API 모니터링: 60초 ---> 30초
-  * 가상 브라우저, 모듈 모니터링: 120초 ---> 60초
+#### Feature Updates 
+* Changed the mimimum unit for web monitoring operations
+  * API Monitoring: 60 seconds ---> 30 seconds 
+  * Virtual browser, Module monitoring: 120 seconds ---> 60 seconds
 
-### 버그 수정
-* 배치 모니터링 내용 검증 시 대소문자를 구분하지 않은 문제 수정
+### Bug Fixes
+* Fixed cases, in which case sensitivity was not included as part of batch monitoring verification  
 
-### 2020. 05. 26.
+### May 26, 2020 
 
-#### 기능 개선
-* 웹 모니터링 테스트가 30초 이상 걸릴 경우 실패하는 문제 수정
-* 웹 모니터링 텍스트 검증 시 시나리오 타입, 응답 콘텐츠 타입에 따라 사용할 수 있는 연산자 추가
+#### Feature Updates 
+* Fixed failed cases of web monitoring test when it took more than 30 seconds 
+* Added operators to be applied for each type of scenario or response content, to verify web monitoring texts
   * API
-    * 응답이 _HTML_, _XML_일 경우 contain, !contain만 사용 가능
-    * 응답이 _JSON_일 경우 _JsonPath_를 활용하여 (==, !=, >, >=, <, <=) 사용 가능
+    * Only contain and !contain are available, when the response is _HTML_ or _XML_  
+    * (==, !=, >, >=, <, <=) are available, when the response is _JSON_, by using _JsonPath_ 
   * Browser, Module
-    * 응답이 _HTML_, _XML_일 경우 contain, !contain, _xPath_를 활용하여 (==, !=, >, >=, <, <=) 사용 가능
-    * 응답이 _JSON_일 경우 _JsonPath_를 활용하여 (==, !=, >, >=, <, <=) 사용 가능
-* TOAST CloudTrail 서비스 연동
-  * Service Monitoring 콘솔에서 발생한 사용자 이벤트를 TOAST CloudTrail에서 확인 가능
+    * (==, !=, >, >=, <, <=) are available, when the response is _HTML_, _XML_, by using contain, !contain, or _xPath_
+    * (==, !=, >, >=, <, <=) are available, when the response is _JSON_, by using _JsonPath_
+* Service Integration with TOAST CloudTrail 
+  * User events that occur from Service Monitoring console can be found at TOAST CloudTrail 
 
 ### March 24, 2020
 
