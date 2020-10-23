@@ -7,7 +7,7 @@
   * API Monitoring: 60 seconds ---> 30 seconds 
   * Virtual browser, Module monitoring: 120 seconds ---> 60 seconds
 
-### Bug Fixes
+#### Bug Fixes
 * Fixed cases, in which case sensitivity was not included as part of batch monitoring verification  
 
 ### May 26, 2020 
