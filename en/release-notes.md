@@ -1,9 +1,9 @@
 ## Management > Service Monitoring > Release Notes
 
-### 2020. 08. 25.
+### August 25, 2020
 
-### 버그 수정
-* 배치 모니터링 시나리오를 등록한 후 바로 API를 호출했을 때, 호출 결과가 제대로 반영되지 않는 문제 수정 
+### Bug Fixes
+* Fixed failed application of a call result of API even when it is called immediately after batch monitoring scenario is registered. 
 
 ### March 24, 2020
 
