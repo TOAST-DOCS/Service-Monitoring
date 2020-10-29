@@ -3,7 +3,7 @@
 
 ### August 25, 2020
 
-### Bug Fixes
+#### Bug Fixes
 * Fixed failed application of a call result of API even when it is called immediately after batch monitoring scenario is registered. 
 
 ### July 28, 2020
