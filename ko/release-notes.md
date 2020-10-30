@@ -1,5 +1,12 @@
 ## Management > Service Monitoring > 릴리스 노트
 
+### 2020. 11. 24.
+
+#### 기능 추가
+* 시나리오 관리를 위한 [수정](/Management/Service%20Monitoring/ko/api-guide/#_8) Open Api 기능 추가
+* 웹훅 request Parameter 지원
+* `LINE`의 메세지 발송 웹훅 템플릿 추가
+
 ### 2020. 10. 27.
 
 #### 버그 수정
