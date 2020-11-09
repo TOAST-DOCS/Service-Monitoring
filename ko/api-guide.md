@@ -220,7 +220,7 @@ Content-Type: application/json
 
 값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
 ---|---|---|---|---|---|---
-url | String | API | http또는 https로 시작하는 url | Y |  | 모니터링을 진행할 API의 URL
+url | String | API | http 또는 https로 시작하는 url | Y |  | 모니터링할 API의 URL
 headers | Map&lt;String, String&gt; | API |  | N |  | API를 보낼 때 사용할 헤더값
 httpMethod | String | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
 requestBody | String | API |  | N |  | API의 requestBody
@@ -312,8 +312,8 @@ validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) | 
 header.isSuccessful | Boolean | 성공 여부
 header.resultCode | Integer | 실패 코드(0은 정상)
 header.resultMessage | String | 실패 메시지
-body.scenarioId | String | 시나리오의 ID
-body.url  |  String  |  모니터링을 진행할 API의 URL
+body.scenarioId | String | 시나리오 ID
+body.url  |  String  |  모니터링할 API의 URL
 headers  |  Map&lt;String, String&gt;  |  API를 보낼 때 사용할 헤더값
 body.httpMethod  |  String  |  API의 httpMethod
 body.requestBody  |  String  |  API의 requestBody
@@ -429,14 +429,14 @@ Content-Type: application/json
 header.isSuccessful | Boolean | - |성공 여부
 header.resultCode | Integer | - |실패 코드(0은 정상)
 header.resultMessage | String | - |실패 메시지
-body.scenarioId | String | - | 시나리오의 ID
-body.url | String | API, WEB, MODULE | 모니터링을 진행할 API의 URL
+body.scenarioId | String | - | 시나리오 ID
+body.url | String | API, WEB, MODULE | 모니터링할 API의 URL
 body.headers | Map&lt;String, String&gt; | API, WEB, MODULE | API를 보낼 때 사용할 헤더값
 body.httpMethod | String | API, WEB, MODULE | API의 httpMethod
 [body.validation](#validation3) | Object | - | 시나리오의 검증 정보
 body.requestBody | String | API, WEB, MODULE | API의 requestBody
 body.browserOption | Map&lt;String, String&gt; | API, WEB, MODULE | 
-body.ip | String | - | 모니터링을 진행할 대상의 IP
+body.ip | String | - | 모니터링할 대상의 IP
 body.scenarioType | String | - | 시나티오 타입
 body.scenarioName | String | - | 시나리오 이름
 body.description | String | - | 시나리오 설명
@@ -560,14 +560,14 @@ Content-Type: application/json
 header.isSuccessful | Boolean | - |성공 여부
 header.resultCode | Integer | - |실패 코드(0은 정상)
 header.resultMessage | String | - |실패 메시지
-body.scenarioId | String | - | 시나리오의 ID
-body.url | String | API, WEB, MODULE | 모니터링을 진행할 API의 URL
+body.scenarioId | String | - | 시나리오 ID
+body.url | String | API, WEB, MODULE | 모니터링할 API의 URL
 body.headers | Map&lt;String, String&gt; | API, WEB, MODULE | API를 보낼 때 사용할 헤더값
 body.httpMethod | String | API, WEB, MODULE | API의 httpMethod
 [body.validation](#validation4) | Object | - | 시나리오의 검증 정보
 body.requestBody | String | API, WEB, MODULE | API의 requestBody
 body.browserOption | Map&lt;String, String&gt; | API, WEB, MODULE | 
-body.ip | String | - | 모니터링을 진행할 대상의 IP
+body.ip | String | - | 모니터링할 대상의 IP
 body.scenarioType | String | - | 시나티오 타입
 body.scenarioName | String | - | 시나리오 이름
 body.description | String | - | 시나리오 설명
@@ -622,7 +622,7 @@ body.validation.responseValidation.validationText | String | TCP,UDP | Response�
 ## 시나리오 수정
 
 ### 데이터 전송
-- 서비스 모니터링 서버로 시나리오 수정 요청 시 필요한 데이터를 전송합니다.
+- 서비스 모니터링 서버로 시나리오 수정을 요청할 때 필요한 데이터를 전송합니다.
 
 [URL]
 ```http
@@ -635,13 +635,13 @@ Content-Type: application/json
 | 값 |	타입 | 필수 여부 |	설명 
 |---|---|---|---|
 | appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
-| scenarioId | String | Required | 시나리오ID(**시나리오 편집** 모달에서 확인 가능) |
+| scenarioId | String | Required | 시나리오 ID(**시나리오 편집** 창에서 확인 가능) |
 
 [Request Header]
 
- 헤더 이름 | 헤더 값
+ 헤더 이름 | 헤더값
  --- | ---
- TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
+ TOAST_PRODUCT_APPKEY | Service Monitoring **서비스 관리** 메뉴에서 오른쪽 상단 **URL & Appkey**를 클릭하면 확인 가능한 Appkey
 
 [Request Body]
 ```json
@@ -683,7 +683,7 @@ Content-Type: application/json
 
 값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
 ---|---|---|---|---|---|---
-url | String | API | http또는 https로 시작하는 url | Y |  | 모니터링을 진행할 API의 URL
+url | String | API | http 또는 https로 시작하는 url | Y |  | 모니터링할 API의 URL
 headers | Map&lt;String, String&gt; | API |  | N |  | API를 보낼 때 사용할 헤더값
 httpMethod | String | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
 requestBody | String | API |  | N |  | API의 requestBody
@@ -775,8 +775,8 @@ validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) | 
 header.isSuccessful | Boolean | 성공 여부
 header.resultCode | Integer | 실패 코드(0은 정상)
 header.resultMessage | String | 실패 메시지
-body.scenarioId | String | 시나리오의 ID
-body.url  |  String  |  모니터링을 진행할 API의 URL
+body.scenarioId | String | 시나리오 ID
+body.url  |  String  |  모니터링할 API의 URL
 headers  |  Map&lt;String, String&gt;  |  API를 보낼 때 사용할 헤더값
 body.httpMethod  |  String  |  API의 httpMethod
 body.requestBody  |  String  |  API의 requestBody
