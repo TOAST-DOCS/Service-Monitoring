@@ -1,16 +1,23 @@
 ## Management > Service Monitoring > 릴리스 노트
 
+### 2020. 11. 24.
+
+#### 기능 추가
+* 시나리오 관리를 위한 [수정](/Management/Service%20Monitoring/ko/api-guide/#_8) 오픈 Api 기능 추가
+* 웹훅 요청 파라미터 지원
+* `LINE`의 메시지 발송 웹훅 템플릿 추가
+
 ### 2020. 10. 27.
 
 #### 버그 수정
-* openAPI를 활용하여 시나리오를 생성할 때 requestBody의 url 필드에 '-'문자가 포함될 경우 시나리오가 생성되지 않던 문제 수정
+* 오픈 API를 활용하여 시나리오를 생성할 때 requestBody의 url 필드에 '-'문자가 포함될 경우 시나리오가 생성되지 않던 문제 수정
 * 배치 모니터링 시나리오를 생성할 때 검증 정보를 입력하지 않아도 생성 가능했던 문제 수정
 * 웹훅 정보를 수정할 때 요청 데이터의 편집 항목의 내용이 정상적으로 보이지 않던 문제 수정
 
 ### 2020. 09. 22.
 
 #### 기능 추가
-* 시나리오 관리를 위한 [생성](/Management/Service%20Monitoring/ko/api-guide/#_8), [조회](/Management/Service%20Monitoring/ko/api-guide/#_11), [삭제](/Management/Service%20Monitoring/ko/api-guide/#_13) Open Api 기능 추가
+* 시나리오 관리를 위한 [생성](/Management/Service%20Monitoring/ko/api-guide/#_8), [조회](/Management/Service%20Monitoring/ko/api-guide/#_11), [삭제](/Management/Service%20Monitoring/ko/api-guide/#_13) 오픈 Api 기능 추가
 
 ### 2020. 08. 25.
 
