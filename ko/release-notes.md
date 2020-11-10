@@ -3,7 +3,7 @@
 ### 2020. 11. 24.
 
 #### 기능 추가
-* 시나리오 관리를 위한 [수정](/Management/Service%20Monitoring/ko/api-guide/#_8) 오픈 Api 기능 추가
+* 시나리오 관리를 위한 [수정](/Management/Service%20Monitoring/ko/api-guide/#_15) 오픈 Api 기능 추가
 * 웹훅 요청 파라미터 지원
 * `LINE`의 메시지 발송 웹훅 템플릿 추가
 
