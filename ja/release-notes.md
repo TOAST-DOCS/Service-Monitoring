@@ -1,5 +1,12 @@
 ## Management > Service Monitoring > リリースノート
 
+### 2020. 11. 24.
+
+#### 機能追加
+* シナリオを管理するための[修正](/Management/Service%20Monitoring/ko/api-guide/#_8)オープンApi機能を追加
+* Webフックリクエストパラメータをサポート
+* `LINE`のメッセージ送信Webフックテンプレートを追加
+
 ### 2020. 10. 27.
 
 #### バグ修正
