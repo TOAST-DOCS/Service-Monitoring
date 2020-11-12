@@ -27,12 +27,12 @@ You can manage the services to monitor, the targets to propagate failures, and c
 
 ### Propagation Channel
 1. **Email**
-   - Propagates a failure via email based on the ID registered in the member profile.
+    - Propagates a failure via email based on the ID registered in the member profile.
 2. **SMS**
-   - Propagates a failure via SMS when a mobile phone number has been registered in the member profile.
+    - Propagates a failure via SMS when a mobile phone number has been registered in the member profile.
 3. **Webhook** 
-   - Provides a webhook function which calls the HTTP API on failure. The HTTP API should be registered according to the user's request (e.g. registration of GitHub issues and slack link). Information related to the detected failure, such as detection details, service name, and scenario name, is substituted to the pre-defined variables and used in the URL, header, and request data. The information is substituted and sent in case of failure propagation.
-   - In the editor where URL, webhook header, and request data are entered, you can view or use pre-defined variables using the AutoComplete (Ctrl + Space) function.
+    - Provides a webhook function which calls the HTTP API on failure. The HTTP API should be registered according to the user's request (e.g. registration of GitHub issues and slack link). Information related to the detected failure, such as detection details, service name, and scenario name, is substituted to the pre-defined variables and used in the URL, header, and request data. The information is substituted and sent in case of failure propagation.
+    - In the editor where URL, webhook header, and request data are entered, you can view or use pre-defined variables using the AutoComplete (Ctrl + Space) function.
 
 
 ## Propagation Status
