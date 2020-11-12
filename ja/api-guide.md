@@ -540,7 +540,7 @@ body.validation.responseValidation.validationText | String | TCP、UDP | Respons
 
 [URL]
 ```http
-POST /open-api/v1.0/appkey/{appKey}/scenarios/{scenarioId}
+PUT /open-api/v1.0/appkey/{appKey}/scenarios/{scenarioId}
 Content-Type: application/json
 ```
 
