@@ -1,5 +1,11 @@
 ## Management > Service Monitoring > Release Notes
 
+
+### August 25, 2020
+
+#### Bug Fixes
+* Fixed failed application of a call result of API even when it is called immediately after batch monitoring scenario is registered. 
+
 ### July 28, 2020
 
 #### Feature Updates 
