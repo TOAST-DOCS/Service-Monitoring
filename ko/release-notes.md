@@ -1,5 +1,10 @@
 ## Management > Service Monitoring > 릴리스 노트
 
+### 2020. 12. 29.
+
+#### 버그 수정
+* 시나리오 관리 open api의 method(POST, GET, PUT, DELETE)별로 api호출의 resultCode와 resultMessage가 상이하게 노출 되던 문제 수정
+
 ### 2020. 11. 24.
 
 #### 기능 추가
