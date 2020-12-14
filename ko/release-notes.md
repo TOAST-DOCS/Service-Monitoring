@@ -4,6 +4,8 @@
 
 #### 버그 수정
 * 시나리오 관리 open api의 method(POST, GET, PUT, DELETE)별로 api호출의 resultCode와 resultMessage가 상이하게 노출 되던 문제 수정
+* CloudTrail 이벤트가 항상 USER_CONSOLE로 적용되는 문제 수정
+* CloudTrail PM 변경 이벤트가 PM 등록 이벤트로 등록되는 문제 수정
 
 ### 2020. 11. 24.
 
