@@ -1,5 +1,13 @@
 ## Management > Service Monitoring > リリースノート
 
+
+### 2020. 12. 29.
+
+#### バグ修正
+* シナリオ管理オープンAPIのメソッド(POST、GET、PUT、DELETE)で、API呼び出しのresultCodeとresultMessageの表示が異なる問題を修正
+* CloudTrailイベントが常にUSER_CONSOLEとして適用される問題を修正
+* CloudTrail PM変更イベントがPM登録イベントとして登録される問題を修正
+
 ### 2020. 11. 24.
 
 #### 機能追加
