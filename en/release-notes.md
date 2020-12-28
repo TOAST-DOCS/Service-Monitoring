@@ -1,6 +1,6 @@
 ## Management > Service Monitoring > Release Notes
 
-### 2020. 10. 27.
+### October 27, 2020
 
 #### Bug Fixes
 * Fixed an issue where the scenario failed to be created if the '-' character was included in the url field of requestBody when creating a scenario with openAPI
