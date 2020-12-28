@@ -532,3 +532,204 @@ body.validation.textValidation.textValidationInfo.operand | String  |  API、WEB
 --- | --- | --- | ---
 body.validation.responseValidation.position | Integer | TCP、UDP | Responseで検証する文字列が始まる位置
 body.validation.responseValidation.validationText | String | TCP、UDP | Responseで検証する文字列
+
+## シナリオ修正
+
+### データ転送
+- サービスモニタリングサーバーへシナリオの修正をリクエストする時、必要なデータを転送します。
+
+[URL]
+```http
+PUT /open-api/v1.0/appkey/{appKey}/scenarios/{scenarioId}
+Content-Type: application/json
+```
+
+[Path Variables]
+
+| 値 |	タイプ | 必須かどうか |	説明 
+|---|---|---|---|
+| appKey | String | Required | サービスAppkey(**サービス管理**タブで確認可能) |
+| scenarioId | String | Required | シナリオID(**シナリオ編集**ウィンドウで確認可能) |
+
+[Request Header]
+
+ ヘッダ名前 | ヘッダ値
+ --- | ---
+ TOAST_PRODUCT_APPKEY | Service Monitoring **サービス管理**メニューで右上**URL & Appkey**をクリックすると確認できるAppkey
+
+[Request Body]
+```json
+{
+   "url":"http://toast.com",
+   "httpMethod":"GET",
+   "validation":{
+      "textValidation":{
+         "textValidationType":"JSON",
+         "textValidationInfos":[
+            {
+               "expression":"$.isSuccess",
+               "operator":"EQ",
+               "operand":"true"
+            }
+         ]
+      },
+      "responseCodes":[
+         "200",
+         "201"
+      ]
+   },
+   "browserOption":{
+      "OPT_LOCALE":"ko"
+   },
+   "ip":"toast.com",
+   "scenarioType":"API",
+   "scenarioName":"API test",
+   "description":"API test",
+   "monitoringRegion":[
+      "KOR"
+   ],
+   "monitoringInterval":30,
+   "errorLimitCount":0
+}
+```
+
+- Request Body
+
+値 | タイプ | 該当するscenarioType | 割り当て可能な値 | 必須かどうか | 基本値 | 説明
+---|---|---|---|---|---|---
+url | String | API | httpまたはhttpsで始まるurl | Y |  | モニタリングするAPIのURL
+headers | Map&lt;String, String&gt; | API |  | N |  | APIを送る時に使用するヘッダ値
+httpMethod | String | API | GET、POST、DELETE、PUT | Y |  | APIのhttpMethod
+requestBody | String | API |  | N |  | APIのrequestBody
+browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
+[validation](#validation1) | Object | API |  | Y |  | APIの検証情報
+scenarioType | String | API | API | Y |  | シナリオタイプ
+scenarioName | String | API |  | Y |  | シナリオ名
+description | String | API |  | Y |  | シナリオ説明
+monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | シナリオをモニタリングする地域
+monitoringInterval | Integer | API |  | N(使わない場合、monitoringCronが必須) |  | モニタリング間隔(秒)
+monitoringCron | String | API | 5桁のCron式 | N(使わない場合、monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
+errorLimitCount | Integer | API | 0以上の整数 | Y | 0 | 連続エラー許容回数
+
+<div id='validation1'></div>
+- validation
+
+値 | タイプ | 該当するscenarioType | 割り当て可能な値 | 必須かどうか | 基本値 | 説明
+---|---|---|---|---|---|---
+[validation.textValidation](#textValidation1) | Object | API |  | N |  | 文字列検証情報
+validation.timeout | Integer | API | 0以上の整数(ms単位) | N |  | タイムアウトしきい値
+validation.responseCodes | Set&lt;String&gt; | API | HTTP response code | N |  | 許可されたresponseCode
+validation.avoidingValidationText | String | API |  | N |  | bodyに含まれる場合、配信を除外する文字列
+
+<div id='textValidation1'></div>
+- textValidation
+
+値 | タイプ | 該当するscenarioType | 割り当て可能な値 | 必須かどうか | 基本値 | 説明
+---|---|---|---|---|---|---
+validation.textValidation.textValidationType | String | API | JSON, HTML, XML | N |  | 文字列を検証する時、ベースになるbodyタイプ
+[validation.textValidation.textValidationInfos](#textValidationInfo1) | List&lt;Object&gt; | API | | N |  | 文字列検証情報
+
+<div id='textValidationInfo1'></div>
+- textValidationInfo
+
+値 | タイプ | 該当するscenarioType | 割り当て可能な値 | 必須かどうか | 基本値 | 説明
+---|---|---|---|---|---|---
+validation.textValidation.textValidationInfo.operator | String | API | CONTAINS、NOT_CONTAINS、EQ、NE、GT、GTE、LT、LTE | Y |  | 文字列演算子
+validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | 検証が必要な文字列
+validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | 期待値
+
+#### レスポンス
+```json
+{
+    "header": {
+        "isSuccessful": true,
+        "resultCode": 0,
+        "resultMessage": "SUCCESS"
+    },
+    "body": {
+        "scenarioId": "0c96cff0-edc2-11ea-9760-8d94f461e6d4",
+        "url": "http://toast.com",
+        "httpMethod": "GET",
+        "validation": {
+            "textValidation": {
+                "textValidationType": "JSON",
+                "textValidationInfos": [
+                    {
+                        "operator": "EQ",
+                        "expression": "$.isSuccess",
+                        "operand": "true"
+                    }
+                ]
+            },
+            "responseCodes": [
+                "200",
+                "201"
+            ]
+        },
+        "browserOption": {
+            "OPT_LOCALE": "ko"
+        },
+        "ip": "toast.com",
+        "scenarioType": "API",
+        "scenarioName": "API test",
+        "description": "API test",
+        "monitoringRegion": [
+            "KOR"
+        ],
+        "amendedTime": "2020-09-03T08:49:01.197+0000",
+        "monitoringCron": "7 * * * * ? *",
+        "status": "temporary",
+        "errorLimitCount": 0
+    }
+}
+```
+
+値 | タイプ | 説明
+--- | --- | ---
+header.isSuccessful | Boolean | 成否
+header.resultCode | Integer | 失敗コード(0は正常)
+header.resultMessage | String | 失敗メッセージ
+body.scenarioId | String | シナリオID
+body.url  |  String  | モニタリングするAPIのURL
+headers  |  Map&lt;String, String&gt;  |  APIを送る時に使用するヘッダ値
+body.httpMethod  |  String  |  APIのhttpMethod
+body.requestBody  |  String  |  APIのrequestBody
+body.browserOption  |  Map&lt;String, String&gt;  |  
+[body.validation](#validation2)  |  Object  |  APIの検証情報
+body.scenarioType  |  String  | シナリオタイプ
+body.scenarioName  |  String  | シナリオ名
+body.description  |  String  | シナリオ説明
+body.monitoringRegion  |  Set&lt;String&gt;  | シナリオをモニタリングする地域
+body.monitoringInterval  |  Integer  | モニタリング間隔(秒)
+body.monitoringCron  |  String  | モニタリング間隔(Cron式)
+body.errorLimitCount  |  Integer  | 連続エラー許容回数
+body.registeredTime | String | 登録時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
+body.amendedTime | String | 修正時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
+body.status | String | シナリオの現在状態
+
+<div id='validation2'></div>
+- validation
+
+値 | タイプ | 説明
+--- | --- | ---
+[body.validation.textValidation](#textValidation2)  |  Object  | 文字列検証情報
+body.validation.timeout  |  Integer  | タイムアウトしきい値
+body.validation.responseCodes  | Set&lt;String&gt;  |  許可されたresponseCode
+body.validation.avoidingValidationText  |  String  |  bodyに含まれる場合、配信を除く文字列
+
+<div id='textValidation2'></div>
+- textValidation
+
+フィールド名(パス名)  | タイプ | 説明
+--- | --- | ---
+textValidationType  |  String  | 文字列を検証する時、ベースになるbodyタイプ
+[body.validation.textValidation.textValidationInfos](#textValidationInfo2)  |  List&lt;Object&gt;  | 文字列検証情報
+
+<div id='textValidationInfo2'></div>
+- textValidationInfo
+
+値 | タイプ | 説明
+--- | --- | ---
+body.validation.textValidation.textValidationInfo.operator  |  String  | 文字列演算子
+body.validation.textValidation.textValidationInfo.expression  |  String  | 検証が必要な文字列
+body.validation.textValidation.textValidationInfo.operand  |  String  |  期待値

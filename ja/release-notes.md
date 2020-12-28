@@ -1,9 +1,31 @@
 ## Management > Service Monitoring > リリースノート
 
+
+### 2020. 12. 29.
+
+#### バグ修正
+* シナリオ管理オープンAPIのメソッド(POST、GET、PUT、DELETE)で、API呼び出しのresultCodeとresultMessageの表示が異なる問題を修正
+* CloudTrailイベントが常にUSER_CONSOLEとして適用される問題を修正
+* CloudTrail PM変更イベントがPM登録イベントとして登録される問題を修正
+
+### 2020. 11. 24.
+
+#### 機能追加
+* シナリオを管理するための[修正](/Management/Service%20Monitoring/ja/api-guide/#_15)オープンApi機能を追加
+* Webフックリクエストパラメータをサポート
+* **LINE**のメッセージ送信Webフックテンプレートを追加
+
+### 2020. 10. 27.
+
+#### バグ修正
+* openAPIを活用してシナリオを作成する際、requestBodyのurlフィールドにハイフン(-)が含まれている場合に、シナリオが作成できない問題を修正
+* バッチモニタリングシナリオを作成する時、検証情報を入力しなくても作成できた問題を修正
+* Webフック情報を修正する時、リクエストデータの編集項目の内容が正常に表示されない問題を修正
+
 ### 2020. 09. 22.
 
 #### 機能追加
-* シナリオ管理用の[作成](/Management/Service%20Monitoring/ko/api-guide/#_8)、[照会](/Management/Service%20Monitoring/ko/api-guide/#_19)、[削除](/Management/Service%20Monitoring/ko/api-guide/#_25) Open API機能を追加
+* シナリオ管理用の[作成](/Management/Service%20Monitoring/ja/api-guide/#_8)、[照会](/Management/Service%20Monitoring/ja/api-guide/#_11)、[削除](/Management/Service%20Monitoring/ja/api-guide/#_13) Open API機能を追加
 
 ### 2020. 08. 25.
 

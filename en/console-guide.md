@@ -27,12 +27,12 @@ You can manage the services to monitor, the targets to propagate failures, and c
 
 ### Propagation Channel
 1. **Email**
-   - Propagates a failure via email based on the ID registered in the member profile.
+    - Propagates a failure via email based on the ID registered in the member profile.
 2. **SMS**
-   - Propagates a failure via SMS when a mobile phone number has been registered in the member profile.
+    - Propagates a failure via SMS when a mobile phone number has been registered in the member profile.
 3. **Webhook** 
-   - Provides a webhook function which calls the HTTP API on failure. The HTTP API should be registered according to the user's request (e.g. registration of GitHub issues and slack link). Information related to the detected failure, such as detection details, service name, and scenario name, is substituted to the pre-defined variables and used in the URL, header, and request data. The information is substituted and sent in case of failure propagation.
-   - In the editor where URL, webhook header, and request data are entered, you can view or use pre-defined variables using the AutoComplete (Ctrl + Space) function.
+    - Provides a webhook function which calls the HTTP API on failure. The HTTP API should be registered according to the user's request (e.g. registration of GitHub issues and slack link). Information related to the detected failure, such as detection details, service name, and scenario name, is substituted to the pre-defined variables and used in the URL, header, and request data. The information is substituted and sent in case of failure propagation.
+    - In the editor where URL, webhook header, and request data are entered, you can view or use pre-defined variables using the AutoComplete (Ctrl + Space) function.
 
 
 ## Propagation Status
@@ -45,12 +45,12 @@ You can monitor all web services which serve via HTTP and HTTPS.
 ### Scenario Type
 - **API Type** 
     - Monitors REST API.
-    - You can register a scenario at every 60 seconds or higher.
+    - You can register a scenario at every 30 seconds or higher.
 - **Virtual browser type** 
     - Monitors the web page with a virtual browser. 
     - You can register the page behavior by registering a customized JavaScript.
     - Module-type scenario can be included; if a module-type scenario is included, it is executed first sequentially and then the other scenarios are executed. Sessions and cookies of the module and the virtual browser scenarios are shared. With those, you can test whether or not the page is working after logging in.
-    - You can register a scenario at every 120 seconds or higher.
+    - You can register a scenario at every 60 seconds or higher.
 - **Module Type** 
     - Provides common features (such as login) for several scenarios. 
     - The module type cannot operate by itself; it only operates as part of the virtual browser type.
@@ -75,7 +75,8 @@ Scenario is verified in the following way.
 | sum() | Sum of Array Data | double | 
 | avg() | Average Value of Array Data | double | 
 | stddev() | Standard Deviation of Array Data | double | 
-| length() | Array Data Count | integer | 
+| length() | Array Data Count | integer |
+> Functions are available only for such sequence data that are included to a response body 
 
 ## TCP monitoring
 

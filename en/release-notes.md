@@ -7,6 +7,35 @@
 * Fixed an issue where a batch monitoring scenario could be created when no validation information is entered
 * Fixed an issue where the content of data edit request was not displayed correctly when editing the webhook information
 
+### August 25, 2020
+
+#### Bug Fixes
+* Fixed failed application of a call result of API even when it is called immediately after batch monitoring scenario is registered. 
+
+### July 28, 2020
+
+#### Feature Updates 
+* Changed the mimimum unit for web monitoring operations
+  * API Monitoring: 60 seconds ---> 30 seconds 
+  * Virtual browser, Module monitoring: 120 seconds ---> 60 seconds
+
+#### Bug Fixes
+* Fixed cases, in which case sensitivity was not included as part of batch monitoring verification  
+
+### May 26, 2020 
+
+#### Feature Updates 
+* Fixed failed cases of web monitoring test when it took more than 30 seconds 
+* Added operators to be applied for each type of scenario or response content, to verify web monitoring texts
+  * API
+    * Only contain and !contain are available, when the response is _HTML_ or _XML_  
+    * (==, !=, >, >=, <, <=) are available, when the response is _JSON_, by using _JsonPath_ 
+  * Browser, Module
+    * (==, !=, >, >=, <, <=) are available, when the response is _HTML_, _XML_, by using contain, !contain, or _xPath_
+    * (==, !=, >, >=, <, <=) are available, when the response is _JSON_, by using _JsonPath_
+* Service Integration with TOAST CloudTrail 
+  * User events that occur from Service Monitoring console can be found at TOAST CloudTrail 
+
 ### March 24, 2020
 
 #### Feature Updates 
