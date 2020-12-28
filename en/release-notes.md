@@ -1,5 +1,11 @@
 ## Management > Service Monitoring > Release Notes
 
+### October 27, 2020
+
+#### Bug Fixes
+* Fixed an issue where the scenario failed to be created if the '-' character was included in the url field of requestBody when creating a scenario with openAPI
+* Fixed an issue where a batch monitoring scenario could be created when no validation information is entered
+* Fixed an issue where the content of data edit request was not displayed correctly when editing the webhook information
 
 ### August 25, 2020
 
