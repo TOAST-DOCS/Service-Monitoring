@@ -2,10 +2,10 @@
 
 ### 2020. 10. 27.
 
-#### 버그 수정
-* openAPI를 활용하여 시나리오를 생성할 때 requestBody의 url 필드에 '-'문자가 포함될 경우 시나리오가 생성되지 않던 문제 수정
-* 배치 모니터링 시나리오를 생성할 때 검증 정보를 입력하지 않아도 생성 가능했던 문제 수정
-* 웹훅 정보를 수정할 때 요청 데이터의 편집 항목의 내용이 정상적으로 보이지 않던 문제 수정
+#### Bug Fixes
+* Fixed an issue where the scenario failed to be created if the '-' character was included in the url field of requestBody when creating a scenario with openAPI
+* Fixed an issue where a batch monitoring scenario could be created when no validation information is entered
+* Fixed an issue where the content of data edit request was not displayed correctly when editing the webhook information
 
 ### March 24, 2020
 
