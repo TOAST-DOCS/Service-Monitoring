@@ -1,5 +1,6 @@
 ## Management > Service Monitoring > Release Notes
 
+
 ### 2020. 12. 29.
 
 #### 버그 수정
@@ -13,6 +14,11 @@
 * Fixed an issue where the scenario failed to be created if the '-' character was included in the url field of requestBody when creating a scenario with openAPI
 * Fixed an issue where a batch monitoring scenario could be created when no validation information is entered
 * Fixed an issue where the content of data edit request was not displayed correctly when editing the webhook information
+
+### September 22, 2020
+
+#### More Features
+* Added open API functions for scenario management [Create](/Management/Service%20Monitoring/ko/api-guide/#_8), [Query](/Management/Service%20Monitoring/ko/api-guide/#_19), [Delete](/Management/Service%20Monitoring/ko/api-guide/#_25) Open Api 기능 추가
 
 ### August 25, 2020
 
@@ -42,6 +48,7 @@
     * (==, !=, >, >=, <, <=) are available, when the response is _JSON_, by using _JsonPath_
 * Service Integration with TOAST CloudTrail 
   * User events that occur from Service Monitoring console can be found at TOAST CloudTrail 
+
 
 ### March 24, 2020
 
