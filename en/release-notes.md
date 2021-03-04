@@ -18,7 +18,7 @@
 ### September 22, 2020
 
 #### More Features
-* Added open API functions for scenario management [Create](/Management/Service%20Monitoring/ko/api-guide/#_8), [Query](/Management/Service%20Monitoring/ko/api-guide/#_19), [Delete](/Management/Service%20Monitoring/ko/api-guide/#_25) Open Api 기능 추가
+* Added open API functions for scenario management: [Create](/Management/Service%20Monitoring/ko/api-guide/#_8), [Query](/Management/Service%20Monitoring/ko/api-guide/#_19), [Delete](/Management/Service%20Monitoring/ko/api-guide/#_25) Open Api 기능 추가
 
 ### August 25, 2020
 
