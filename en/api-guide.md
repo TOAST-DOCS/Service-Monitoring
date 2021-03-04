@@ -156,10 +156,10 @@ Content-Type: application/json
 | body.ipaddr | String | IP Address of Requestor |
 | body.requestTime | String | Request Time (ISO 8601 format) |
 | body.serviceCode | Integer | Original Service Code |
-## 시나리오 생성
+## Create scenario
 
-### 데이터 전송
-- 서비스 모니터링 서버로 시나리오 생성 요청 시 필요한 데이터를 전송합니다.
+### Data transfer
+- Send data required for scenario creation request to the service monitoring server.
 
 [URL]
 ```http
@@ -169,15 +169,15 @@ Content-Type: application/json
 
 [Path Variables]
 
-| 값 |	타입 | 필수 여부 |	설명 
+| Value |	Type | Necessity |	Description 
 |---|---|---|---|
-| appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
+| appKey | String | Required | Service Appkey (Viewable in **Manage Service** tab) |
 
 [Request Header]
 
- 헤더 이름 | 헤더 값
+ Header Name | Header value
  --- | ---
- TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
+ TOAST_PRODUCT_APPKEY | Service Monitoring: in the Manage Service menu, click URL & Appkey on the upper right side to check this Appkey.
 
 [Request Body]
 ```json
@@ -217,50 +217,50 @@ Content-Type: application/json
 
 - Request Body
 
-값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
+Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Default | Description
 ---|---|---|---|---|---|---
-url | String | API | http또는 https로 시작하는 url | Y |  | 모니터링을 진행할 API의 URL
-headers | Map\<String, String\> | API |  | N |  | API를 보낼 때 사용할 헤더값
+url | String | API | http or url starting with https | Y |  | The URL of API to monitor
+headers | Map\<String, String\> | API |  | N |  | Header value to use to send the API
 httpMethod | Enum | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
 requestBody | String | API |  | N |  | API의 requestBody
 browserOption | Map\<String, String\> | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
-[validation](#validation1) | Object | API |  | Y |  | API의 검증 정보
-scenarioType | Enum | API | API | Y |  | 시나리오 타입
-scenarioName | String | API |  | Y |  | 시나리오 이름
-description | String | API |  | Y |  | 시나리오 설명
-monitoringRegion | Set\<Enum\> | API | KOR, US | Y | KOR | 시나리오를 모니터링할 지역
-monitoringInterval | Integer | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격(초)
-monitoringCron | String | API | 5자리의 Cron 표현식 | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
-errorLimitCount | Integer | API | 0 이상의 정수 | Y | 0 | 연속 오류 허용 횟수
+[validation](#validation1) | Object | API |  | Y |  | Validation info of API
+scenarioType | Enum | API | API | Y |  | Scenario type
+scenarioName | String | API |  | Y |  | Scenario name
+description | String | API |  | Y |  | Scenario description
+monitoringRegion | Set\<Enum\> | API | KOR, US | Y | KOR | The region to monitor a scenario
+monitoringInterval | Integer | API |  | N (monitoringCron required if this is not used) |  | Monitoring intervals (sec)
+monitoringCron | String | API | 5-digit Cron expression | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
+errorLimitCount | Integer | API | 0 or higher integer | Y | 0 | Number of repeat errors allowed
 
 <div id='validation1'></div>
 - validation
 
-값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
+Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Default | Description
 ---|---|---|---|---|---|---
-[validation.textValidation](#textValidation1) | Object | API |  | N |  | 문자열 검증 정보
-validation.timeout | Integer | API | 0 이상의 정수(ms 단위) | N |  | 타임아웃 임곗값
-validation.responseCodes | Set\<String\> | API | HTTP response code | N |  | 허용된 responseCode
-validation.avoidingValidationText | String | API |  | N |  | body에 포함된 경우 전파를 제외할 문자열
+[validation.textValidation](#textValidation1) | Object | API |  | N |  | String validation info
+validation.timeout | Integer | API | 0 or higher integer (in ms) | N |  | Timeout threshold
+validation.responseCodes | Set\<String\> | API | HTTP response code | N |  | Allowed responseCode
+validation.avoidingValidationText | String | API |  | N |  | String to exclude from propagation, if included in the body
 
 <div id='textValidation1'></div>
 - textValidation
 
-값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
+Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Default | Description
 ---|---|---|---|---|---|---
-validation.textValidation.textValidationType | Enum | API | JSON, HTML, XML | N |  | 문자열을 검증할 때 기반이 되는 body 타입
-[validation.textValidation.textValidationInfos](#textValidationInfo1) | List\<Object\> | API | | N |  | 문자열 검증 정보
+validation.textValidation.textValidationType | Enum | API | JSON, HTML, XML | N |  | Base body type to validate a string
+[validation.textValidation.textValidationInfos](#textValidationInfo1) | List\<Object\> | API | | N |  | String validation info
 
 <div id='textValidationInfo1'></div>
 - textValidationInfo
 
-값 | 타입 | 해당하는 scenarioType | 할당 가능한 값 | 필수 여부 | 기본값 | 설명
+Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Default | Description
 ---|---|---|---|---|---|---
-validation.textValidation.textValidationInfo.operator | Enum | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | 문자열 연산자
-validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | 검증이 필요한 문자열
-validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | 기댓값
+validation.textValidation.textValidationInfo.operator | Enum | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | String operator
+validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | String that requires validation
+validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | Expected Value
 
-#### 응답
+#### Response
 ```json
 {
     "header": {
@@ -306,57 +306,57 @@ validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) | 
 }
 ```
 
-값 | 타입 | 설명
+Value | Type | Description
 --- | --- | ---
-header.isSuccessful | Boolean | 성공 여부
-header.resultCode | Integer | 실패 코드(0은 정상)
-header.resultMessage | String | 실패 메시지
-body.scenarioId | UUID | 시나리오의 ID
-body.url  |  String  |  모니터링을 진행할 API의 URL
-headers  |  Map\<String, String\>  |  API를 보낼 때 사용할 헤더값
+header.isSuccessful | Boolean | Success
+header.resultCode | Integer | Failure Code (0: Normal)
+header.resultMessage | String | Failure message
+body.scenarioId | UUID | Scenario ID
+body.url  |  String  |  The URL of API to monitor
+headers  |  Map\<String, String\>  |  Header value to use to send the API
 body.httpMethod  |  Enum  |  API의 httpMethod
 body.requestBody  |  String  |  API의 requestBody
 body.browserOption  |  Map\<String, String\>  |  
-[body.validation](#validation2)  |  Object  |  API의 검증 정보
-body.scenarioType  |  Enum  |  시나리오 타입
-body.scenarioName  |  String  |  시나리오 이름
-body.description  |  String  |  시나리오 설명
-body.monitoringRegion  |  Set\<Enum\>  |  시나리오를 모니터링할 지역
-body.monitoringInterval  |  Integer  |  모니터링 간격(초)
-body.monitoringCron  |  String  |  모니터링 간격(Cron 표현식)
-body.errorLimitCount  |  Integer  |  연속 오류 허용 횟수
-body.registeredTime | Date | 등록 시각
-body.amendedTime | Date | 수정 시각
-body.status | String | 시나리오의 현재 상태
+[body.validation](#validation2)  |  Object  |  Validation info of API
+body.scenarioType  |  Enum  |  Scenario type
+body.scenarioName  |  String  |  Scenario name
+body.description  |  String  |  Scenario description
+body.monitoringRegion  |  Set\<Enum\>  |  The region to monitor a scenario
+body.monitoringInterval  |  Integer  |  Monitoring intervals (sec)
+body.monitoringCron  |  String  |  Monitoring intervals (Cron expression)
+body.errorLimitCount  |  Integer  |  Number of repeat errors allowed
+body.registeredTime | Date | Registered time
+body.amendedTime | Date | Amended time
+body.status | String | Scenario's current status
 
 <div id='validation2'></div>
 - validation
 
-값  |  타입  | 설명
+Value | Type | Description
 --- | --- | ---
-[body.validation.textValidation](#textValidation2)  |  Object  |  문자열 검증 정보
-body.validation.timeout  |  Integer  |  타임아웃 임곗값
-body.validation.responseCodes  | Set\<String\>  |  허용된 responseCode
-body.validation.avoidingValidationText  |  String  |  body에 포함된 경우 전파를 제외할 문자열
+[body.validation.textValidation](#textValidation2)  |  Object  |  String validation info
+body.validation.timeout  |  Integer  |  Timeout threshold
+body.validation.responseCodes  | Set\<String\>  |  Allowed responseCode
+body.validation.avoidingValidationText  |  String  |  String to exclude from propagation, if included in the body
 
 <div id='textValidation2'></div>
 - textValidation
 
-필드명(경로명)  |  타입  |  설명
+Field name(directory name)  |  Type  |  Description
 --- | --- | ---
-textValidationType  |  Enum  |  문자열을 검증할 때 기반이 되는 body 타입
-[body.validation.textValidation.textValidationInfos](#textValidationInfo2)  |  List\<Object\>  |  문자열 검증 정보
+textValidationType  |  Enum  |  Base body type to validate a string
+[body.validation.textValidation.textValidationInfos](#textValidationInfo2)  |  List\<Object\>  |  String validation info
 
 <div id='textValidationInfo2'></div>
 - textValidationInfo
 
-값  |  타입  |  설명
+Value | Type | Description
 --- | --- | ---
-body.validation.textValidation.textValidationInfo.operator  |  Enum  |  문자열 연산자
-body.validation.textValidation.textValidationInfo.expression  |  String  |  검증이 필요한 문자열
-body.validation.textValidation.textValidationInfo.operand  |  String  |  기댓값
+body.validation.textValidation.textValidationInfo.operator  |  Enum  |  String operator
+body.validation.textValidation.textValidationInfo.expression  |  String  |  String that requires validation
+body.validation.textValidation.textValidationInfo.operand  |  String  |  Expected Value
 
-## 등록된 시나리오 조회
+## Query registered scenario
 
 [URL]
 ```http
@@ -366,16 +366,16 @@ Content-Type: application/json
 
 [Request Header]
 
- 헤더 이름 | 헤더 값
+ Header Name | Header value
  --- | ---
- TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
+ TOAST_PRODUCT_APPKEY | Service Monitoring: in the Manage Service menu, click URL & Appkey on the upper right side to check this Appkey.
 
 [Path Variables]
 
-| 값 |	타입 | 필수 여부 |	설명 |
+| Value |	Type | Necessity |	Description |
 |---|---|---|---|
-| appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
-| scenarioId | String | Required | 시나리오 ID |
+| appKey | String | Required | Service Appkey (Viewable in **Manage Service** tab) |
+| scenarioId | String | Required | Scenario ID |
 
 #### 응답
 ```json
@@ -423,71 +423,71 @@ Content-Type: application/json
 }
 ```
 
-값 | 타입 | 해당하는 scenarioType | 설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-header.isSuccessful | Boolean | - |성공 여부
-header.resultCode | Integer | - |실패 코드(0은 정상)
-header.resultMessage | String | - |실패 메시지
-body.scenarioId | UUID | - | 시나리오의 ID
-body.url | String | API, WEB, MODULE | 모니터링을 진행할 API의 URL
-body.headers | Map\<String, String\> | API, WEB, MODULE | API를 보낼 때 사용할 헤더값
+header.isSuccessful | Boolean | - |Success
+header.resultCode | Integer | - |Failure Code (0: Normal)
+header.resultMessage | String | - |Failure message
+body.scenarioId | UUID | - | Scenario ID
+body.url | String | API, WEB, MODULE | The URL of API to monitor
+body.headers | Map\<String, String\> | API, WEB, MODULE | Header value to use to send the API
 body.httpMethod | Enum | API, WEB, MODULE | API의 httpMethod
-[body.validation](#validation3) | Object | - | 시나리오의 검증 정보
+[body.validation](#validation3) | Object | - | Scenario validation info
 body.requestBody | String | API, WEB, MODULE | API의 requestBody
 body.browserOption | Map\<String, String\> | API, WEB, MODULE | 
-body.ip | String | - | 모니터링을 진행할 대상의 IP
-body.scenarioType | Enum | - | 시나티오 타입
-body.scenarioName | String | - | 시나리오 이름
-body.description | String | - | 시나리오 설명
-body.monitoringRegion | Set\<Enum\> | - | 시나리오 모니터링 지역
-body.registeredTime | Date | - | 등록 시각
-body.amendedTime | Date | - | 수정 시각
-body.monitoringInterval | Integer | - | 모니터링 간격(초 단위)
-body.monitoringCron | String | - | 모니터링 간격(Cron 표현식)
-body.status | String | - | 시나리오의 현재 상태
-body.errorLimitCount | Integer | - | 연속 오류 허용 횟수
-body.request | String | TCP, UDP | TCP, UDP 요청 시 리퀘스트 문자열
-body.port | Integer | TCP,UDP | TCP, UDP 요청 시 포트 번호
+body.ip | String | - | IP of monitoring target
+body.scenarioType | Enum | - | Scenario type
+body.scenarioName | String | - | Scenario name
+body.description | String | - | Scenario description
+body.monitoringRegion | Set\<Enum\> | - | Scenario monitoring region
+body.registeredTime | Date | - | Registered time
+body.amendedTime | Date | - | Amended time
+body.monitoringInterval | Integer | - | Monitoring intervals (unit: secs)
+body.monitoringCron | String | - | Monitoring intervals (Cron expression)
+body.status | String | - | Scenario's current status
+body.errorLimitCount | Integer | - | Number of repeat errors allowed
+body.request | String | TCP, UDP | Request string for TCP, UDP requests
+body.port | Integer | TCP,UDP | Port number for TCP, UDP requests
 
 <div id='validation3'></div>
 - validation
 
-값  | 타입  |  해당하는 scenarioType |  설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-[body.validation.textValidation](#textValidation3) | Object  |  API, WEB, MODULE |  문자열 검증 정보
-body.validation.timeout | Integer  |  - | 타임아웃 임곗값
-body.validation.responseCodes  | Set\<String\>  |  - | 허용된 responseCode
-body.validation.avoidingValidationText  | String  | API, WEB, MODULE | body에 포함된 경우 전파를 제외할 문자열
-body.validation.imageValidationPaths | List\<String\> | API, WEB, MODULE | 이미지 검증 경로
-[body.validation.responseValidation](#responseValidation3) | List\<Object\> | TCP,UDP | TCP, UDP 요청 시 Resoponse 검증 목록
-body.validation.lengthValidation | Map\<String, String\> | TCP,UDP | Response의 길이 검증
+[body.validation.textValidation](#textValidation3) | Object  |  API, WEB, MODULE |  String validation info
+body.validation.timeout | Integer  |  - | Timeout threshold
+body.validation.responseCodes  | Set\<String\>  |  - | Allowed responseCode
+body.validation.avoidingValidationText  | String  | API, WEB, MODULE | String to exclude from propagation, if included in the body
+body.validation.imageValidationPaths | List\<String\> | API, WEB, MODULE | Image verification path
+[body.validation.responseValidation](#responseValidation3) | List\<Object\> | TCP,UDP | Response verification list for TCP, UDP requests
+body.validation.lengthValidation | Map\<String, String\> | TCP,UDP | Response length verification
 
 <div id='textValidation3'></div>
 - textValidation
 
-값 | 타입  |  해당하는 scenarioType |  설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-body.validation.textValidation.textValidationType  | Enum  |  API, WEB, MODULE |  문자열을 검증할 때 기반이 되는 body 타입
-[body.validation.textValidation.textValidationInfos](#textValidationInfo3) | List\<Object\>  | API, WEB, MODULE | 문자열 검증 정보
+body.validation.textValidation.textValidationType  | Enum  |  API, WEB, MODULE |  Base body type to validate a string
+[body.validation.textValidation.textValidationInfos](#textValidationInfo3) | List\<Object\>  | API, WEB, MODULE | String validation info
 
 <div id='textValidationInfo3'></div>
 - textValidationInfo
 
-값  | 타입  |  해당하는 scenarioType | 설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-body.validation.textValidation.textValidationInfo.operator | Enum  |  API, WEB, MODULE | 문자열 연산자
-body.validation.textValidation.textValidationInfo.expression | String  |  API, WEB, MODULE |  검증이 필요한 문자열
-body.validation.textValidation.textValidationInfo.operand | String  |  API, WEB, MODULE |  기댓값
+body.validation.textValidation.textValidationInfo.operator | Enum  |  API, WEB, MODULE | String operator
+body.validation.textValidation.textValidationInfo.expression | String  |  API, WEB, MODULE |  String that requires validation
+body.validation.textValidation.textValidationInfo.operand | String  |  API, WEB, MODULE |  Expected Value
 
 <div id='responseValidation3'></div>
 - responseValidation
 
-값 | 타입 | 해당하는 scenarioType | 설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-body.validation.responseValidation.position | Integer | TCP,UDP | Response에서 검증할 문자열이 시작하는 위치
-body.validation.responseValidation.validationText | String | TCP,UDP | Response에서 검증할 문자열
+body.validation.responseValidation.position | Integer | TCP,UDP | Starting location of string to be verified in response
+body.validation.responseValidation.validationText | String | TCP,UDP | String to be verified in response
 
-## 등록된 시나오 삭제
+## Delete registered scenario
 
 [URL]
 ```http
@@ -497,18 +497,18 @@ Content-Type: application/json
 
 [Request Header]
 
- 헤더 이름 | 헤더 값
+ Header Name | Header value
  --- | ---
- TOAST_PRODUCT_APPKEY | Service Monitoring 서비스 관리 메뉴에서 오른쪽 상단 URL & Appkey를 클릭하면 확인 가능한 Appkey
+ TOAST_PRODUCT_APPKEY | Service Monitoring: in the Manage Service menu, click URL & Appkey on the upper right side to check this Appkey.
 
 [Path Variables]
 
-| 값 |	타입 | 필수 여부 |	설명 |
+| Value |	Type | Necessity |	Description |
 |---|---|---|---|
-| appKey | String | Required | 서비스 Appkey(**서비스 관리** 탭에서 확인 가능) |
-| scenarioId | String | Required | 시나리오 ID |
+| appKey | String | Required | Service Appkey (Viewable in **Manage Service** tab) |
+| scenarioId | String | Required | Scenario ID |
 
-#### 응답
+#### Response
 ```json
 {
     "header": {
@@ -554,66 +554,66 @@ Content-Type: application/json
 }
 ```
 
-값 | 타입 | 해당하는 scenarioType | 설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-header.isSuccessful | Boolean | - |성공 여부
-header.resultCode | Integer | - |실패 코드(0은 정상)
-header.resultMessage | String | - |실패 메시지
-body.scenarioId | UUID | - | 시나리오의 ID
-body.url | String | API, WEB, MODULE | 모니터링을 진행할 API의 URL
-body.headers | Map\<String, String\> | API, WEB, MODULE | API를 보낼 때 사용할 헤더값
+header.isSuccessful | Boolean | - |Success
+header.resultCode | Integer | - |Failure Code (0: Normal)
+header.resultMessage | String | - |Failure message
+body.scenarioId | UUID | - | Scenario ID
+body.url | String | API, WEB, MODULE | The URL of API to monitor
+body.headers | Map\<String, String\> | API, WEB, MODULE | Header value to use to send the API
 body.httpMethod | Enum | API, WEB, MODULE | API의 httpMethod
-[body.validation](#validation4) | Object | - | 시나리오의 검증 정보
+[body.validation](#validation4) | Object | - | Scenario validation info
 body.requestBody | String | API, WEB, MODULE | API의 requestBody
 body.browserOption | Map\<String, String\> | API, WEB, MODULE | 
-body.ip | String | - | 모니터링을 진행할 대상의 IP
-body.scenarioType | Enum | - | 시나티오 타입
-body.scenarioName | String | - | 시나리오 이름
-body.description | String | - | 시나리오 설명
-body.monitoringRegion | Set\<Enum\> | - | 시나리오 모니터링 지역
-body.registeredTime | Date | - | 등록 시각
-body.amendedTime | Date | - | 수정 시각
-body.monitoringInterval | Integer | - | 모니터링 간격(초 단위)
-body.monitoringCron | String | - | 모니터링 간격(Cron 표현식)
-body.status | String | - | 시나리오의 현재 상태
-body.errorLimitCount | Integer | - | 연속 오류 허용 횟수
-body.request | String | TCP, UDP | TCP, UDP 요청 시 리퀘스트 문자열
-body.port | Integer | TCP,UDP | TCP, UDP 요청 시 포트 번호
+body.ip | String | - | IP of monitoring target
+body.scenarioType | Enum | - | Scenario type
+body.scenarioName | String | - | Scenario name
+body.description | String | - | Scenario description
+body.monitoringRegion | Set\<Enum\> | - | Scenario monitoring region
+body.registeredTime | Date | - | Registered time
+body.amendedTime | Date | - | Amended time
+body.monitoringInterval | Integer | - | Monitoring intervals (unit: secs)
+body.monitoringCron | String | - | Monitoring intervals (Cron expression)
+body.status | String | - | Scenario's current status
+body.errorLimitCount | Integer | - | Number of repeat errors allowed
+body.request | String | TCP, UDP | Request string for TCP, UDP requests
+body.port | Integer | TCP,UDP | Port number for TCP, UDP requests
 
 <div id='validation4'></div>
 - validation
 
-값  | 타입  |  해당하는 scenarioType |  설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-[body.validation.textValidation](#textValidation4) | Object  |  API, WEB, MODULE |  문자열 검증 정보
-body.validation.timeout | Integer  |  - | 타임아웃 임곗값
-body.validation.responseCodes  | Set\<String\>  |  - | 허용된 responseCode
-body.validation.avoidingValidationText  | String  | API, WEB, MODULE | body에 포함된 경우 전파를 제외할 문자열
-body.validation.imageValidationPaths | List\<String\> | API, WEB, MODULE | 이미지 검증 경로
-[body.validation.responseValidation](#responseValidation4) | List\<Object\> | TCP,UDP | TCP, UDP 요청 시 Resoponse 검증 목록
-body.validation.lengthValidation | Map\<String, String\> | TCP,UDP | Response의 길이 검증
+[body.validation.textValidation](#textValidation4) | Object  |  API, WEB, MODULE |  String validation info
+body.validation.timeout | Integer  |  - | Timeout threshold
+body.validation.responseCodes  | Set\<String\>  |  - | Allowed responseCode
+body.validation.avoidingValidationText  | String  | API, WEB, MODULE | String to exclude from propagation, if included in the body
+body.validation.imageValidationPaths | List\<String\> | API, WEB, MODULE | Image verification path
+[body.validation.responseValidation](#responseValidation4) | List\<Object\> | TCP,UDP | Response verification list for TCP, UDP requests
+body.validation.lengthValidation | Map\<String, String\> | TCP,UDP | Response length verification
 
 <div id='textValidation4'></div>
 - textValidation
 
-값 | 타입  |  해당하는 scenarioType |  설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-body.validation.textValidation.textValidationType  | Enum  |  API, WEB, MODULE |  문자열을 검증할 때 기반이 되는 body 타입
-[body.validation.textValidation.textValidationInfos](#textValidationInfo4) | List\<Object\>  | API, WEB, MODULE | 문자열 검증 정보
+body.validation.textValidation.textValidationType  | Enum  |  API, WEB, MODULE |  Base body type to validate a string
+[body.validation.textValidation.textValidationInfos](#textValidationInfo4) | List\<Object\>  | API, WEB, MODULE | String validation info
 
 <div id='textValidationInfo4'></div>
 - textValidationInfo
 
-값  | 타입  |  해당하는 scenarioType | 설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-body.validation.textValidation.textValidationInfo.operator | Enum  |  API, WEB, MODULE | 문자열 연산자
-body.validation.textValidation.textValidationInfo.expression | String  |  API, WEB, MODULE |  검증이 필요한 문자열
-body.validation.textValidation.textValidationInfo.operand | String  |  API, WEB, MODULE |  기댓값
+body.validation.textValidation.textValidationInfo.operator | Enum  |  API, WEB, MODULE | String operator
+body.validation.textValidation.textValidationInfo.expression | String  |  API, WEB, MODULE |  String that requires validation
+body.validation.textValidation.textValidationInfo.operand | String  |  API, WEB, MODULE |  Expected Value
 
 <div id='responseValidation4'></div>
 - responseValidation
 
-값 | 타입 | 해당하는 scenarioType | 설명
+Value | Type | Corresponding scenarioType | Description
 --- | --- | --- | ---
-body.validation.responseValidation.position | Integer | TCP,UDP | Response에서 검증할 문자열이 시작하는 위치
-body.validation.responseValidation.validationText | String | TCP,UDP | Response에서 검증할 문자열
+body.validation.responseValidation.position | Integer | TCP,UDP | Starting location of string to be verified in response
+body.validation.responseValidation.validationText | String | TCP,UDP | String to be verified in response
