@@ -1,19 +1,13 @@
 ## Management > Service Monitoring > Release Notes
 
 
-### 2020. 12. 29.
-
-#### 버그 수정
-* 시나리오 관리 오픈 API의 메서드(POST, GET, PUT, DELETE)별로 API 호출의 resultCode와 resultMessage가 다르게 표시되는 문제 수정
-* CloudTrail 이벤트가 항상 USER_CONSOLE로 적용되는 문제 수정
-* CloudTrail PM 변경 이벤트가 PM 등록 이벤트로 등록되는 문제 수정
-
 ### October 27, 2020
 
 #### Bug Fixes
 * Fixed an issue where the scenario failed to be created if the '-' character was included in the url field of requestBody when creating a scenario with openAPI
 * Fixed an issue where a batch monitoring scenario could be created when no validation information is entered
 * Fixed an issue where the content of data edit request was not displayed correctly when editing the webhook information
+
 
 ### September 22, 2020
 
