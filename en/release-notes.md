@@ -1,11 +1,12 @@
 ## Management > Service Monitoring > Release Notes
 
-### 2020. 12. 29.
+### December 29, 2020
 
-#### 버그 수정
-* 시나리오 관리 오픈 API의 메서드(POST, GET, PUT, DELETE)별로 API 호출의 resultCode와 resultMessage가 다르게 표시되는 문제 수정
-* CloudTrail 이벤트가 항상 USER_CONSOLE로 적용되는 문제 수정
-* CloudTrail PM 변경 이벤트가 PM 등록 이벤트로 등록되는 문제 수정
+#### Bug fixes
+
+* Fixed the issue where API call's resultCode and resultMessage are displayed differently for each method (POST, GET, PUT, DELETE) of scenario management open API
+* Fixed the issue where CloudTrail event is always applied as USER_CONSOLE
+* Fixed the issue where CloudTrail PM change event is registered as PM register event
 
 
 ###  November 24, 2020
