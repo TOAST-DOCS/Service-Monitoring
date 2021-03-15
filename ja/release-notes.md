@@ -1,6 +1,5 @@
 ## Management > Service Monitoring > リリースノート
 
-
 ### 2021. 03. 23.
 
 #### バグ修正
