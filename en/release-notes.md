@@ -1,5 +1,12 @@
 ## Management > Service Monitoring > Release Notes
 
+###  November 24, 2020
+
+####  Functions added
+*  The open API function [Modification](/Management/Service%20Monitoring/ko/api-guide/#_8) added for scenario management
+*  Webhook request parameters now supported
+*  "LINE" message send webhook templates added
+
 
 ### October 27, 2020
 
