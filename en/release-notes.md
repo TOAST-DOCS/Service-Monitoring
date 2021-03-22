@@ -1,12 +1,12 @@
 ## Management > Service Monitoring > Release Notes
 
-### 2021. 03. 23.
+### March 23, 2021
 
-#### 버그 수정
-* 장애 알림 페이지 검색 조건에 따라 조회되지 않은 문제 수정
-* 장애 알림 페이지에서 리스트 선택시 만료 안내가 표시되는 문제 수정
-* 웹훅 편집시 기존 HTTP 헤더가 계속 보이는 문제 수정
-* 히스토리 검색시 시작 시간 포함되지 않았던 문제 수정
+#### Bug Fixes
+* Fixed an issue of not being unable to view depending on the search conditions on the failure notification page
+* Fixed an issue of displaying an expiration prompt upon selecting a list on the failure notification page
+* Fixed an issue where the previous HTTP header would not go away when editing webhooks
+* Fixed an issue of failing to include the start time when searching history
 
 
 ### December 29, 2020
