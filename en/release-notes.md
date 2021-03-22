@@ -1,5 +1,43 @@
 ## Management > Service Monitoring > Release Notes
 
+### March 23, 2021
+
+#### Bug Fixes
+* Fixed an issue of not being unable to view depending on the search conditions on the failure notification page
+* Fixed an issue of displaying an expiration prompt upon selecting a list on the failure notification page
+* Fixed an issue where the previous HTTP header would not go away when editing webhooks
+* Fixed an issue of failing to include the start time when searching history
+
+
+### December 29, 2020
+
+#### Bug fixes
+
+* Fixed the issue where API call's resultCode and resultMessage are displayed differently for each method (POST, GET, PUT, DELETE) of scenario management open API
+* Fixed the issue where CloudTrail event is always applied as USER_CONSOLE
+* Fixed the issue where CloudTrail PM change event is registered as PM register event
+
+
+###  November 24, 2020
+
+####  Functions added
+*  The open API function [Modification](/Management/Service%20Monitoring/ko/api-guide/#_8) added for scenario management
+*  Webhook request parameters now supported
+*  "LINE" message send webhook templates added
+
+
+### October 27, 2020
+
+#### Bug Fixes
+* Fixed an issue where the scenario failed to be created if the '-' character was included in the url field of requestBody when creating a scenario with openAPI
+* Fixed an issue where a batch monitoring scenario could be created when no validation information is entered
+* Fixed an issue where the content of data edit request was not displayed correctly when editing the webhook information
+
+
+### September 22, 2020
+
+#### More Features
+* Added open API functions for scenario management: [Create](/Management/Service%20Monitoring/ko/api-guide/#_8), [Query](/Management/Service%20Monitoring/ko/api-guide/#_19), [Delete](/Management/Service%20Monitoring/ko/api-guide/#_25)
 
 ### August 25, 2020
 
@@ -29,6 +67,7 @@
     * (==, !=, >, >=, <, <=) are available, when the response is _JSON_, by using _JsonPath_
 * Service Integration with TOAST CloudTrail 
   * User events that occur from Service Monitoring console can be found at TOAST CloudTrail 
+
 
 ### March 24, 2020
 
