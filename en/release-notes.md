@@ -1,5 +1,11 @@
 ## Management > Service Monitoring > Release Notes
 
+### 2021. 04. 27.
+
+#### 버그 수정
+* 특정 사용자가 포함되어 있는 프로젝트에서 전파 대상자가 조회되지 않은 문제 수정
+
+
 ### March 23, 2021
 
 #### Bug Fixes
