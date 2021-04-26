@@ -1,9 +1,9 @@
 ## Management > Service Monitoring > Release Notes
 
-### 2021. 04. 27.
+### April 27, 2021
 
-#### 버그 수정
-* 특정 사용자가 포함되어 있는 프로젝트에서 전파 대상자가 조회되지 않은 문제 수정
+#### Bug Fixes
+* Fixed an issue where diffusion target could not be viewed in a project with specific user
 
 
 ### March 23, 2021
