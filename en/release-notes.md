@@ -1,5 +1,11 @@
 ## Management > Service Monitoring > Release Notes
 
+### April 27, 2021
+
+#### Bug Fixes
+* Fixed an issue where diffusion target could not be viewed in a project with specific user
+
+
 ### March 23, 2021
 
 #### Bug Fixes
