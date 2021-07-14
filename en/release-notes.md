@@ -1,5 +1,11 @@
 ## Management > Service Monitoring > Release Notes
 
+### 2021. 07. 27.
+
+#### 기능 개선
+* 신규 로딩바 적용
+* 보안 개선 사항 적용
+
 ### April 27, 2021
 
 #### Bug Fixes
