@@ -1,5 +1,11 @@
 ## Management > Service Monitoring > Release Notes
 
+### 2021. 07. 27.
+
+#### Feature Updates
+* New progress bar applied
+* Security improvements applied
+
 ### April 27, 2021
 
 #### Bug Fixes
