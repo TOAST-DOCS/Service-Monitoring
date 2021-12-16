@@ -20,7 +20,7 @@
 ### March 23, 2021
 
 #### Bug Fixes
-* Fixed an issue of not being unable to view depending on the search conditions on the failure notification page
+* Fixed an issue of being unable to view depending on the search conditions on the failure notification page
 * Fixed an issue of displaying an expiration prompt upon selecting a list on the failure notification page
 * Fixed an issue where the previous HTTP header would not go away when editing webhooks
 * Fixed an issue of failing to include the start time when searching history
