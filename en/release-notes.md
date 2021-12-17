@@ -1,5 +1,10 @@
 ## Management > Service Monitoring > Release Notes
 
+### December 28, 2021
+
+#### Bug Fixes
+* Fixed an issue where, if the name of a scenario exceeds 31 characters, the history Excel file for two or more scenarios including the scenario could not be downloaded
+
 ### July 27, 2021
 
 #### Feature Updates
@@ -15,7 +20,7 @@
 ### March 23, 2021
 
 #### Bug Fixes
-* Fixed an issue of not being unable to view depending on the search conditions on the failure notification page
+* Fixed an issue of being unable to view depending on the search conditions on the failure notification page
 * Fixed an issue of displaying an expiration prompt upon selecting a list on the failure notification page
 * Fixed an issue where the previous HTTP header would not go away when editing webhooks
 * Fixed an issue of failing to include the start time when searching history
@@ -86,7 +91,7 @@
 #### Feature Updates 
 * Provides [JsonPath Method](/ko/Management/Service%20Monitoring/ko/console-guide/#_9) to validate web monitoring data
 * _Organization Name_ and _Project Name_ are added to an email error message
-* Supports [Validate Multiple Batch Monotoring API](/ko/Management/Service%20Monitoring/ko/api-guide/) 
+* Supports [Validate Multiple Batch Monitoring API](/ko/Management/Service%20Monitoring/ko/api-guide/) 
 * Emphasizes failures from batch monitoring validation results 
 
 ### January 21, 2020
@@ -132,7 +137,7 @@
 
 ### July 23, 2019
 
-#### New Service Releases
+#### New Service Release
 Service Monitoring is a service failure management platform to allow stable service operations
 	* Transmission administrator assigned for each service, to manage transmission channels
 	* Supports a variety of monitoring methods - Web Monitoring, TCP Monitoring, or Batch Monitoring
