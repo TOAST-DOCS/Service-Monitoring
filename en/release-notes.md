@@ -1,5 +1,8 @@
 ## Management > Service Monitoring > Release Notes
 
+### November 15, 2022
+* Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
+
 ### December 28, 2021
 
 #### Bug Fixes
@@ -15,7 +18,6 @@
 
 #### Bug Fixes
 * Fixed an issue where diffusion target could not be viewed in a project with specific user
-
 
 ### March 23, 2021
 
