@@ -1,5 +1,8 @@
 ## Management > Service Monitoring > Release Notes
 
+### November 15, 2022
+* Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
+
 ### April 27, 2021
 
 #### Bug Fixes
