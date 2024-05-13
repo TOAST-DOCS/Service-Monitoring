@@ -1,4 +1,4 @@
-## Management > Service Monitoring > Overview
+## Monitoring > Service Monitoring > Overview
 
 Service Monitoring is a service failure management platform for the stable operation of services. 
 - Failures can be detected quickly using the monitoring tools provided.
