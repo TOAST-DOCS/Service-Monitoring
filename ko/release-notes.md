@@ -1,4 +1,7 @@
-## Management > Service Monitoring > 릴리스 노트
+## Monitoring > Service Monitoring > 릴리스 노트
+
+### 2024. 05. 28
+* Service Monitoring 서비스가 Management 카테고리에서 Monitoring 카테고리로 이동 되었습니다.
 
 ### 2022. 11. 15.
 * 장애 발생 시 전파 채널을 통해 제공하는 알람 페이지 URL의 도메인이 nh.nu로 변경되었습니다.
