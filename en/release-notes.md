@@ -1,4 +1,4 @@
-## Management > Service Monitoring > Release Notes
+## Monitoring > Service Monitoring > Release Notes
 
 ### November 15, 2022
 * Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
@@ -40,7 +40,7 @@
 ###  November 24, 2020
 
 ####  Functions added
-*  The open API function [Modification](/Management/Service%20Monitoring/ko/api-guide/#_8) added for scenario management
+*  The open API function [Modification](/Monitoring/Service%20Monitoring/ko/api-guide/#_8) added for scenario management
 *  Webhook request parameters now supported
 *  "LINE" message send webhook templates added
 
@@ -56,7 +56,7 @@
 ### September 22, 2020
 
 #### More Features
-* Added open API functions for scenario management: [Create](/Management/Service%20Monitoring/ko/api-guide/#_8), [Query](/Management/Service%20Monitoring/ko/api-guide/#_19), [Delete](/Management/Service%20Monitoring/ko/api-guide/#_25)
+* Added open API functions for scenario management: [Create](/Monitoring/Service%20Monitoring/ko/api-guide/#_8), [Query](/Monitoring/Service%20Monitoring/ko/api-guide/#_19), [Delete](/Monitoring/Service%20Monitoring/ko/api-guide/#_25)
 
 ### August 25, 2020
 
@@ -91,9 +91,9 @@
 ### March 24, 2020
 
 #### Feature Updates 
-* Provides [JsonPath Method](/ko/Management/Service%20Monitoring/ko/console-guide/#_9) to validate web monitoring data
+* Provides [JsonPath Method](/ko/Monitoring/Service%20Monitoring/ko/console-guide/#_9) to validate web monitoring data
 * _Organization Name_ and _Project Name_ are added to an email error message
-* Supports [Validate Multiple Batch Monitoring API](/ko/Management/Service%20Monitoring/ko/api-guide/) 
+* Supports [Validate Multiple Batch Monitoring API](/ko/Monitoring/Service%20Monitoring/ko/api-guide/) 
 * Emphasizes failures from batch monitoring validation results 
 
 ### January 21, 2020

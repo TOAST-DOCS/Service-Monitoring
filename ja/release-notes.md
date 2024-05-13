@@ -1,4 +1,4 @@
-## Management > Service Monitoring > リリースノート
+## Monitoring > Service Monitoring > リリースノート
 
 ### 2022. 11. 15.
 * 障害発生時、配信チャンネルを通じて提供するアラームページURLのドメインがnh.nuに変更されました。
@@ -37,7 +37,7 @@
 ### 2020. 11. 24.
 
 #### 機能追加
-* シナリオを管理するための[修正](/Management/Service%20Monitoring/ja/api-guide/#_15)オープンApi機能を追加
+* シナリオを管理するための[修正](/Monitoring/Service%20Monitoring/ja/api-guide/#_15)オープンApi機能を追加
 * Webフックリクエストパラメータをサポート
 * **LINE**のメッセージ送信Webフックテンプレートを追加
 
@@ -51,7 +51,7 @@
 ### 2020. 09. 22.
 
 #### 機能追加
-* シナリオ管理用の[作成](/Management/Service%20Monitoring/ja/api-guide/#_8)、[照会](/Management/Service%20Monitoring/ja/api-guide/#_11)、[削除](/Management/Service%20Monitoring/ja/api-guide/#_13) Open API機能を追加
+* シナリオ管理用の[作成](/Monitoring/Service%20Monitoring/ja/api-guide/#_8)、[照会](/Monitoring/Service%20Monitoring/ja/api-guide/#_11)、[削除](/Monitoring/Service%20Monitoring/ja/api-guide/#_13) Open API機能を追加
 
 ### 2020. 08. 25.
 

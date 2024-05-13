@@ -1,4 +1,4 @@
-## Management > Service Monitoring > APIガイド
+## Monitoring > Service Monitoring > APIガイド
 
 ### 基本情報
 ```

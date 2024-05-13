@@ -1,4 +1,4 @@
-## Management > Service Monitoring > 릴리스 노트
+## Monitoring > Service Monitoring > 릴리스 노트
 
 ### 2022. 11. 15.
 * 장애 발생 시 전파 채널을 통해 제공하는 알람 페이지 URL의 도메인이 nh.nu로 변경되었습니다.
@@ -38,7 +38,7 @@
 ### 2020. 11. 24.
 
 #### 기능 추가
-* 시나리오 관리를 위한 [수정](/Management/Service%20Monitoring/ko/api-guide/#_15) 오픈 Api 기능 추가
+* 시나리오 관리를 위한 [수정](/Monitoring/Service%20Monitoring/ko/api-guide/#_15) 오픈 Api 기능 추가
 * 웹훅 요청 파라미터 지원
 * **LINE**의 메시지 발송 웹훅 템플릿 추가
 
@@ -52,7 +52,7 @@
 ### 2020. 09. 22.
 
 #### 기능 추가
-* 시나리오 관리를 위한 [생성](/Management/Service%20Monitoring/ko/api-guide/#_8), [조회](/Management/Service%20Monitoring/ko/api-guide/#_11), [삭제](/Management/Service%20Monitoring/ko/api-guide/#_13) 오픈 Api 기능 추가
+* 시나리오 관리를 위한 [생성](/Monitoring/Service%20Monitoring/ko/api-guide/#_8), [조회](/Monitoring/Service%20Monitoring/ko/api-guide/#_11), [삭제](/Monitoring/Service%20Monitoring/ko/api-guide/#_13) 오픈 Api 기능 추가
 
 ### 2020. 08. 25.
 
@@ -87,9 +87,9 @@
 ### 2020. 03. 24.
 
 #### 기능 개선
-* 웹 모니터링 데이터 검증 시 [JsonPath 메서드](/Management/Service%20Monitoring/ko/console-guide/#_9) 제공
+* 웹 모니터링 데이터 검증 시 [JsonPath 메서드](/Monitoring/Service%20Monitoring/ko/console-guide/#_9) 제공
 * 이메일 장애 메시지에 _조직명_, _프로젝트명_ 추가
-* [다중 배치 모니터링 검증 API](/Management/Service%20Monitoring/ko/api-guide/#_5) 지원
+* [다중 배치 모니터링 검증 API](/Monitoring/Service%20Monitoring/ko/api-guide/#_5) 지원
 * 배치 모니터링 내용 검증 결과 중 실패한 내용 강조 표시
 
 ### 2020. 01. 21.

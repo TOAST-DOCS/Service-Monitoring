@@ -1,4 +1,4 @@
-## Management > Service Monitoring > コンソール使用ガイド
+## Monitoring > Service Monitoring > コンソール使用ガイド
 
 ## サービス管理
 
