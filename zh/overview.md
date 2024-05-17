@@ -1,4 +1,4 @@
-## Management > Service Monitoring > 개요
+## Monitoring > Service Monitoring > 개요
 
 Service Monitoring은 안정적인 서비스 운영을 위한 서비스 장애 관리 플랫폼입니다. 
 - 제공하는 모니터링 도구 사용하여 빠르게 장애를 감지할 수 있습니다.
