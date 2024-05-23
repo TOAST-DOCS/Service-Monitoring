@@ -1,4 +1,4 @@
-## Management > Service Monitoring > Console User Guide
+## Monitoring > Service Monitoring > Console User Guide
 
 ## Service Management
 
