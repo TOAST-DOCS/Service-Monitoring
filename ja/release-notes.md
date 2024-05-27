@@ -1,5 +1,8 @@
 ## Monitoring > Service Monitoring > リリースノート
 
+### 2024. 05. 28.
+* Service Monitoring サービスの表示位置がManagementからMonitoringカテゴリーに変更されました。
+
 ### 2022. 11. 15.
 * 障害発生時、配信チャンネルを通じて提供するアラームページURLのドメインがnh.nuに変更されました。
 
