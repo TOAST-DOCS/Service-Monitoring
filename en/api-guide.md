@@ -1,4 +1,4 @@
-## Management > Service Monitoring > API Guide
+## Monitoring > Service Monitoring > API Guide
 
 ### Basic information
 ```

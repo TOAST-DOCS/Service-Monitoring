@@ -1,4 +1,4 @@
-## Management > Service Monitoring > 概要
+## Monitoring > Service Monitoring > 概要
 
 Service Monitoringは、安定的にサービスを運営するためのサービス障害監視プラットフォームです。 
 

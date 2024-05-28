@@ -1,4 +1,4 @@
-## Management > Service Monitoring > 콘솔 사용 가이드
+## Monitoring > Service Monitoring > 콘솔 사용 가이드
 
 ## 서비스 관리
 
