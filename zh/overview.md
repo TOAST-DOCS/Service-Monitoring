@@ -1,12 +1,12 @@
-## Monitoring > Service Monitoring > 개요
+## Monitoring > Service Monitoring > Overview
 
-Service Monitoring은 안정적인 서비스 운영을 위한 서비스 장애 관리 플랫폼입니다. 
-- 제공하는 모니터링 도구 사용하여 빠르게 장애를 감지할 수 있습니다.
-- 제공하는 전파 관리 도구를 사용하여 서비스 담당자에게 신속하게 장애를 전파할 수 있습니다.
+Service Monitoring is a service failure management platform for the stable operation of services.
+- Failures can be detected quickly using the monitoring tools provided.
+- With the propagation management tool, you can quickly propagate failures to people in charge of the services.
 
-## 주요 기능
-- 서비스별 담당자 그룹 및 전파 채널을 관리할 수 있습니다.
-- 전파 채널은 Email, SMS, 웹훅(사용자 변경 가능)을 지원합니다.
-- 웹 서비스 모니터링을 지원하며, API 및 웹 페이지를 모니터링할 수 있습니다.
-- TCP/UDP 모니터링을 지원하며, 웹 서버가 아닌 서비스를 모니터링할 수 있습니다.
-- 배치 모니터링을 지원하여, 스케줄 작업을 모니터링할 수 있습니다.
+## Key Features
+-  Manages the owner group and propagation channel per service.
+- The propagation channel supports Email, SMS, and webhook (can be changed by users).
+- Supports web service monitoring and monitors the API and web pages.
+- Supports TCP/UDP monitoring and monitors the non-web server services.
+- Supports batch monitoring and monitors scheduling.
