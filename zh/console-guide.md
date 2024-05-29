@@ -1,102 +1,112 @@
-## Monitoring > Service Monitoring > 콘솔 사용 가이드
+## Monitoring > Service Monitoring > Console User Guide
 
-## 서비스 관리
+## Service Management
 
-모니터링할 서비스, 장애를 전파할 대상과 채널 등을 관리할 수 있습니다.
+You can manage the services to monitor, the targets to propagate failures, and channels.
 
-### 서비스 추가
-- 서비스별로 모니터링을 등록하고 장애를 전파하고 관리합니다. 따라서 서비스를 논리적으로 잘 구분해 관리할 수 있도록 서비스 트리를 제공합니다. 
-- 서비스 트리 상단의 **+추가** 버튼을 클릭하면 서비스를 추가할 수 있습니다.
+### Add Service
+-  Register monitoring and propagate / manage failure per service . To classify services logically for efficient management, a service tree is provided.
+- Click the **+Add** button at the top of the service tree to add a service.
 
-### 전파 설정
-- 장애를 전파받을 담당자를 설정합니다. 
-- 프로젝트 멤버로 등록된 사용자만 등록할 수 있습니다.
-- 먼저 그룹을 등록하고, 그룹별 담당자, 전파받을 채널을 선택합니다.
+### Set Propagation
+-  Set the assignee who will receive the propagated failure.
+- Only those who are registered as project members can be registered.
+- First, register a group, and then select an owner of each group and a channel to receive the propagation information.
 
-### 전파 그룹
-- 여러 전파 그룹을 등록한 경우, 최초 장애를 감지한 경우
-  - 첫 번째 그룹에만 장애가 전파됩니다. 첫 번째 그룹의 사용자가 **전파 현황** 페이지에서 다음 그룹으로 전파(추가적인 장애 전파) 또는 전파 중지(장애 아님)를 선택할 수 있습니다.
-  - 3시간 동안 발생한 장애를 처리하지 않으면 자동으로 다음 그룹으로 장애가 전파됩니다.
+### Propagation Group
+- When several propagation groups have been registered, if the first failure is detected,
+  - the failure is propagated to the first group only. User of the first group can select Propagate to the next group (additional failure propagation) or Stop propagation (not a failure) in the **Propagation Status** page.
+  - If a failure is not handled within three hours, the failure is propagated to the next group.
 
-- 하나의 그룹만 등록한 경우
-  - 장애가 하나의 그룹에만 전파되고 종료됩니다.
+- When only one group has been registered
+  - The failure is propagated to only one group and terminated.
 
-- 그룹을 등록하지 않은 경우
-  - 장애가 전파되지 않고, 전파 현황에도 등록되지 않습니다.
+- When no group has been registered
+  - The failure is not propagated nor registered to the Propagation Status.
 
 
-### 전파 채널
+### Propagation Channel
 1. **Email**
-    - 회원 정보에 등록한 아이디를 기준으로 장애를 이메일로 전파합니다.
+  - Propagates a failure via email based on the ID registered in the member profile.
 2. **SMS**
-    - 회원 정보에 휴대폰 번호를 등록한 경우 장애를 SMS로 전파합니다.
-3. **웹훅** 
-    - 사용자의 요구에 맞게 장애 발생 시 동작할 HTTP API를 등록하면, 장애 발생 시 해당 API를 호출하는 웹훅 기능을 제공합니다(예: GitHub 이슈 등록 및 Slack 연동 등). 장애 감지 내용, 서비스 이름, 시나리오 이름 등 감지된 장애와 관련된 정보는 미리 정의된 변수로 치환되어 URL, 헤더, 요청 데이터에서 사용할 수 있으며, 장애 전파 시 치환되어 전송됩니다.
-    - URL, 웹훅 헤더, 요청 데이터 입력 에디터에서 자동 완성(Ctrl + Space) 기능을 사용해 미리 정의된 변수를 확인하거나 사용할 수 있습니다.
+  - Propagates a failure via SMS when a mobile phone number has been registered in the member profile.
+3. **Webhook**
+  - Provides a webhook function which calls the HTTP API on failure. The HTTP API should be registered according to the user's request (e.g. registration of GitHub issues and slack link). Information related to the detected failure, such as detection details, service name, and scenario name, is substituted to the pre-defined variables and used in the URL, header, and request data. The information is substituted and sent in case of failure propagation.
+  - In the editor where URL, webhook header, and request data are entered, you can view or use pre-defined variables using the AutoComplete (Ctrl + Space) function.
 
 
-## 전파 현황
-- 감지 및 전파된 장애 이력을 확인할 수 있습니다.
-- 다음 그룹으로 장애를 전파하거나 중지하는 기능을 사용할 수 있습니다.
+## Propagation Status
+- You can check the history of detected and propagated failures.
+- You can use a function that propagates failure to the next group or stops propagation.
 
-## 웹 모니터링
-HTTP, HTTPS를 통해 서비스를 제공하는 모든 웹 서비스를 모니터링할 수 있습니다.
+## Web monitoring
+You can monitor all web services which serve via HTTP and HTTPS.
 
-### 시나리오 타입
-- **API 타입** 
-    - REST API를 모니터링합니다.
-    - 최소 60초 주기로 시나리오를 등록할 수 있습니다.
-- **가상 브라우저 타입** 
-    - 가상 브라우저를 활용해 웹 페이지를 모니터링합니다. 
-    - 사용자 지정 JavaScript를 등록해 페이지의 동작을 모니터링할 수 있습니다.
-    - 모듈 타입 시나리오를 포함할 수 있으며, 모듈 타입 시나리오를 순차적으로 먼저 실행한 후 시나리오를 실행합니다. 모듈 및 가상 브라우저 시나리오 사이의 세션 및 쿠키는 공유되며, 이를 활용하여 로그인 후 페이지의 동작 여부 등을 테스트할 수 있습니다.
-    - 최소 120초 주기로 시나리오를 등록할 수 있습니다.
-- **모듈 타입** 
-    - 여러 시나리오에서 공통으로 필요한 기능(로그인 등)을 제공합니다. 
-    - 모듈 타입 단독으로 동작할 수 없으며, 가상 브라우저 타입에 포함되어 동작합니다.
+### Scenario Type
+- **API Type**
+  - Monitors REST API.
+  - You can register a scenario at every 30 seconds or higher.
+- **Virtual browser type**
+  - Monitors the web page with a virtual browser.
+  - You can register the page behavior by registering a customized JavaScript.
+  - Module-type scenario can be included; if a module-type scenario is included, it is executed first sequentially and then the other scenarios are executed. Sessions and cookies of the module and the virtual browser scenarios are shared. With those, you can test whether or not the page is working after logging in.
+  - You can register a scenario at every 60 seconds or higher.
+- **Module Type**
+  - Provides common features (such as login) for several scenarios.
+  - The module type cannot operate by itself; it only operates as part of the virtual browser type.
 
-### 시나리오 검증
+### Scenario Verification
 
-시나리오 검증 방식은 다음과 같습니다.
+Scenario is verified in the following way.
 
-| 검증 방식 | 설명 | 기본 설정 | 비고 |
+| Verification type | Description | Default settings | Remark |
 | -- | -- | -- | -- |
-| 응답 코드 | HTTP 응답 코드 검증 | 200 | |
-| 타임아웃 | 요청 후 응답 시간까지 검증 | 5000 (ms) ||
-| 텍스트 검증 | 응답 데이터(화면)에 특정 텍스트의 존재 여부 검증 | 없음 | JsonPath, XPath 지원 |
-| 이미지 검증 | 응답 화면에 이미지가 존재하고, 다운로드 가능 여부 검증 | 없음 | 모듈, 가상 브라우저 타입만 지원 |
-| 전파 제외 검증 | 응답 데이터(화면)에 특정 텍스트가 존재할 경우 장애 전파를 하지 않음 | 없음 | 점검 시 사용 |
+| Response code | HTTP response code verification | 200 | |
+| Timeout | Verifies until the response time after request | 5000 (ms) ||
+| Text verification | Verifies whether or not a specific text exists on the response data (screen) | None | JsonPath and XPath supported |
+| Image verification | Verifies whether an image exists on the response screen and it is downloadable or not. | None | Only module and virtual browser types are supported |
+| Propagation Exception Verification | No failure is propagated when a specific text exists in the response data (screen). | None | Used for maintenance |
+
+#### Function Support of Array Data for JsonPath Text Verification
+| Function | Description | Output Type |
+| -- | -- | -- |
+| min() | Minimum Value of Array Data | double | 
+| max() | Maximum Value of Array Data | double | 
+| sum() | Sum of Array Data | double | 
+| avg() | Average Value of Array Data | double | 
+| stddev() | Standard Deviation of Array Data | double | 
+| length() | Array Data Count | integer |
+> Functions are available only for such sequence data that are included to a response body
+
+## TCP monitoring
+
+You can use TCP, UDP, and ICMP protocols for monitoring.
+
+### Scenario Type
+- **ICMP Type**
+  - You can perform the ping test to monitor the server status.
+
+- **TCP Type**, **UDP Type**
+  - Accesses with IP:Port, tests the process from sending data to receiving a response and verifies the response data.
+  - It can be used for checking the IP:Port status.
+
+## Batch Monitoring
+
+Unlike web monitoring and TCP monitoring, this batch monitoring does not try monitoring directly from the Service Monitoring. Users call the API provided by Service Monitoring and then Service Monitoring verifies API data to determine a failure state.
+
+### Verification Type
+- Contents Verification
+  - Determines whether failure occurred or not by comparing user-registered scenario in advance with data which are actually sent by users.
+    Compares scenario data with actual data using   - JsonPath (https://goessner.net/articles/JsonPath/).
+- Count Verification
+  - Determines whether failure occurred or not by comparing the count of user requests with the user-specified count during a specific period of time.
+
+### Usage Example
+    - A build result from the build server can be sent to the batch monitoring server to monitor the result.
+    - Executes the daily batch and then calls the batch monitoring API to monitor whether or not the daily batch has been successfully operated.
 
 
-## TCP 모니터링
-
-TCP, UDP, ICMP 프로토콜을 활용하여 모니터링할 수 있습니다.
-
-### 시나리오 타입
-- **ICMP 타입**
-  - 서버의 상태를 모니터링하기 위한 ping 테스트를 진행할 수 있습니다.
-
-- **TCP 타입**, **UDP 타입**
-  - IP:Port로 접속한 후, 데이터를 전송하고 응답받는 과정을 테스트하고 응답받은 데이터를 검증합니다.
-  - IP:Port의 상태를 확인하는 용도로도 사용할 수 있습니다.
-
-## 배치 모니터링
-
-웹 모니터링, TCP 모니터링과는 달리 Service Monitoring에서 직접 모니터링을 시도하는 것이 아니라, Service Monitoring에서 제공하는 API를 사용자가 호출하고 API의 데이터를 Service Monitoring에서 검증하여 장애 여부를 판단합니다.
-
-### 검증 방식
-- 내용 검증
-  - 사용자가 사전에 등록한 시나리오로 실제 사용자가 전송한 데이터와 비교해 장애 여부를 판단합니다.
-  - JsonPath(https://goessner.net/articles/JsonPath/) 방식을 사용해 시나리오 데이터와 실제 데이터를 비교합니다.
-- 횟수 검증
-  - 특정 시간 동안 사용자의 요청 횟수를 확인해 사용자가 설정한 횟수와 비교해 장애 여부를 판단합니다.
-
-### 사용 예
-    - 빌드 서버의 빌드 결과를 배치 모니터링으로 전송하여, 빌드 결과를 모니터링할 수 있습니다.
-    - 일간 배치를 실행한 후 배치 모니터링 API를 호출하도록 하여, 일간 배치의 성공 여부 및 동작 여부를 모니터링할 수 있습니다.
-
-
-## 전파 관리
-- **일시적 전파 중지**란 배포와 같이 이미 알고 있는 장애라면, 장애가 발생해도 장애로 판단하지 않게 하는 기능입니다.
-- **일시적 전파 중지**는 각 모니터링별로 설정할 수 있습니다.
-- 시작 시간과 종료 시간을 설정할 수 있으며 설정한 시간이 지난 후에는 장애가 발생하면 설정된 전파 그룹으로 장애가 전파됩니다.
+## Propagation Management
+- **Stop Propagation Temporarily** is a function that does not consider known failures (such as distribution) as failures even if this kind of failure occurs.
+- **Stop Propagation Temporarily** can be set for each monitoring.
+- You can set the start and end time. After the specified period, the failure is propagated to the specified propagation group.
