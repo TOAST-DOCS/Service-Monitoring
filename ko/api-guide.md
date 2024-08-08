@@ -231,7 +231,7 @@ scenarioName | String | API |  | Y |  | 시나리오 이름
 description | String | API |  | Y |  | 시나리오 설명
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | 시나리오를 모니터링할 지역
 monitoringInterval | Integer | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격(초)
-monitoringCron | String | API | 5자리의 Cron 표현식 | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
+monitoringCron | String | API | [6자리의 Cron 표현식](#cronExpression) | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
 errorLimitCount | Integer | API | 0 이상의 정수 | Y | 0 | 연속 오류 허용 횟수
 
 <div id='validation1'></div>
@@ -260,6 +260,21 @@ validation.textValidation.textValidationType | String | API | JSON, HTML, XML | 
 validation.textValidation.textValidationInfo.operator | String | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | 문자열 연산자
 validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | 검증이 필요한 문자열
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | 기댓값
+
+<div id='cronExpression'></div>
+- cronExpression 
+
+  - cron 표현식은 공백으로 구분된 6개의 필드로 구성된 문자열입니다
+
+순서 | 항목 이름 | 필수 여부 | 허용 값 | 허용 특수 문자
+---|---|---|---|---
+1 | 분 | Y | 0-59 |  , - * /
+2 | 시 | Y | 0-23 | , - * /
+3 | 일 | Y | 1-31 | , - * ? / L W
+4 | 월 | Y | 1-12 or JAN-DEC | , - * /
+5 | 요일 | Y | 1-7 or SUN-SAT | , - * ? / L #
+6 | 연도 | N | 1970-2099 | , - * /
+  - 요일 항목과 일 항목을 동시에 설정할 수 없습니다. 두 필드중 하나는 항상 `?`가 되어야 합니다.
 
 #### 응답
 ```json
@@ -694,7 +709,7 @@ scenarioName | String | API |  | Y |  | 시나리오 이름
 description | String | API |  | Y |  | 시나리오 설명
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | 시나리오를 모니터링할 지역
 monitoringInterval | Integer | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격(초)
-monitoringCron | String | API | 5자리의 Cron 표현식 | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
+monitoringCron | String | API | [6자리의 Cron 표현식](#cronExpression) | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
 errorLimitCount | Integer | API | 0 이상의 정수 | Y | 0 | 연속 오류 허용 횟수
 
 <div id='validation1'></div>
