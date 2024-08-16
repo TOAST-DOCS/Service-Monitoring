@@ -262,9 +262,10 @@ validation.textValidation.textValidationInfo.expression | String | API |  | Y | 
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | 기댓값
 
 <div id='cronExpression'></div>
-- cronExpression 
 
-  - Cron 표현식은 공백으로 구분되는 6개의 필드로 구성된 문자열입니다.
+- cronExpression
+    - Cron 표현식은 공백으로 구분되는 6개의 필드로 구성된 문자열입니다.
+    - '일'과 '요일'은 동시에 설정할 수 없습니다. 두 필드 중 하나는 항상 `?`가 되어야 합니다.
 
 순서 | 항목 이름 | 필수 여부 | 허용 값 | 허용 특수 문자
 ---|---|---|---|---
@@ -274,7 +275,6 @@ validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) | 
 4 | 월 | Y | 1-12 or JAN-DEC | , - * /
 5 | 요일 | Y | 1-7 or SUN-SAT | , - * ? / L #
 6 | 연도 | N | 1970-2099 | , - * /
-  - '일'과 '요일'은 동시에 설정할 수 없습니다. 두 필드 중 하나는 항상 `?`가 되어야 합니다.
 
 #### 응답
 ```json
