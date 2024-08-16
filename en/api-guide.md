@@ -230,7 +230,7 @@ scenarioName | String | API |  | Y |  | Scenario name
 description | String | API |  | Y |  | Scenario description
 monitoringRegion | Set\<Enum\> | API | KOR, US | Y | KOR | The region to monitor a scenario
 monitoringInterval | Integer | API |  | N (monitoringCron required if this is not used) |  | Monitoring intervals (sec)
-monitoringCron | String | API | 5-digit Cron expression | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
+monitoringCron | String | API | [6-digit Cron expression](#cronExpression) | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
 errorLimitCount | Integer | API | 0 or higher integer | Y | 0 | Number of repeat errors allowed
 
 <div id='validation1'></div>
@@ -259,6 +259,21 @@ Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Defau
 validation.textValidation.textValidationInfo.operator | Enum | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | String operator
 validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | String that requires validation
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | Expected Value
+
+<div id='cronExpression'></div>
+- cronExpression 
+
+  - A Cron expression is a string of six fields separated by spaces.
+
+Order | Item | Required | Allowed value | Allowed special characters
+---|---|---|---|---
+1 | minute | Y | 0-59 |  , - * /
+2 | hour | Y | 0-23 | , - * /
+3 | day | Y | 1-31 | , - * ? / L W
+4 | month | Y | 1-12 or JAN-DEC | , - * /
+5 | day of week | Y | 1-7 or SUN-SAT | , - * ? / L #
+6 | year | N | 1970-2099 | , - * /
+  - 'Day' and 'Day of week' cannot be set at the same time; one of the two fields must always be `?`.
 
 #### Response
 ```json
@@ -377,7 +392,7 @@ Content-Type: application/json
 | appKey | String | Required | Service Appkey (Viewable in **Manage Service** tab) |
 | scenarioId | String | Required | Scenario ID |
 
-#### 응답
+#### Response
 ```json
 {
     "header": {
@@ -695,7 +710,7 @@ scenarioName | String | API |  | Y |  | Scenario name
 description | String | API |  | Y |  | Scenario description
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | The region to monitor a scenario
 monitoringInterval | Integer | API |  | N (monitoringCron required if this is not used) |  | Monitoring intervals (sec)
-monitoringCron | String | API | 5-digit Cron expression | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
+monitoringCron | String | API | [6-digit Cron expression](#cronExpression)  | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
 errorLimitCount | Integer | API | 0 or higher integer | Y | 0 | Number of repeat errors allowed
 
 <div id='validation1'></div>
