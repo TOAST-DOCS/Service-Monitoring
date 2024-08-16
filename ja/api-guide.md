@@ -145,7 +145,7 @@ scenarioName | String | API |  | Y |  | シナリオ名
 description | String | API |  | Y |  | シナリオの説明
 monitoringRegion | Set&lt;String&gt; | API | KOR、US | Y | KOR | シナリオをモニタリングする地域
 monitoringInterval | Integer | API |  | N(使用しないの場合monitoringCronが必須) |  | モニタリング間隔(秒)
-monitoringCron | String | API | 5桁のCron式 | N(使用しないの場合monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
+monitoringCron | String | API | 6桁のCron式](#cronExpression) | N(使用しないの場合monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
 errorLimitCount | Integer | API | 0以上の整数 | Y | 0 | 連続エラー許容回数
 
 <div id='validation1'></div>
@@ -174,6 +174,21 @@ validation.textValidation.textValidationType | String | API | JSON、HTML、XML 
 validation.textValidation.textValidationInfo.operator | String | API | CONTAINS、NOT_CONTAINS、EQ、NE、GT、GTE、LT、LTE | Y |  | 文字列演算子
 validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | 検証が必要な文字列
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | 期待値
+
+<div id='cronExpression'></div>
+- cronExpression 
+
+  - Cron式は、空白で区切られた6つのフィールドで構成された文字列です。
+
+順序 | 項目名前 | 必須か否か | 許可値 | 許可特殊文字
+---|---|---|---|---
+1 | 分 | Y | 0-59 |  , - * /
+2 | 時 | Y | 0-23 | , - * /
+3 | 日 | Y | 1-31 | , - * ? / L W
+4 | 月 | Y | 1-12 or JAN-DEC | , - * /
+5 | 曜日 | Y | 1-7 or SUN-SAT | , - * ? / L #
+6 | 年度 | N | 1970-2099 | , - * /
+  - 「日」と「曜日」は同時に設定できません。どちらかのフィールドは常に`?`でなければなりません。
 
 #### レスポンス
 ```json
@@ -608,7 +623,7 @@ scenarioName | String | API |  | Y |  | シナリオ名
 description | String | API |  | Y |  | シナリオ説明
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | シナリオをモニタリングする地域
 monitoringInterval | Integer | API |  | N(使わない場合、monitoringCronが必須) |  | モニタリング間隔(秒)
-monitoringCron | String | API | 5桁のCron式 | N(使わない場合、monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
+monitoringCron | String | API | 6桁のCron式](#cronExpression) | N(使わない場合、monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
 errorLimitCount | Integer | API | 0以上の整数 | Y | 0 | 連続エラー許容回数
 
 <div id='validation1'></div>
