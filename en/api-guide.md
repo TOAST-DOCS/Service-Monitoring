@@ -261,9 +261,11 @@ validation.textValidation.textValidationInfo.expression | String | API |  | Y | 
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | Expected Value
 
 <div id='cronExpression'></div>
-- cronExpression 
 
-  - A Cron expression is a string of six fields separated by spaces.
+
+- cronExpression
+    - A Cron expression is a string of six fields separated by spaces.
+    - 'Day' and 'Day of week' cannot be set at the same time; one of the two fields must always be `?`.
 
 Order | Item | Required | Allowed value | Allowed special characters
 ---|---|---|---|---
@@ -273,7 +275,6 @@ Order | Item | Required | Allowed value | Allowed special characters
 4 | month | Y | 1-12 or JAN-DEC | , - * /
 5 | day of week | Y | 1-7 or SUN-SAT | , - * ? / L #
 6 | year | N | 1970-2099 | , - * /
-  - 'Day' and 'Day of week' cannot be set at the same time; one of the two fields must always be `?`.
 
 #### Response
 ```json

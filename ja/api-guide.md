@@ -176,9 +176,10 @@ validation.textValidation.textValidationInfo.expression | String | API |  | Y | 
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | 期待値
 
 <div id='cronExpression'></div>
-- cronExpression 
 
-  - Cron式は、空白で区切られた6つのフィールドで構成された文字列です。
+- cronExpression
+    - Cron式は、空白で区切られた6つのフィールドで構成された文字列です。
+    - 「日」と「曜日」は同時に設定できません。どちらかのフィールドは常に`?`でなければなりません。
 
 順序 | 項目名前 | 必須か否か | 許可値 | 許可特殊文字
 ---|---|---|---|---
@@ -188,7 +189,6 @@ validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) | 
 4 | 月 | Y | 1-12 or JAN-DEC | , - * /
 5 | 曜日 | Y | 1-7 or SUN-SAT | , - * ? / L #
 6 | 年度 | N | 1970-2099 | , - * /
-  - 「日」と「曜日」は同時に設定できません。どちらかのフィールドは常に`?`でなければなりません。
 
 #### レスポンス
 ```json
