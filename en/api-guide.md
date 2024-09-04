@@ -156,6 +156,7 @@ Content-Type: application/json
 | body.ipaddr | String | IP Address of Requestor |
 | body.requestTime | String | Request Time (ISO 8601 format) |
 | body.serviceCode | Integer | Original Service Code |
+
 ## Create scenario
 
 ### Data transfer
