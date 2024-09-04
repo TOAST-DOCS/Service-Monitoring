@@ -138,7 +138,7 @@ url | String | API | httpまたはhttpsで始まるurl | Y |  | モニタリン�
 headers | Map&lt;String、String&gt; | API |  | N |  | APIを送る時に使用するヘッダ値
 httpMethod | String | API | GET、POST、DELETE、PUT | Y |  | APIのhttpMethod
 requestBody | String | API |  | N |  | APIのrequestBody
-browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
+browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} | 
 [validation](#validation1) | Object | API |  | Y |  | APIの検証情報
 scenarioType | String | API | API | Y |  | シナリオタイプ
 scenarioName | String | API |  | Y |  | シナリオ名

@@ -224,7 +224,7 @@ url | String | API | http 또는 https로 시작하는 url | Y |  | 모니터링
 headers | Map&lt;String, String&gt; | API |  | N |  | API를 보낼 때 사용할 헤더값
 httpMethod | String | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
 requestBody | String | API |  | N |  | API의 requestBody
-browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
+browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} | 
 [validation](#validation1) | Object | API |  | Y |  | API의 검증 정보
 scenarioType | String | API | API | Y |  | 시나리오 타입
 scenarioName | String | API |  | Y |  | 시나리오 이름

@@ -224,7 +224,7 @@ url | String | API | http or url starting with https | Y |  | The URL of API to 
 headers | Map\<String, String\> | API |  | N |  | Header value to use to send the API
 httpMethod | Enum | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
 requestBody | String | API |  | N |  | API의 requestBody
-browserOption | Map\<String, String\> | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
+browserOption | Map\<String, String\> | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} | 
 [validation](#validation1) | Object | API |  | Y |  | Validation info of API
 scenarioType | Enum | API | API | Y |  | Scenario type
 scenarioName | String | API |  | Y |  | Scenario name
