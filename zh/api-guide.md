@@ -705,7 +705,7 @@ url | String | API | url starting with http or https | Y |  | The URL of API to 
 headers | Map&lt;String, String&gt; | API |  | N |  | Header value to use to send the API
 httpMethod | String | API | GET, POST, DELETE, PUT | Y |  | httpMethod of API
 requestBody | String | API |  | N |  | requestBody of API
-browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} |
+browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} |
 [validation](#validation1) | Object | API |  | Y |  | Validation info of API
 scenarioType | String | API | API | Y |  | Scenario type
 scenarioName | String | API |  | Y |  | Scenario name
