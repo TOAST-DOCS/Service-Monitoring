@@ -145,7 +145,7 @@ scenarioName | String | API |  | Y |  | シナリオ名
 description | String | API |  | Y |  | シナリオの説明
 monitoringRegion | Set&lt;String&gt; | API | KOR、US | Y | KOR | シナリオをモニタリングする地域
 monitoringInterval | Integer | API |  | N(使用しないの場合monitoringCronが必須) |  | モニタリング間隔(秒)
-monitoringCron | String | API | 6桁のCron式](#cronExpression) | N(使用しないの場合monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
+monitoringCron | String | API | [6桁のCron式](#cronExpression) | N(使用しないの場合monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
 errorLimitCount | Integer | API | 0以上の整数 | Y | 0 | 連続エラー許容回数
 
 <div id='validation1'></div>
@@ -623,7 +623,7 @@ scenarioName | String | API |  | Y |  | シナリオ名
 description | String | API |  | Y |  | シナリオ説明
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | シナリオをモニタリングする地域
 monitoringInterval | Integer | API |  | N(使わない場合、monitoringCronが必須) |  | モニタリング間隔(秒)
-monitoringCron | String | API | 6桁のCron式](#cronExpression) | N(使わない場合、monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
+monitoringCron | String | API | [6桁のCron式](#cronExpression) | N(使わない場合、monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
 errorLimitCount | Integer | API | 0以上の整数 | Y | 0 | 連続エラー許容回数
 
 <div id='validation1'></div>
