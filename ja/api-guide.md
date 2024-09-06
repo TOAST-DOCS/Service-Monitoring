@@ -373,7 +373,7 @@ body.monitoringRegion | Set&lt;String&gt; | - | シナリオモニタリング�
 body.registeredTime | String | - | 登録時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | - | 修正時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | モニタリング間隔(秒単位)
-body.monitoringCron | String | - | モニタリング間隔(Cron式)
+body.monitoringCron | String | - | モニタリング間隔(秒項目が追加された7桁のCron式)
 body.status | String | - | シナリオの現在状態
 body.errorLimitCount | Integer | - | 連続エラー許容回数
 body.request | String | TCP、UDP | TCP、UDPリクエスト時のリクエスト文字列
@@ -504,7 +504,7 @@ body.monitoringRegion | Set&lt;String&gt; | - | シナリオモニタリング�
 body.registeredTime | String | - | 登録時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | - | 修正時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | モニタリング間隔(秒単位)
-body.monitoringCron | String | - | モニタリング間隔(Cron式)
+body.monitoringCron | String | - | モニタリング間隔(秒項目が追加された7桁のCron式)
 body.status | String | - | シナリオの現在状態
 body.errorLimitCount | Integer | - | 連続エラー許容回数
 body.request | String | TCP、UDP | TCP、UDPリクエスト時のリクエスト文字列
@@ -623,7 +623,7 @@ scenarioName | String | API |  | Y |  | シナリオ名
 description | String | API |  | Y |  | シナリオ説明
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | シナリオをモニタリングする地域
 monitoringInterval | Integer | API |  | N(使わない場合、monitoringCronが必須) |  | モニタリング間隔(秒)
-monitoringCron | String | API | [6桁のCron式](#cronExpression) | N(使わない場合、monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
+monitoringCron | String | API | [6桁のCron式](#cronExpression) | N(使わない場合、monitoringIntervalが必須) |  | モニタリング間隔(秒項目が追加された7桁のCron式)
 errorLimitCount | Integer | API | 0以上の整数 | Y | 0 | 連続エラー許容回数
 
 <div id='validation1'></div>
@@ -716,7 +716,7 @@ body.scenarioName  |  String  | シナリオ名
 body.description  |  String  | シナリオ説明
 body.monitoringRegion  |  Set&lt;String&gt;  | シナリオをモニタリングする地域
 body.monitoringInterval  |  Integer  | モニタリング間隔(秒)
-body.monitoringCron  |  String  | モニタリング間隔(Cron式)
+body.monitoringCron  |  String  | モニタリング間隔(秒項目が追加された7桁のCron式)
 body.errorLimitCount  |  Integer  | 連続エラー許容回数
 body.registeredTime | String | 登録時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | 修正時刻(yyyy-MM-dd'T'HH:mm:ss.SSSz)
