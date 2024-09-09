@@ -339,7 +339,7 @@ body.scenarioName  |  String  |  시나리오 이름
 body.description  |  String  |  시나리오 설명
 body.monitoringRegion  |  Set&lt;String&gt;  |  시나리오를 모니터링할 지역
 body.monitoringInterval  |  Integer  |  모니터링 간격(초)
-body.monitoringCron  |  String  |  모니터링 간격(Cron 표현식)
+body.monitoringCron  |  String  |  모니터링 간격(초 항목이 추가된 7자리 Cron 표현식)
 body.errorLimitCount  |  Integer  |  연속 오류 허용 횟수
 body.registeredTime | String | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
@@ -459,7 +459,7 @@ body.monitoringRegion | Set&lt;String&gt; | - | 시나리오 모니터링 지역
 body.registeredTime | String | - | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | - | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | 모니터링 간격(초 단위)
-body.monitoringCron | String | - | 모니터링 간격(Cron 표현식)
+body.monitoringCron | String | - | 모니터링 간격(초 항목이 추가된 7자리 Cron 표현식)
 body.status | String | - | 시나리오의 현재 상태
 body.errorLimitCount | Integer | - | 연속 오류 허용 횟수
 body.request | String | TCP, UDP | TCP, UDP 요청 시 리퀘스트 문자열
@@ -590,7 +590,7 @@ body.monitoringRegion | Set&lt;String&gt; | - | 시나리오 모니터링 지역
 body.registeredTime | String | - | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | - | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | 모니터링 간격(초 단위)
-body.monitoringCron | String | - | 모니터링 간격(Cron 표현식)
+body.monitoringCron | String | - | 모니터링 간격(초 항목이 추가된 7자리 Cron 표현식)
 body.status | String | - | 시나리오의 현재 상태
 body.errorLimitCount | Integer | - | 연속 오류 허용 횟수
 body.request | String | TCP, UDP | TCP, UDP 요청 시 리퀘스트 문자열
@@ -802,7 +802,7 @@ body.scenarioName  |  String  |  시나리오 이름
 body.description  |  String  |  시나리오 설명
 body.monitoringRegion  |  Set&lt;String&gt;  |  시나리오를 모니터링할 지역
 body.monitoringInterval  |  Integer  |  모니터링 간격(초)
-body.monitoringCron  |  String  |  모니터링 간격(Cron 표현식)
+body.monitoringCron  |  String  |  모니터링 간격(초 항목이 추가된 7자리 Cron 표현식)
 body.errorLimitCount  |  Integer  |  연속 오류 허용 횟수
 body.registeredTime | String | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
