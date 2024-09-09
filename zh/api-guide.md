@@ -4,6 +4,7 @@
 ```
 API Endpoint: https://api-service-monitoring.cloud.toast.com
 ```
+
 ## Single Batch Monitoring
 
 ### Data Transfer
@@ -11,7 +12,7 @@ API Endpoint: https://api-service-monitoring.cloud.toast.com
 - The JSON type data can be sent according to the verification information entered for batch monitoring. When verification of batch monitoring fails, it is registered as a failure.
 
 [URL]
-```
+```http
 POST /v1.0/monitoring/batchmon/appkey/{appKey}/scenarios/{scenarioId}
 Content-Type: application/json
 ```
@@ -50,8 +51,7 @@ Content-Type: application/json
         "requestData": {
             "body": "{\"issueDescription\": \"This is test message.\"}"
         },
-        "serviceCode": 0,
-        "status": "beforeValidation"
+        "serviceCode": 0
     }
 }
 ```
@@ -68,7 +68,7 @@ Content-Type: application/json
 | body.ipaddr | String | IP address of the requestor |
 | body.requestTime | String | Request time (ISO 8601 format) |
 | body.serviceCode | Integer | Unique code of the service |
-| body.status | String | Request status |
+
 
 ## Multiple Batch Monitoring
 - Verify multiple services and scenarios, with a single request.
@@ -263,10 +263,9 @@ validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) | 
 
 <div id='cronExpression'></div>
 
-
 - cronExpression
-    - A Cron expression is a string of six fields separated by spaces.
-    - 'Day' and 'Day of week' cannot be set at the same time; one of the two fields must always be `?`.
+  - A Cron expression is a string of six fields separated by spaces.
+  - 'Day' and 'Day of week' cannot be set at the same time; one of the two fields must always be `?`.
 
 Order | Item | Required | Allowed value | Allowed special characters
 ---|---|---|---|---
@@ -635,14 +634,12 @@ Value | Type | Corresponding scenarioType | Description
 body.validation.responseValidation.position | Integer | TCP,UDP | Starting location of string to be verified in response
 body.validation.responseValidation.validationText | String | TCP,UDP | String to be verified in response
 
-
 ## Scenario Modification
 
 ### Data transfer
 - Send data required for scenario modification request to the service monitoring server.
 
 [URL]
-
 ```http
 POST /open-api/v1.0/appkey/{appKey}/scenarios/{scenarioId}
 Content-Type: application/json
@@ -716,7 +713,6 @@ monitoringCron | String | API | [6-digit Cron expression](#cronExpression)  | N 
 errorLimitCount | Integer | API | 0 or higher integer | Y | 0 | Number of repeat errors allowed
 
 <div id='validation1'></div>
-
 - validation
 
 Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Default | Description
