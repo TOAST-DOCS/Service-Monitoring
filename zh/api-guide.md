@@ -339,7 +339,7 @@ body.scenarioName  |  String  |  Scenario name
 body.description  |  String  |  Scenario description
 body.monitoringRegion  |  Set\<Enum\>  |  The region to monitor a scenario
 body.monitoringInterval  |  Integer  |  Monitoring intervals (sec)
-body.monitoringCron  |  String  |  Monitoring intervals (Cron expression)
+body.monitoringCron  |  String  |  Monitoring intervals (Cron expressions of 7 fields including seconds)
 body.errorLimitCount  |  Integer  |  Number of repeat errors allowed
 body.registeredTime | Date | Registered time
 body.amendedTime | Date | Amended time
@@ -459,7 +459,7 @@ body.monitoringRegion | Set\<Enum\> | - | Scenario monitoring region
 body.registeredTime | Date | - | Registered time
 body.amendedTime | Date | - | Amended time
 body.monitoringInterval | Integer | - | Monitoring intervals (unit: secs)
-body.monitoringCron | String | - | Monitoring intervals (Cron expression)
+body.monitoringCron | String | - | Monitoring intervals (Cron expressions of 7 fields including seconds)
 body.status | String | - | Scenario's current status
 body.errorLimitCount | Integer | - | Number of repeat errors allowed
 body.request | String | TCP, UDP | Request string for TCP, UDP requests
@@ -590,7 +590,7 @@ body.monitoringRegion | Set\<Enum\> | - | Scenario monitoring region
 body.registeredTime | Date | - | Registered time
 body.amendedTime | Date | - | Amended time
 body.monitoringInterval | Integer | - | Monitoring intervals (unit: secs)
-body.monitoringCron | String | - | Monitoring intervals (Cron expression)
+body.monitoringCron | String | - | Monitoring intervals (Cron expressions of 7 fields including seconds)
 body.status | String | - | Scenario's current status
 body.errorLimitCount | Integer | - | Number of repeat errors allowed
 body.request | String | TCP, UDP | Request string for TCP, UDP requests
@@ -802,7 +802,7 @@ body.scenarioName  |  String  |  Scenario name
 body.description  |  String  |  Scenario description
 body.monitoringRegion  |  Set&lt;String&gt;  |  The region to monitor a scenario
 body.monitoringInterval  |  Integer  |  Monitoring intervals (sec)
-body.monitoringCron  |  String  |  Monitoring intervals (Cron expression)
+body.monitoringCron  |  String  |  Monitoring intervals (Cron expressions of 7 fields including seconds)
 body.errorLimitCount  |  Integer  |  Number of repeat errors allowed
 body.registeredTime | String | Registered time (yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | Modified time (yyyy-MM-dd'T'HH:mm:ss.SSSz)
