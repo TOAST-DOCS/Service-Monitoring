@@ -224,14 +224,14 @@ url | String | API | http 또는 https로 시작하는 url | Y |  | 모니터링
 headers | Map&lt;String, String&gt; | API |  | N |  | API를 보낼 때 사용할 헤더값
 httpMethod | String | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
 requestBody | String | API |  | N |  | API의 requestBody
-browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
+browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} | 
 [validation](#validation1) | Object | API |  | Y |  | API의 검증 정보
 scenarioType | String | API | API | Y |  | 시나리오 타입
 scenarioName | String | API |  | Y |  | 시나리오 이름
 description | String | API |  | Y |  | 시나리오 설명
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | 시나리오를 모니터링할 지역
 monitoringInterval | Integer | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격(초)
-monitoringCron | String | API | 5자리의 Cron 표현식 | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
+monitoringCron | String | API | [6자리의 Cron 표현식](#cronExpression) | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
 errorLimitCount | Integer | API | 0 이상의 정수 | Y | 0 | 연속 오류 허용 횟수
 
 <div id='validation1'></div>
@@ -260,6 +260,21 @@ validation.textValidation.textValidationType | String | API | JSON, HTML, XML | 
 validation.textValidation.textValidationInfo.operator | String | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | 문자열 연산자
 validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | 검증이 필요한 문자열
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | 기댓값
+
+<div id='cronExpression'></div>
+
+- cronExpression
+    - Cron 표현식은 공백으로 구분되는 6개의 필드로 구성된 문자열입니다.
+    - '일'과 '요일'은 동시에 설정할 수 없습니다. 두 필드 중 하나는 항상 `?`가 되어야 합니다.
+
+순서 | 항목 이름 | 필수 여부 | 허용 값 | 허용 특수 문자
+---|---|---|---|---
+1 | 분 | Y | 0-59 |  , - * /
+2 | 시 | Y | 0-23 | , - * /
+3 | 일 | Y | 1-31 | , - * ? / L W
+4 | 월 | Y | 1-12 or JAN-DEC | , - * /
+5 | 요일 | Y | 1-7 or SUN-SAT | , - * ? / L #
+6 | 연도 | N | 1970-2099 | , - * /
 
 #### 응답
 ```json
@@ -324,7 +339,7 @@ body.scenarioName  |  String  |  시나리오 이름
 body.description  |  String  |  시나리오 설명
 body.monitoringRegion  |  Set&lt;String&gt;  |  시나리오를 모니터링할 지역
 body.monitoringInterval  |  Integer  |  모니터링 간격(초)
-body.monitoringCron  |  String  |  모니터링 간격(Cron 표현식)
+body.monitoringCron  |  String  |  모니터링 간격(초 항목이 추가된 7자리 Cron 표현식)
 body.errorLimitCount  |  Integer  |  연속 오류 허용 횟수
 body.registeredTime | String | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
@@ -444,7 +459,7 @@ body.monitoringRegion | Set&lt;String&gt; | - | 시나리오 모니터링 지역
 body.registeredTime | String | - | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | - | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | 모니터링 간격(초 단위)
-body.monitoringCron | String | - | 모니터링 간격(Cron 표현식)
+body.monitoringCron | String | - | 모니터링 간격(초 항목이 추가된 7자리 Cron 표현식)
 body.status | String | - | 시나리오의 현재 상태
 body.errorLimitCount | Integer | - | 연속 오류 허용 횟수
 body.request | String | TCP, UDP | TCP, UDP 요청 시 리퀘스트 문자열
@@ -575,7 +590,7 @@ body.monitoringRegion | Set&lt;String&gt; | - | 시나리오 모니터링 지역
 body.registeredTime | String | - | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | - | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.monitoringInterval | Integer | - | 모니터링 간격(초 단위)
-body.monitoringCron | String | - | 모니터링 간격(Cron 표현식)
+body.monitoringCron | String | - | 모니터링 간격(초 항목이 추가된 7자리 Cron 표현식)
 body.status | String | - | 시나리오의 현재 상태
 body.errorLimitCount | Integer | - | 연속 오류 허용 횟수
 body.request | String | TCP, UDP | TCP, UDP 요청 시 리퀘스트 문자열
@@ -687,14 +702,14 @@ url | String | API | http 또는 https로 시작하는 url | Y |  | 모니터링
 headers | Map&lt;String, String&gt; | API |  | N |  | API를 보낼 때 사용할 헤더값
 httpMethod | String | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
 requestBody | String | API |  | N |  | API의 requestBody
-browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} | 
+browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} | 
 [validation](#validation1) | Object | API |  | Y |  | API의 검증 정보
 scenarioType | String | API | API | Y |  | 시나리오 타입
 scenarioName | String | API |  | Y |  | 시나리오 이름
 description | String | API |  | Y |  | 시나리오 설명
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | 시나리오를 모니터링할 지역
 monitoringInterval | Integer | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격(초)
-monitoringCron | String | API | 5자리의 Cron 표현식 | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
+monitoringCron | String | API | [6자리의 Cron 표현식](#cronExpression) | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
 errorLimitCount | Integer | API | 0 이상의 정수 | Y | 0 | 연속 오류 허용 횟수
 
 <div id='validation1'></div>
@@ -787,7 +802,7 @@ body.scenarioName  |  String  |  시나리오 이름
 body.description  |  String  |  시나리오 설명
 body.monitoringRegion  |  Set&lt;String&gt;  |  시나리오를 모니터링할 지역
 body.monitoringInterval  |  Integer  |  모니터링 간격(초)
-body.monitoringCron  |  String  |  모니터링 간격(Cron 표현식)
+body.monitoringCron  |  String  |  모니터링 간격(초 항목이 추가된 7자리 Cron 표현식)
 body.errorLimitCount  |  Integer  |  연속 오류 허용 횟수
 body.registeredTime | String | 등록 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | 수정 시각(yyyy-MM-dd'T'HH:mm:ss.SSSz)
