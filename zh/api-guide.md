@@ -4,6 +4,7 @@
 ```
 API Endpoint: https://api-service-monitoring.cloud.toast.com
 ```
+
 ## Single Batch Monitoring
 
 ### Data Transfer
@@ -11,7 +12,7 @@ API Endpoint: https://api-service-monitoring.cloud.toast.com
 - The JSON type data can be sent according to the verification information entered for batch monitoring. When verification of batch monitoring fails, it is registered as a failure.
 
 [URL]
-```
+```http
 POST /v1.0/monitoring/batchmon/appkey/{appKey}/scenarios/{scenarioId}
 Content-Type: application/json
 ```
@@ -50,8 +51,7 @@ Content-Type: application/json
         "requestData": {
             "body": "{\"issueDescription\": \"This is test message.\"}"
         },
-        "serviceCode": 0,
-        "status": "beforeValidation"
+        "serviceCode": 0
     }
 }
 ```
@@ -68,7 +68,7 @@ Content-Type: application/json
 | body.ipaddr | String | IP address of the requestor |
 | body.requestTime | String | Request time (ISO 8601 format) |
 | body.serviceCode | Integer | Unique code of the service |
-| body.status | String | Request status |
+
 
 ## Multiple Batch Monitoring
 - Verify multiple services and scenarios, with a single request.
@@ -156,6 +156,7 @@ Content-Type: application/json
 | body.ipaddr | String | IP Address of Requestor |
 | body.requestTime | String | Request Time (ISO 8601 format) |
 | body.serviceCode | Integer | Original Service Code |
+
 ## Create scenario
 
 ### Data transfer
@@ -223,14 +224,14 @@ url | String | API | http or url starting with https | Y |  | The URL of API to 
 headers | Map\<String, String\> | API |  | N |  | Header value to use to send the API
 httpMethod | Enum | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
 requestBody | String | API |  | N |  | API의 requestBody
-browserOption | Map\<String, String\> | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} |
+browserOption | Map\<String, String\> | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} |
 [validation](#validation1) | Object | API |  | Y |  | Validation info of API
 scenarioType | Enum | API | API | Y |  | Scenario type
 scenarioName | String | API |  | Y |  | Scenario name
 description | String | API |  | Y |  | Scenario description
 monitoringRegion | Set\<Enum\> | API | KOR, US | Y | KOR | The region to monitor a scenario
 monitoringInterval | Integer | API |  | N (monitoringCron required if this is not used) |  | Monitoring intervals (sec)
-monitoringCron | String | API | 5-digit Cron expression | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
+monitoringCron | String | API | [6-digit Cron expression](#cronExpression) | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
 errorLimitCount | Integer | API | 0 or higher integer | Y | 0 | Number of repeat errors allowed
 
 <div id='validation1'></div>
@@ -259,6 +260,21 @@ Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Defau
 validation.textValidation.textValidationInfo.operator | Enum | API | CONTAINS, NOT_CONTAINS, EQ, NE, GT, GTE, LT, LTE | Y |  | String operator
 validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | String that requires validation
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | Expected Value
+
+<div id='cronExpression'></div>
+
+- cronExpression
+  - A Cron expression is a string of six fields separated by spaces.
+  - 'Day' and 'Day of week' cannot be set at the same time; one of the two fields must always be `?`.
+
+Order | Item | Required | Allowed value | Allowed special characters
+---|---|---|---|---
+1 | minute | Y | 0-59 |  , - * /
+2 | hour | Y | 0-23 | , - * /
+3 | day | Y | 1-31 | , - * ? / L W
+4 | month | Y | 1-12 or JAN-DEC | , - * /
+5 | day of week | Y | 1-7 or SUN-SAT | , - * ? / L #
+6 | year | N | 1970-2099 | , - * /
 
 #### Response
 ```json
@@ -323,7 +339,7 @@ body.scenarioName  |  String  |  Scenario name
 body.description  |  String  |  Scenario description
 body.monitoringRegion  |  Set\<Enum\>  |  The region to monitor a scenario
 body.monitoringInterval  |  Integer  |  Monitoring intervals (sec)
-body.monitoringCron  |  String  |  Monitoring intervals (Cron expression)
+body.monitoringCron  |  String  |  Monitoring intervals (Cron expressions of 7 fields including seconds)
 body.errorLimitCount  |  Integer  |  Number of repeat errors allowed
 body.registeredTime | Date | Registered time
 body.amendedTime | Date | Amended time
@@ -377,7 +393,7 @@ Content-Type: application/json
 | appKey | String | Required | Service Appkey (Viewable in **Manage Service** tab) |
 | scenarioId | String | Required | Scenario ID |
 
-#### 응답
+#### Response
 ```json
 {
     "header": {
@@ -443,7 +459,7 @@ body.monitoringRegion | Set\<Enum\> | - | Scenario monitoring region
 body.registeredTime | Date | - | Registered time
 body.amendedTime | Date | - | Amended time
 body.monitoringInterval | Integer | - | Monitoring intervals (unit: secs)
-body.monitoringCron | String | - | Monitoring intervals (Cron expression)
+body.monitoringCron | String | - | Monitoring intervals (Cron expressions of 7 fields including seconds)
 body.status | String | - | Scenario's current status
 body.errorLimitCount | Integer | - | Number of repeat errors allowed
 body.request | String | TCP, UDP | Request string for TCP, UDP requests
@@ -574,7 +590,7 @@ body.monitoringRegion | Set\<Enum\> | - | Scenario monitoring region
 body.registeredTime | Date | - | Registered time
 body.amendedTime | Date | - | Amended time
 body.monitoringInterval | Integer | - | Monitoring intervals (unit: secs)
-body.monitoringCron | String | - | Monitoring intervals (Cron expression)
+body.monitoringCron | String | - | Monitoring intervals (Cron expressions of 7 fields including seconds)
 body.status | String | - | Scenario's current status
 body.errorLimitCount | Integer | - | Number of repeat errors allowed
 body.request | String | TCP, UDP | Request string for TCP, UDP requests
@@ -618,14 +634,12 @@ Value | Type | Corresponding scenarioType | Description
 body.validation.responseValidation.position | Integer | TCP,UDP | Starting location of string to be verified in response
 body.validation.responseValidation.validationText | String | TCP,UDP | String to be verified in response
 
-
 ## Scenario Modification
 
 ### Data transfer
 - Send data required for scenario modification request to the service monitoring server.
 
 [URL]
-
 ```http
 POST /open-api/v1.0/appkey/{appKey}/scenarios/{scenarioId}
 Content-Type: application/json
@@ -688,18 +702,17 @@ url | String | API | url starting with http or https | Y |  | The URL of API to 
 headers | Map&lt;String, String&gt; | API |  | N |  | Header value to use to send the API
 httpMethod | String | API | GET, POST, DELETE, PUT | Y |  | httpMethod of API
 requestBody | String | API |  | N |  | requestBody of API
-browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | Y | {"OPT_LOCALE" : "kr"} |
+browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} |
 [validation](#validation1) | Object | API |  | Y |  | Validation info of API
 scenarioType | String | API | API | Y |  | Scenario type
 scenarioName | String | API |  | Y |  | Scenario name
 description | String | API |  | Y |  | Scenario description
 monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | The region to monitor a scenario
 monitoringInterval | Integer | API |  | N (monitoringCron required if this is not used) |  | Monitoring intervals (sec)
-monitoringCron | String | API | 5-digit Cron expression | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
+monitoringCron | String | API | [6-digit Cron expression](#cronExpression)  | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
 errorLimitCount | Integer | API | 0 or higher integer | Y | 0 | Number of repeat errors allowed
 
 <div id='validation1'></div>
-
 - validation
 
 Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Default | Description
@@ -789,7 +802,7 @@ body.scenarioName  |  String  |  Scenario name
 body.description  |  String  |  Scenario description
 body.monitoringRegion  |  Set&lt;String&gt;  |  The region to monitor a scenario
 body.monitoringInterval  |  Integer  |  Monitoring intervals (sec)
-body.monitoringCron  |  String  |  Monitoring intervals (Cron expression)
+body.monitoringCron  |  String  |  Monitoring intervals (Cron expressions of 7 fields including seconds)
 body.errorLimitCount  |  Integer  |  Number of repeat errors allowed
 body.registeredTime | String | Registered time (yyyy-MM-dd'T'HH:mm:ss.SSSz)
 body.amendedTime | String | Modified time (yyyy-MM-dd'T'HH:mm:ss.SSSz)
