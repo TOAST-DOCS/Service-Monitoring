@@ -1,5 +1,8 @@
 ## Monitoring > Service Monitoring > 릴리스 노트
 
+### 2025. 09. 09.
+* 감시 준비시간을 감시 응답시간에서 제외, 감시 준비오류시 감시 오류로 판단하지 않음
+
 ### 2024. 05. 28.
 * Service Monitoring 서비스의 노출 위치가 Management에서 Monitoring 카테고리로 변경되었습니다.
 
