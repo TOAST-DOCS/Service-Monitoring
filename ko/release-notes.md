@@ -8,7 +8,7 @@
 
 ### 2024. 05. 28.
 
-#### 기능 변경
+#### 기능 개선
 * Service Monitoring 서비스의 노출 위치가 Management에서 Monitoring 카테고리로 변경되었습니다.
 
 ### 2022. 11. 15.
