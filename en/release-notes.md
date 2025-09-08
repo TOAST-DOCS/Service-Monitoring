@@ -1,12 +1,19 @@
 ## Monitoring > Service Monitoring > Release Notes
 
+### September 9, 2025
+
+#### Feature Updates
+* Exclude monitoring preparation time from monitoring response time
+  * Improved so that when a monitoring preparation error occurs, it is not judged as a monitoring error.
+
 ### May 28, 2024
+
+#### Feature Updates
 * Changed the category for Service Monitoring from Management to Monitoring.
 
 ### November 15, 2022
-* Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
 
-### November 15, 2022
+#### Feature Updates
 * Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
 
 ### December 28, 2021
