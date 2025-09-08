@@ -1,12 +1,13 @@
 ## Monitoring > Service Monitoring > Release Notes
 
 ### May 28, 2024
+
+#### Feature Updates
 * Changed the category for Service Monitoring from Management to Monitoring.
 
 ### November 15, 2022
-* Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
 
-### November 15, 2022
+#### Feature Updates
 * Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
 
 ### December 28, 2021
