@@ -1,5 +1,11 @@
 ## Monitoring > Service Monitoring > Release Notes
 
+### September 9, 2025
+
+#### Feature Updates
+* Exclude monitoring preparation time from monitoring response time
+  * Improved so that when a monitoring preparation error occurs, it is not judged as a monitoring error.
+
 ### May 28, 2024
 
 #### Feature Updates
