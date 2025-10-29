@@ -5,7 +5,7 @@
 #### 기능 개선
 * 웹/TCP 모니터링 DR 리전 지원
 * 모니터링 히스토리 검색 시 DR 리전 옵션 추가
-* Service Monitoring의 DR (Disaster Recovery) 기능 지원
+* Service Monitoring의 DR(disaster recovery) 기능 지원
 
 ### 2025. 09. 09.
 
