@@ -1,5 +1,12 @@
 ## Monitoring > Service Monitoring > リリースノート
 
+### 2025. 11. 11.
+
+#### 機能改善
+* Web/TCPモニタリングのDRリージョンサポート
+* モニタリング履歴の検索時にDRリージョンオプションを追加
+* Service MonitoringのDR(Disaster Recovery)機能サポート
+
 ### 2025. 09. 09.
 
 #### 機能改善
