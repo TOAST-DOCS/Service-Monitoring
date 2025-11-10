@@ -1,5 +1,12 @@
 ## Monitoring > Service Monitoring > Release Notes
 
+### November 11, 2025
+
+#### Feature Updates
+* Supported Web/TCP monitoring DR region
+* Added DR region option when searching monitoring history
+* Supported Disaster Recovery (DR) feature of Service Monitoring
+
 ### September 9, 2025
 
 #### Feature Updates
