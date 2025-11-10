@@ -229,7 +229,7 @@ browserOption | Map\<String, String\> | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_
 scenarioType | Enum | API | API | Y |  | Scenario type
 scenarioName | String | API |  | Y |  | Scenario name
 description | String | API |  | Y |  | Scenario description
-monitoringRegion | Set\<Enum\> | API | KOR, US,KOR2 | Y | KOR | The region to monitor a scenario
+monitoringRegion | Set\<Enum\> | API | KOR, US, KOR2 | Y | KOR | The region to monitor a scenario
 monitoringInterval | Integer | API |  | N (monitoringCron required if this is not used) |  | Monitoring intervals (sec)
 monitoringCron | String | API | [6-digit Cron expression](#cronExpression) | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
 errorLimitCount | Integer | API | 0 or higher integer | Y | 0 | Number of repeat errors allowed
@@ -707,7 +707,7 @@ browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"
 scenarioType | String | API | API | Y |  | Scenario type
 scenarioName | String | API |  | Y |  | Scenario name
 description | String | API |  | Y |  | Scenario description
-monitoringRegion | Set&lt;String&gt; | API | KOR, US,KOR2 | Y | KOR | The region to monitor a scenario
+monitoringRegion | Set&lt;String&gt; | API | KOR, US, KOR2 | Y | KOR | The region to monitor a scenario
 monitoringInterval | Integer | API |  | N (monitoringCron required if this is not used) |  | Monitoring intervals (sec)
 monitoringCron | String | API | [6-digit Cron expression](#cronExpression)  | N (monitoringInterval required if this is not used) |  | Monitoring intervals (Cron expression)
 errorLimitCount | Integer | API | 0 or higher integer | Y | 0 | Number of repeat errors allowed
