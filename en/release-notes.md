@@ -1,5 +1,11 @@
 ## Monitoring > Service Monitoring > Release Notes
 
+### March 24, 2026
+#### Feature Updates
+* Modified the default error tolerance count for web monitoring and TCP monitoring scenarios to 1
+* Improved the web monitoring and TCP monitoring scenarios to prevent false positives by changing the default error tolerance count to 1
+* Removed all US region selection options due to the discontinuation of US region service
+
 ### November 11, 2025
 
 #### Feature Updates
