@@ -620,7 +620,7 @@ browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"
 scenarioType | String | API | API | Y |  | シナリオタイプ
 scenarioName | String | API |  | Y |  | シナリオ名
 description | String | API |  | Y |  | シナリオ説明
-monitoringRegion | Set&lt;String&gt; | API | KOR, US,KOR2 | Y | KOR | シナリオをモニタリングする地域
+monitoringRegion | Set&lt;String&gt; | API | KOR,KOR2 | Y | KOR | シナリオをモニタリングする地域
 monitoringInterval | Integer | API |  | N(使わない場合、monitoringCronが必須) |  | モニタリング間隔(秒)
 monitoringCron | String | API | [6桁のCron式](#cronExpression) | N(使わない場合、monitoringIntervalが必須) |  | モニタリング間隔(Cron式)
 errorLimitCount | Integer | API | 0以上の整数 | Y | 0 | 連続エラー許容回数
