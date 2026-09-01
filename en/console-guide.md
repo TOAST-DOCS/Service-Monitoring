@@ -1,19 +1,26 @@
-## Monitoring > Service Monitoring > Console User Guide
+<!-- pre-align:aligned sig=7fa1af3af52f -->
 
-## Service Management
+<a id="monitoring-service-monitoring-console-user-guide"></a>
+## Monitoring > Service Monitoring > Console User Guide { #monitoring-service-monitoring-console-user-guide }
+
+<a id="service-management"></a>
+## Service Management { #service-management }
 
 You can manage the services to monitor, the targets to propagate failures, and channels.
 
-### Add Service
+<a id="add-service"></a>
+### Add Service { #add-service }
 -  Register monitoring and propagate / manage failure per service . To classify services logically for efficient management, a service tree is provided. 
 - Click the **+Add** button at the top of the service tree to add a service.
 
-### Set Propagation
+<a id="set-propagation"></a>
+### Set Propagation { #set-propagation }
 -  Set the assignee who will receive the propagated failure. 
 - Only those who are registered as project members can be registered.
 - First, register a group, and then select an owner of each group and a channel to receive the propagation information.
 
-### Propagation Group
+<a id="propagation-group"></a>
+### Propagation Group { #propagation-group }
 - When several propagation groups have been registered, if the first failure is detected,
   - the failure is propagated to the first group only. User of the first group can select Propagate to the next group (additional failure propagation) or Stop propagation (not a failure) in the **Propagation Status** page.
   - If a failure is not handled within three hours, the failure is propagated to the next group.
@@ -25,7 +32,8 @@ You can manage the services to monitor, the targets to propagate failures, and c
   - The failure is not propagated nor registered to the Propagation Status.
 
 
-### Propagation Channel
+<a id="propagation-channel"></a>
+### Propagation Channel { #propagation-channel }
 1. **Email**
     - Propagates a failure via email based on the ID registered in the member profile.
 2. **SMS**
@@ -35,14 +43,17 @@ You can manage the services to monitor, the targets to propagate failures, and c
     - In the editor where URL, webhook header, and request data are entered, you can view or use pre-defined variables using the AutoComplete (Ctrl + Space) function.
 
 
-## Propagation Status
+<a id="propagation-status"></a>
+## Propagation Status { #propagation-status }
 - You can check the history of detected and propagated failures.
 - You can use a function that propagates failure to the next group or stops propagation.
 
-## Web monitoring
+<a id="web-monitoring"></a>
+## Web monitoring { #web-monitoring }
 You can monitor all web services which serve via HTTP and HTTPS.
 
-### Scenario Type
+<a id="scenario-type"></a>
+### Scenario Type { #scenario-type }
 - **API Type** 
     - Monitors REST API.
     - You can register a scenario at every 30 seconds or higher.
@@ -55,7 +66,8 @@ You can monitor all web services which serve via HTTP and HTTPS.
     - Provides common features (such as login) for several scenarios. 
     - The module type cannot operate by itself; it only operates as part of the virtual browser type.
 
-### Scenario Verification
+<a id="scenario-verification"></a>
+### Scenario Verification { #scenario-verification }
 
 Scenario is verified in the following way.
 
@@ -67,6 +79,7 @@ Scenario is verified in the following way.
 | Image verification | Verifies whether an image exists on the response screen and it is downloadable or not. | None | Only module and virtual browser types are supported |
 | Propagation Exception Verification | No failure is propagated when a specific text exists in the response data (screen). | None | Used for maintenance |
 
+<a id="scenario-verification-function-support-of-array-data-for-jsonpath-text-verification"></a>
 #### Function Support of Array Data for JsonPath Text Verification
 | Function | Description | Output Type |
 | -- | -- | -- |
@@ -78,11 +91,13 @@ Scenario is verified in the following way.
 | length() | Array Data Count | integer |
 > Functions are available only for such sequence data that are included to a response body 
 
-## TCP monitoring
+<a id="tcp-monitoring"></a>
+## TCP monitoring { #tcp-monitoring }
 
 You can use TCP, UDP, and ICMP protocols for monitoring.
 
-### Scenario Type
+<a id="tcp-monitoring-scenario-type"></a>
+### Scenario Type { #tcp-monitoring-scenario-type }
 - **ICMP Type**
   - You can perform the ping test to monitor the server status.
 
@@ -90,23 +105,27 @@ You can use TCP, UDP, and ICMP protocols for monitoring.
   - Accesses with IP:Port, tests the process from sending data to receiving a response and verifies the response data.
   - It can be used for checking the IP:Port status.
 
-## Batch Monitoring
+<a id="batch-monitoring"></a>
+## Batch Monitoring { #batch-monitoring }
 
 Unlike web monitoring and TCP monitoring, this batch monitoring does not try monitoring directly from the Service Monitoring. Users call the API provided by Service Monitoring and then Service Monitoring verifies API data to determine a failure state.
 
-### Verification Type
+<a id="verification-type"></a>
+### Verification Type { #verification-type }
 - Contents Verification
   - Determines whether failure occurred or not by comparing user-registered scenario in advance with data which are actually sent by users.
 Compares scenario data with actual data using   - JsonPath (https://goessner.net/articles/JsonPath/).
 - Count Verification
   - Determines whether failure occurred or not by comparing the count of user requests with the user-specified count during a specific period of time.
 
-### Usage Example
+<a id="usage-example"></a>
+### Usage Example { #usage-example }
     - A build result from the build server can be sent to the batch monitoring server to monitor the result.
     - Executes the daily batch and then calls the batch monitoring API to monitor whether or not the daily batch has been successfully operated.
 
 
-## Propagation Management
+<a id="propagation-management"></a>
+## Propagation Management { #propagation-management }
 - **Stop Propagation Temporarily** is a function that does not consider known failures (such as distribution) as failures even if this kind of failure occurs.
 - **Stop Propagation Temporarily** can be set for each monitoring.
 - You can set the start and end time. After the specified period, the failure is propagated to the specified propagation group.
