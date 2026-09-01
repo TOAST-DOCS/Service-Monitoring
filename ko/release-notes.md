@@ -1,52 +1,73 @@
-## Monitoring > Service Monitoring > 릴리스 노트
+<!-- pre-align:aligned sig=1a93f00c2c5a -->
 
-### 2026. 03. 24.
+<a id="monitoring-service-monitoring-release-notes"></a>
+## Monitoring > Service Monitoring > 릴리스 노트 { #monitoring-service-monitoring-release-notes }
 
+<a id="march-24-2026"></a>
+### 2026. 03. 24. { #march-24-2026 }
+
+<a id="march-24-2026-feature-updates"></a>
 #### 기능 수정
 * 웹 모니터링, TCP 모니터링 시나리오의 에러 허용 횟수 기본값을 1로 변경
 * 미국 리전 서비스 종료로 미국 리전 선택 옵션 모두 제거
 
-### 2025. 11. 11.
+<a id="november-11-2025"></a>
+### 2025. 11. 11. { #november-11-2025 }
 
+<a id="november-11-2025-feature-updates"></a>
 #### 기능 개선
 * 웹/TCP 모니터링 DR 리전 지원
 * 모니터링 히스토리 검색 시 DR 리전 옵션 추가
 * Service Monitoring의 DR(disaster recovery) 기능 지원
 
-### 2025. 09. 09.
+<a id="september-9-2025"></a>
+### 2025. 09. 09. { #september-9-2025 }
 
+<a id="september-9-2025-feature-updates"></a>
 #### 기능 개선
 * 감시 준비 시간을 감시 응답 시간에서 제외
   * 감시 준비 오류 시 감시 오류로 판단하지 않도록 개선
 
-### 2024. 05. 28.
+<a id="may-28-2024"></a>
+### 2024. 05. 28. { #may-28-2024 }
 
+<a id="may-28-2024-feature-updates"></a>
 #### 기능 개선
 * Service Monitoring 서비스의 노출 위치가 Management에서 Monitoring 카테고리로 변경되었습니다.
 
-### 2022. 11. 15.
+<a id="november-15-2022"></a>
+### 2022. 11. 15. { #november-15-2022 }
 
+<a id="november-15-2022-feature-updates"></a>
 #### 기능 개선
 * 장애 발생 시 전파 채널을 통해 제공하는 알람 페이지 URL의 도메인이 nh.nu로 변경되었습니다.
 
-### 2021. 12. 28.
+<a id="december-28-2021"></a>
+### 2021. 12. 28. { #december-28-2021 }
 
+<a id="december-28-2021-bug-fixes"></a>
 #### 버그 수정
 * 어떤 시나리오의 이름이 31자를 초과하는 경우, 그 시나리오를 포함한 두 개 이상의 시나리오에 대한 히스토리 Excel 파일을 다운로드하지 못하는 문제 수정
 
-### 2021. 07. 27.
+<a id="july-27-2021"></a>
+### 2021. 07. 27. { #july-27-2021 }
 
+<a id="july-27-2021-feature-updates"></a>
 #### 기능 개선
 * 신규 진행 표시줄 적용
 * 보안 개선 사항 적용
 
-### 2021. 04. 27.
+<a id="april-27-2021"></a>
+### 2021. 04. 27. { #april-27-2021 }
 
+<a id="april-27-2021-bug-fixes"></a>
 #### 버그 수정
 * 특정 사용자가 포함되어 있는 프로젝트에서 전파 대상자가 조회되지 않은 문제 수정
 
-### 2021. 03. 23.
+<a id="march-23-2021"></a>
+### 2021. 03. 23. { #march-23-2021 }
 
+<a id="march-23-2021-bug-fixes"></a>
 #### 버그 수정
 * 장애 알림 페이지 검색 조건에 따라 조회되지 않은 문제 수정
 * 장애 알림 페이지에서 리스트 선택시 만료 안내가 표시되는 문제 수정
@@ -54,50 +75,65 @@
 * 히스토리 검색시 시작 시간 포함되지 않았던 문제 수정
 
 
-### 2020. 12. 29.
+<a id="december-29-2020"></a>
+### 2020. 12. 29. { #december-29-2020 }
 
+<a id="december-29-2020-bug-fixes"></a>
 #### 버그 수정
 * 시나리오 관리 오픈 API의 메서드(POST, GET, PUT, DELETE)별로 API 호출의 resultCode와 resultMessage가 다르게 표시되는 문제 수정
 * CloudTrail 이벤트가 항상 USER_CONSOLE로 적용되는 문제 수정
 * CloudTrail PM 변경 이벤트가 PM 등록 이벤트로 등록되는 문제 수정
 
-### 2020. 11. 24.
+<a id="november-24-2020"></a>
+### 2020. 11. 24. { #november-24-2020 }
 
+<a id="november-24-2020-functions-added"></a>
 #### 기능 추가
 * 시나리오 관리를 위한 [수정](/Monitoring/Service%20Monitoring/ko/api-guide/#_15) 오픈 Api 기능 추가
 * 웹훅 요청 파라미터 지원
 * **LINE**의 메시지 발송 웹훅 템플릿 추가
 
-### 2020. 10. 27.
+<a id="october-27-2020"></a>
+### 2020. 10. 27. { #october-27-2020 }
 
+<a id="october-27-2020-bug-fixes"></a>
 #### 버그 수정
 * 오픈 API를 활용하여 시나리오를 생성할 때 requestBody의 url 필드에 '-'문자가 포함될 경우 시나리오가 생성되지 않던 문제 수정
 * 배치 모니터링 시나리오를 생성할 때 검증 정보를 입력하지 않아도 생성 가능했던 문제 수정
 * 웹훅 정보를 수정할 때 요청 데이터의 편집 항목의 내용이 정상적으로 보이지 않던 문제 수정
 
-### 2020. 09. 22.
+<a id="september-22-2020"></a>
+### 2020. 09. 22. { #september-22-2020 }
 
+<a id="september-22-2020-more-features"></a>
 #### 기능 추가
 * 시나리오 관리를 위한 [생성](/Monitoring/Service%20Monitoring/ko/api-guide/#_8), [조회](/Monitoring/Service%20Monitoring/ko/api-guide/#_11), [삭제](/Monitoring/Service%20Monitoring/ko/api-guide/#_13) 오픈 Api 기능 추가
 
-### 2020. 08. 25.
+<a id="august-25-2020"></a>
+### 2020. 08. 25. { #august-25-2020 }
 
+<a id="august-25-2020-bug-fixes"></a>
 #### 버그 수정
 * 배치 모니터링 시나리오를 등록한 후 바로 API를 호출했을 때, 호출 결과가 제대로 반영되지 않는 문제 수정 
 
-### 2020. 07. 28.
+<a id="july-28-2020"></a>
+### 2020. 07. 28. { #july-28-2020 }
 
+<a id="july-28-2020-feature-updates"></a>
 #### 기능 개선
 * 웹 모니터링 동작 최소 단위 변경
   * API 모니터링: 60초 ---> 30초
   * 가상 브라우저, 모듈 모니터링: 120초 ---> 60초
 
+<a id="july-28-2020-bug-fixes"></a>
 #### 버그 수정
 * 배치 모니터링 내용 검증 시 대소문자를 구분하지 않은 문제 수정
 
 
-### 2020. 05. 26.
+<a id="may-26-2020"></a>
+### 2020. 05. 26. { #may-26-2020 }
 
+<a id="may-26-2020-feature-updates"></a>
 #### 기능 개선
 * 웹 모니터링 테스트가 30초 이상 걸릴 경우 실패하는 문제 수정
 * 웹 모니터링 텍스트 검증 시 시나리오 타입, 응답 콘텐츠 타입에 따라 사용할 수 있는 연산자 추가
@@ -110,31 +146,40 @@
 * TOAST CloudTrail 서비스 연동
   * Service Monitoring 콘솔에서 발생한 사용자 이벤트를 TOAST CloudTrail에서 확인 가능
 
-### 2020. 03. 24.
+<a id="march-24-2020"></a>
+### 2020. 03. 24. { #march-24-2020 }
 
+<a id="march-24-2020-feature-updates"></a>
 #### 기능 개선
 * 웹 모니터링 데이터 검증 시 [JsonPath 메서드](/Monitoring/Service%20Monitoring/ko/console-guide/#_9) 제공
 * 이메일 장애 메시지에 _조직명_, _프로젝트명_ 추가
 * [다중 배치 모니터링 검증 API](/Monitoring/Service%20Monitoring/ko/api-guide/#_5) 지원
 * 배치 모니터링 내용 검증 결과 중 실패한 내용 강조 표시
 
-### 2020. 01. 21.
+<a id="january-21-2020"></a>
+### 2020. 01. 21. { #january-21-2020 }
 
+<a id="january-21-2020-feature-updates"></a>
 #### 기능 개선
 * 웹/TCP 모니터링 US 리전 지원
 * 모니터링 히스토리 검색 시 모니터링 리전 옵션 추가
 
-### 2019. 12. 24.
+<a id="december-24-2019"></a>
+### 2019. 12. 24. { #december-24-2019 }
 
+<a id="december-24-2019-feature-updates"></a>
 #### 기능 개선
 * 장애 전파 실패 시 히스토리 상세 내역 메시지 개선
 * 웹 페이지 성능 향상
 
+<a id="december-24-2019-bug-fixes"></a>
 #### 버그 수정
 * 전파 현황 페이지에서 서비스 전파 담당자가 아닌 사용자에게는 전파 내역이 보이지 않는 문제 수정
 
-### 2019. 11. 26.
+<a id="november-26-2019"></a>
+### 2019. 11. 26. { #november-26-2019 }
 
+<a id="november-26-2019-feature-updates"></a>
 #### 기능 개선
 * 전파 현황 페이지에서 전파 상태 정보 분리 노출.
 * 사용자 언어가 영어일 경우 일부 UI가 깨지는 현상 수정.
@@ -143,23 +188,29 @@
   * [시나리오 검증 타입]에 따라 텍스트 검증 연산자 노출 제한.
   * [시나리오 검증 타입]이 모듈일 경우에도 **스크립트 에러무시**, **이미지 다운로드 제외**, **CSS 활성화** 옵션을 사용할 수 있도록 개선.
 
+<a id="november-26-2019-bug-fixes"></a>
 #### 버그 수정
 * [장애 전파 취소 안내] 메일 전송시 각 메일 내의 취소한 사용자 이름 대산 수신자 이름으로 전달되는 문제 수정.
 
-### 2019. 08. 27.
+<a id="august-27-2019"></a>
+### 2019. 08. 27. { #august-27-2019 }
 
+<a id="august-27-2019-feature-updates"></a>
 #### 기능 개선
 * 일본어 글꼴을 TOAST 공통 글꼴로 변경하였습니다.
 * TCP 모니터링 시나리오 편집 화면에서 IP, PORT 입력 레이블을 분리해 가독성을 향상했습니다.
 
+<a id="august-27-2019-bug-fixes"></a>
 #### 버그 수정
 * [전파 상세 보기] 화면에서 시간이 제대로 표시되지 않는 문제를 개선하였습니다.
 * 모니터링 장애를 등록할 때, 시나리오 저장 시 설정한 언어로 전파 제목이 등록되도록 개선하였습니다.
 * 장애 전파 메시지에서 장애 알림 페이지에 접속할 때, 만료되지 않았음에도 만료되었다고 나오는 현상을 개선하였습니다.
 * 일본어 장애 전파 메시지의 제목이 잘못 추가되는 문제를 개선하였습니다.
 
-### 2019. 07. 23.
+<a id="july-23-2019"></a>
+### 2019. 07. 23. { #july-23-2019 }
 
+<a id="july-23-2019-new-service-release"></a>
 #### 신규 서비스 출시
 Service Monitoring은 안정적인 서비스 운영을 위한 서비스 장애 관리 플랫폼입니다. 
 	* 서비스별 전파 담당자, 전파 채널 관리
