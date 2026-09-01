@@ -1,10 +1,14 @@
-## Monitoring > Service Monitoring > 개요
+<!-- pre-align:aligned sig=412d417c2f49 -->
+
+<a id="monitoring-service-monitoring-overview"></a>
+## Monitoring > Service Monitoring > 개요 { #monitoring-service-monitoring-overview }
 
 Service Monitoring은 안정적인 서비스 운영을 위한 서비스 장애 관리 플랫폼입니다. 
 - 제공하는 모니터링 도구 사용하여 빠르게 장애를 감지할 수 있습니다.
 - 제공하는 전파 관리 도구를 사용하여 서비스 담당자에게 신속하게 장애를 전파할 수 있습니다.
 
-## 주요 기능
+<a id="key-features"></a>
+## 주요 기능 { #key-features }
 - 서비스별 담당자 그룹 및 전파 채널을 관리할 수 있습니다.
 - 전파 채널은 Email, SMS, 웹훅(사용자 변경 가능)을 지원합니다.
 - 웹 서비스 모니터링을 지원하며, API 및 웹 페이지를 모니터링할 수 있습니다.

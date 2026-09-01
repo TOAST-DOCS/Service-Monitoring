@@ -1,19 +1,26 @@
-## Monitoring > Service Monitoring > コンソール使用ガイド
+<!-- pre-align:aligned sig=7fa1af3af52f -->
 
-## サービス管理
+<a id="monitoring-service-monitoring-console-user-guide"></a>
+## Monitoring > Service Monitoring > コンソール使用ガイド { #monitoring-service-monitoring-console-user-guide }
+
+<a id="service-management"></a>
+## サービス管理 { #service-management }
 
 監視するサービス、障害を通知する対象とチャンネルなどを管理できます。
 
-### サービス追加
+<a id="add-service"></a>
+### サービス追加 { #add-service }
 - サービスごとにモニタリングを登録し、障害の通知、管理を行います。適切に障害通知をすることができるよう、サービスを区分して登録しておくことができます。
 - サービス一覧上部の**+追加**ボタンをクリックすると、サービスを追加できます。
 
-### 配信設定
+<a id="set-propagation"></a>
+### 配信設定 { #set-propagation }
 - 障害の配信を受信する担当者を設定します。 
 - プロジェクトメンバーに登録されたユーザーのみ登録できます。
 - 先にグループを登録し、グループ別担当者、受信するチャンネルを選択します。
 
-### 配信グループ
+<a id="propagation-group"></a>
+### 配信グループ { #propagation-group }
 - 複数の配信グループを登録した場合、最初に障害を検知した場合
     - 最初のグループにのみ障害が配信されます。最初のグループのユーザーが**配信状況**ページで次のグループに配信(追加の障害配信)または配信中止(障害ではない)を選択できます。
     - 3時間、発生した障害を処理しない場合、自動的に次のグループに障害が配信されます。
@@ -25,7 +32,8 @@
     - 障害が配信されず、配信状況にも登録されません。
 
 
-### 配信チャンネル
+<a id="propagation-channel"></a>
+### 配信チャンネル { #propagation-channel }
 1. **Email**
     - 会員情報に登録したIDを基準に、障害をメールで配信します。
 2. **SMS**
@@ -35,14 +43,17 @@
     - URL、Webフックヘッダ、リクエストデータ入力エディタで、自動コンプリート(Ctrl + Space)機能を使用し、定義されている変数を確認し、使用することができます。
 
 
-## 配信状況
+<a id="propagation-status"></a>
+## 配信状況 { #propagation-status }
 - 検知および通知された障害履歴を確認できます。
 - 次のグループに障害を通知または通知を中止する機能を使用できます。
 
-## Webモニタリング
+<a id="web-monitoring"></a>
+## Webモニタリング { #web-monitoring }
 HTTP、HTTPSでサービスを提供するすべてのウェブサービスを監視できます。
 
-### シナリオタイプ
+<a id="scenario-type"></a>
+### シナリオタイプ { #scenario-type }
 - **APIタイプ** 
     - REST APIをモニタリングします。
     - 最短30秒周期でシナリオを登録できます。
@@ -55,7 +66,8 @@ HTTP、HTTPSでサービスを提供するすべてのウェブサービスを�
     - 複数のシナリオで共通して必要な機能(ログインなど)を提供します。 
     - モジュールタイプ単独で動作できず、仮想ブラウザタイプに含まれて動作します。
 
-### シナリオ検証
+<a id="scenario-verification"></a>
+### シナリオ検証 { #scenario-verification }
 
 シナリオの検証方式は次のとおりです。
 
@@ -68,11 +80,18 @@ HTTP、HTTPSでサービスを提供するすべてのウェブサービスを�
 | 配信除外検証 | レスポンスデータ(画面)に特定テキストが存在する場合、障害を配信しない | なし | メンテナンス時に使用 |
 
 
-## TCPモニタリング
+<a id="scenario-verification-function-support-of-array-data-for-jsonpath-text-verification"></a>
+#### JsonPathを使用したテキスト検証時の配列データに対する関数サポート
+
+<!-- TODO: translate body -->
+
+<a id="tcp-monitoring"></a>
+## TCPモニタリング { #tcp-monitoring }
 
 TCP、UDP、ICMPプロトコルを活用して監視できます。
 
-### シナリオタイプ
+<a id="tcp-monitoring-scenario-type"></a>
+### シナリオタイプ { #tcp-monitoring-scenario-type }
 - **ICMPタイプ**
   - サーバーの状態を監視するためのpingテストを実行します。
 
@@ -80,23 +99,27 @@ TCP、UDP、ICMPプロトコルを活用して監視できます。
   - IP：ポートに接続した後、データを転送し、レスポンスを受けるプロセスをテストし、返されたデータを検証します。
   - IP：ポートの状態を確認する用途でも使用できます。
 
-## バッチモニタリング
+<a id="batch-monitoring"></a>
+## バッチモニタリング { #batch-monitoring }
 
 Webモニタリング、TCPモニタリングとは異なり、Service Monitoringで直接モニタリングを行うのではなく、Service Monitoringで提供するAPIをユーザーが呼び出し、APIのデータをService Monitoringで検証して、障害かどうかを判断します。
 
-### 検証方式
+<a id="verification-type"></a>
+### 検証方式 { #verification-type }
 - 内容検証
   - ユーザーが事前に登録したシナリオで、実際にユーザーが転送したデータと比較して障害かどうかを判断します。
   - JsonPath(https://goessner.net/articles/JsonPath/)方式を使用して、シナリオデータと実際のデータを比較します。
 - 回数検証
   - 特定時間中のユーザーのリクエスト回数を確認し、ユーザーが設定した回数と比較して障害かどうかを判断します。
 
-### 使用例
+<a id="usage-example"></a>
+### 使用例 { #usage-example }
     - ビルドサーバーのビルド結果をバッチモニタリングに転送して、ビルド結果を監視できます。
     - 毎日バッチを実行した後にバッチモニタリングAPIを呼び出し、毎日バッチの成否および動作を監視できます。
 
 
-## 配信管理
+<a id="propagation-management"></a>
+## 配信管理 { #propagation-management }
 - **一時的配信中止**にしている配信のように、すでに認知している障害の場合は、障害が発生しても障害と静観させるようにすることができます。
 - **一時的配信中止**は、モニタリングごとに設定できます。
 - 開始時間と終了時間を設定でき、設定した時間が経過した後に障害が発生すると、設定された配信グループに障害が通知されます。

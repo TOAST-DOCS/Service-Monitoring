@@ -1,19 +1,26 @@
-## Monitoring > Service Monitoring > 콘솔 사용 가이드
+<!-- pre-align:aligned sig=7fa1af3af52f -->
 
-## 서비스 관리
+<a id="monitoring-service-monitoring-console-user-guide"></a>
+## Monitoring > Service Monitoring > 콘솔 사용 가이드 { #monitoring-service-monitoring-console-user-guide }
+
+<a id="service-management"></a>
+## 서비스 관리 { #service-management }
 
 모니터링할 서비스, 장애를 전파할 대상과 채널 등을 관리할 수 있습니다.
 
-### 서비스 추가
+<a id="add-service"></a>
+### 서비스 추가 { #add-service }
 - 서비스별로 모니터링을 등록하고 장애를 전파하고 관리합니다. 따라서 서비스를 논리적으로 잘 구분해 관리할 수 있도록 서비스 트리를 제공합니다. 
 - 서비스 트리 상단의 **+추가** 버튼을 클릭하면 서비스를 추가할 수 있습니다.
 
-### 전파 설정
+<a id="set-propagation"></a>
+### 전파 설정 { #set-propagation }
 - 장애를 전파받을 담당자를 설정합니다. 
 - 프로젝트 멤버로 등록된 사용자만 등록할 수 있습니다.
 - 먼저 그룹을 등록하고, 그룹별 담당자, 전파받을 채널을 선택합니다.
 
-### 전파 그룹
+<a id="propagation-group"></a>
+### 전파 그룹 { #propagation-group }
 - 여러 전파 그룹을 등록한 경우, 최초 장애를 감지한 경우
   - 첫 번째 그룹에만 장애가 전파됩니다. 첫 번째 그룹의 사용자가 **전파 현황** 페이지에서 다음 그룹으로 전파(추가적인 장애 전파) 또는 전파 중지(장애 아님)를 선택할 수 있습니다.
   - 3시간 동안 발생한 장애를 처리하지 않으면 자동으로 다음 그룹으로 장애가 전파됩니다.
@@ -25,7 +32,8 @@
   - 장애가 전파되지 않고, 전파 현황에도 등록되지 않습니다.
 
 
-### 전파 채널
+<a id="propagation-channel"></a>
+### 전파 채널 { #propagation-channel }
 1. **Email**
     - 회원 정보에 등록한 아이디를 기준으로 장애를 이메일로 전파합니다.
 2. **SMS**
@@ -35,14 +43,17 @@
     - URL, 웹훅 헤더, 요청 데이터 입력 에디터에서 자동 완성(Ctrl + Space) 기능을 사용해 미리 정의된 변수를 확인하거나 사용할 수 있습니다.
 
 
-## 전파 현황
+<a id="propagation-status"></a>
+## 전파 현황 { #propagation-status }
 - 감지 및 전파된 장애 이력을 확인할 수 있습니다.
 - 다음 그룹으로 장애를 전파하거나 중지하는 기능을 사용할 수 있습니다.
 
-## 웹 모니터링
+<a id="web-monitoring"></a>
+## 웹 모니터링 { #web-monitoring }
 HTTP, HTTPS를 통해 서비스를 제공하는 모든 웹 서비스를 모니터링할 수 있습니다.
 
-### 시나리오 타입
+<a id="scenario-type"></a>
+### 시나리오 타입 { #scenario-type }
 - **API 타입** 
     - REST API를 모니터링합니다.
     - 최소 30초 주기로 시나리오를 등록할 수 있습니다.
@@ -55,7 +66,8 @@ HTTP, HTTPS를 통해 서비스를 제공하는 모든 웹 서비스를 모니�
     - 여러 시나리오에서 공통으로 필요한 기능(로그인 등)을 제공합니다. 
     - 모듈 타입 단독으로 동작할 수 없으며, 가상 브라우저 타입에 포함되어 동작합니다.
 
-### 시나리오 검증
+<a id="scenario-verification"></a>
+### 시나리오 검증 { #scenario-verification }
 
 시나리오 검증 방식은 다음과 같습니다.
 
@@ -67,6 +79,7 @@ HTTP, HTTPS를 통해 서비스를 제공하는 모든 웹 서비스를 모니�
 | 이미지 검증 | 응답 화면에 이미지가 존재하고, 다운로드 가능 여부 검증 | 없음 | 모듈, 가상 브라우저 타입만 지원 |
 | 전파 제외 검증 | 응답 데이터(화면)에 특정 텍스트가 존재할 경우 장애 전파를 하지 않음 | 없음 | 점검 시 사용 |
 
+<a id="scenario-verification-function-support-of-array-data-for-jsonpath-text-verification"></a>
 #### JsonPath를 사용하여 텍스트 검증 시 배열 데이터에 대한 함수 지원
 | 함수 | 설명 | 출력 타입 |
 | -- | -- | -- |
@@ -79,11 +92,13 @@ HTTP, HTTPS를 통해 서비스를 제공하는 모든 웹 서비스를 모니�
 > 응답 바디에 포함된 배열 데이터만 함수 사용 가능
 
 
-## TCP 모니터링
+<a id="tcp-monitoring"></a>
+## TCP 모니터링 { #tcp-monitoring }
 
 TCP, UDP, ICMP 프로토콜을 활용하여 모니터링할 수 있습니다.
 
-### 시나리오 타입
+<a id="tcp-monitoring-scenario-type"></a>
+### 시나리오 타입 { #tcp-monitoring-scenario-type }
 - **ICMP 타입**
   - 서버의 상태를 모니터링하기 위한 ping 테스트를 진행할 수 있습니다.
 
@@ -91,11 +106,13 @@ TCP, UDP, ICMP 프로토콜을 활용하여 모니터링할 수 있습니다.
   - IP:Port로 접속한 후, 데이터를 전송하고 응답받는 과정을 테스트하고 응답받은 데이터를 검증합니다.
   - IP:Port의 상태를 확인하는 용도로도 사용할 수 있습니다.
 
-## 배치 모니터링
+<a id="batch-monitoring"></a>
+## 배치 모니터링 { #batch-monitoring }
 
 웹 모니터링, TCP 모니터링과는 달리 Service Monitoring에서 직접 모니터링을 시도하는 것이 아니라, Service Monitoring에서 제공하는 API를 사용자가 호출하고 API의 데이터를 Service Monitoring에서 검증하여 장애 여부를 판단합니다.
 
-### 검증 방식
+<a id="verification-type"></a>
+### 검증 방식 { #verification-type }
 - 내용 검증
   - 사용자가 사전에 등록한 시나리오로 실제 사용자가 전송한 데이터와 비교해 장애 여부를 판단합니다.
   - JsonPath(https://goessner.net/articles/JsonPath/) 방식을 사용해 시나리오 데이터와 실제 데이터를 비교합니다.
@@ -103,12 +120,14 @@ TCP, UDP, ICMP 프로토콜을 활용하여 모니터링할 수 있습니다.
   - 특정 시간 동안 사용자의 요청 횟수를 확인해 사용자가 설정한 횟수와 비교해 장애 여부를 판단합니다.
 
 
-### 사용 예
+<a id="usage-example"></a>
+### 사용 예 { #usage-example }
     - 빌드 서버의 빌드 결과를 배치 모니터링으로 전송하여, 빌드 결과를 모니터링할 수 있습니다.
     - 일간 배치를 실행한 후 배치 모니터링 API를 호출하도록 하여, 일간 배치의 성공 여부 및 동작 여부를 모니터링할 수 있습니다.
 
 
-## 전파 관리
+<a id="propagation-management"></a>
+## 전파 관리 { #propagation-management }
 - **일시적 전파 중지**란 배포와 같이 이미 알고 있는 장애라면, 장애가 발생해도 장애로 판단하지 않게 하는 기능입니다.
 - **일시적 전파 중지**는 각 모니터링별로 설정할 수 있습니다.
 - 시작 시간과 종료 시간을 설정할 수 있으며 설정한 시간이 지난 후에는 장애가 발생하면 설정된 전파 그룹으로 장애가 전파됩니다.

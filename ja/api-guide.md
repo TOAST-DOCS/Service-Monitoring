@@ -1,13 +1,19 @@
-## Monitoring > Service Monitoring > APIガイド
+<!-- pre-align:aligned sig=409e2cd0ee43 -->
 
-### 基本情報
+<a id="monitoring-service-monitoring-api-guide"></a>
+## Monitoring > Service Monitoring > APIガイド { #monitoring-service-monitoring-api-guide }
+
+<a id="basic-information"></a>
+### 基本情報 { #basic-information }
 ```
 API Endpoint: https://api-service-monitoring.cloud.toast.com
 ```
 
-## バッチモニタリング
+<a id="single-batch-monitoring"></a>
+## バッチモニタリング { #single-batch-monitoring }
 
-### データ転送
+<a id="data-transfer"></a>
+### データ転送 { #data-transfer }
 - バッチモニタリングサーバーに、検証が必要なデータを転送します。
 - バッチモニタリングに入力した検証情報に基づいたJSONタイプのデータを転送することができ、バッチモニタリングの検証に失敗した場合は障害に登録されます。
 
@@ -32,6 +38,7 @@ Content-Type: application/json
 ```
 
 
+<a id="data-transfer-response"></a>
 #### レスポンス
 ```json
 {
@@ -70,9 +77,26 @@ Content-Type: application/json
 | body.serviceCode | Integer | サービス固有コード |
 
 
-## シナリオ作成
+<a id="multiple-batch-monitoring"></a>
+## マルチバッチモニタリング { #multiple-batch-monitoring }
 
-### データ転送
+<!-- TODO: translate body -->
+
+<a id="multiple-batch-monitoring-data-transfer"></a>
+### データ転送 { #multiple-batch-monitoring-data-transfer }
+
+<!-- TODO: translate body -->
+
+<a id="multiple-batch-monitoring-data-transfer-response"></a>
+#### レスポンス
+
+<!-- TODO: translate body -->
+
+<a id="create-scenario"></a>
+## シナリオ作成 { #create-scenario }
+
+<a id="create-scenario-data-transfer"></a>
+### データ転送 { #create-scenario-data-transfer }
 - サービスモニタリングサーバーへシナリオ作成をリクエストする時、必要なデータを転送します。
 
 [URL]
@@ -189,6 +213,7 @@ validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) | 
 5 | 曜日 | Y | 1-7 or SUN-SAT | , - * ? / L #
 6 | 年度 | N | 1970-2099 | , - * /
 
+<a id="create-scenario-data-transfer-response"></a>
 #### レスポンス
 ```json
 {
@@ -285,7 +310,8 @@ body.validation.textValidation.textValidationInfo.operator  |  String  | 文字�
 body.validation.textValidation.textValidationInfo.expression  |  String  | 検証が必要な文字列
 body.validation.textValidation.textValidationInfo.operand  |  String  |  期待値
 
-## 登録されたシナリオ照会
+<a id="query-registered-scenario"></a>
+## 登録されたシナリオ照会 { #query-registered-scenario }
 
 [URL]
 ```http
@@ -306,6 +332,7 @@ Content-Type: application/json
 | appKey | String | Required | サービスAppkey(**サービス管理**タブで確認可能) |
 | scenarioId | String | Required | シナリオID |
 
+<a id="query-registered-scenario-response"></a>
 #### レスポンス
 ```json
 {
@@ -416,7 +443,8 @@ body.validation.textValidation.textValidationInfo.operand | String  |  API、WEB
 body.validation.responseValidation.position | Integer | TCP、UDP | Responseで検証する文字列が始まる位置
 body.validation.responseValidation.validationText | String | TCP、UDP | Responseで検証する文字列
 
-## 登録されたシナリオ削除
+<a id="delete-registered-scenario"></a>
+## 登録されたシナリオ削除 { #delete-registered-scenario }
 
 [URL]
 ```http
@@ -437,6 +465,7 @@ Content-Type: application/json
 | appKey | String | Required | サービスAppkey(**サービス管理**タブで確認可能) |
 | scenarioId | String | Required | シナリオID |
 
+<a id="delete-registered-scenario-response"></a>
 #### レスポンス
 ```json
 {
@@ -547,9 +576,11 @@ body.validation.textValidation.textValidationInfo.operand | String  |  API、WEB
 body.validation.responseValidation.position | Integer | TCP、UDP | Responseで検証する文字列が始まる位置
 body.validation.responseValidation.validationText | String | TCP、UDP | Responseで検証する文字列
 
-## シナリオ修正
+<a id="scenario-modification"></a>
+## シナリオ修正 { #scenario-modification }
 
-### データ転送
+<a id="scenario-modification-data-transfer"></a>
+### データ転送 { #scenario-modification-data-transfer }
 - サービスモニタリングサーバーへシナリオの修正をリクエストする時、必要なデータを転送します。
 
 [URL]
@@ -652,6 +683,7 @@ validation.textValidation.textValidationInfo.operator | String | API | CONTAINS�
 validation.textValidation.textValidationInfo.expression | String | API |  | Y |  | 検証が必要な文字列
 validation.textValidation.textValidationInfo.operand | String | API |  | Y(N) |  | 期待値
 
+<a id="scenario-modification-data-transfer-response"></a>
 #### レスポンス
 ```json
 {
