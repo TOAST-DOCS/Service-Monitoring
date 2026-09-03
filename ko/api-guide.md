@@ -241,7 +241,7 @@ browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"
 scenarioType | String | API | API | Y |  | 시나리오 타입
 scenarioName | String | API |  | Y |  | 시나리오 이름
 description | String | API |  | Y |  | 시나리오 설명
-monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | 시나리오를 모니터링할 지역
+monitoringRegion | Set&lt;String&gt; | API | KOR, KOR2 | Y | KOR | 시나리오를 모니터링할 지역
 monitoringInterval | Integer | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격(초)
 monitoringCron | String | API | [6자리의 Cron 표현식](#cronExpression) | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
 errorLimitCount | Integer | API | 0 이상의 정수 | Y | 0 | 연속 오류 허용 횟수
@@ -726,7 +726,7 @@ browserOption | Map&lt;String, String&gt; | API | {"OPT_LOCALE" : "kr"} | N | {"
 scenarioType | String | API | API | Y |  | 시나리오 타입
 scenarioName | String | API |  | Y |  | 시나리오 이름
 description | String | API |  | Y |  | 시나리오 설명
-monitoringRegion | Set&lt;String&gt; | API | KOR, US | Y | KOR | 시나리오를 모니터링할 지역
+monitoringRegion | Set&lt;String&gt; | API | KOR, KOR2 | Y | KOR | 시나리오를 모니터링할 지역
 monitoringInterval | Integer | API |  | N(쓰지 않을 경우 monitoringCron이 필수) |  | 모니터링 간격(초)
 monitoringCron | String | API | [6자리의 Cron 표현식](#cronExpression) | N(쓰지 않을 경우 monitoringInterval이 필수) |  | 모니터링 간격(Cron 표현식)
 errorLimitCount | Integer | API | 0 이상의 정수 | Y | 0 | 연속 오류 허용 횟수

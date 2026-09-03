@@ -3,16 +3,43 @@
 <a id="monitoring-service-monitoring-release-notes"></a>
 ## Monitoring > Service Monitoring > リリースノート { #monitoring-service-monitoring-release-notes }
 
+<a id="march-24-2026"></a>
+### 2026. 03. 24. { #march-24-2026 }
+
+<a id="march-24-2026-feature-updates"></a>
+#### 機能改善
+* Webモニタリング、TCPモニタリングシナリオのエラー許容回数のデフォルト値を1に変更
+* 米国リージョンのサービス終了に伴い、米国リージョン選択オプションをすべて削除
+
+<a id="november-11-2025"></a>
+### 2025. 11. 11. { #november-11-2025 }
+
+<a id="november-11-2025-feature-updates"></a>
+#### 機能改善
+* Web/TCPモニタリングのDRリージョンサポート
+* モニタリング履歴の検索時にDRリージョンオプションを追加
+* Service MonitoringのDR(Disaster Recovery)機能サポート
+
+<a id="september-9-2025"></a>
+### 2025. 09. 09. { #september-9-2025 }
+
+<a id="september-9-2025-feature-updates"></a>
+#### 機能改善
+* 監視準備時間を監視レスポンス時間から除外
+  * 監視準備エラーが発生した場合に、監視エラーと判定しないように改善
+
 <a id="may-28-2024"></a>
 ### 2024. 05. 28. { #may-28-2024 }
+
+<a id="may-28-2024-feature-updates"></a>
+#### 機能改善
 * Service Monitoring サービスの表示位置がManagementからMonitoringカテゴリーに変更されました。
 
 <a id="november-15-2022"></a>
 ### 2022. 11. 15. { #november-15-2022 }
-* 障害発生時、配信チャンネルを通じて提供するアラームページURLのドメインがnh.nuに変更されました。
 
-<a id="monitoring-service-monitoring-release-notes-november-15-2022"></a>
-### 2022. 11. 15. { #monitoring-service-monitoring-release-notes-november-15-2022 }
+<a id="november-15-2022-feature-updates"></a>
+#### 機能改善
 * 障害発生時、配信チャンネルを通じて提供するアラームページURLのドメインがnh.nuに変更されました。
 
 <a id="december-28-2021"></a>

@@ -3,16 +3,43 @@
 <a id="monitoring-service-monitoring-release-notes"></a>
 ## Monitoring > Service Monitoring > 릴리스 노트 { #monitoring-service-monitoring-release-notes }
 
+<a id="march-24-2026"></a>
+### 2026. 03. 24. { #march-24-2026 }
+
+<a id="march-24-2026-feature-updates"></a>
+#### 기능 수정
+* 웹 모니터링, TCP 모니터링 시나리오의 에러 허용 횟수 기본값을 1로 변경
+* 미국 리전 서비스 종료로 미국 리전 선택 옵션 모두 제거
+
+<a id="november-11-2025"></a>
+### 2025. 11. 11. { #november-11-2025 }
+
+<a id="november-11-2025-feature-updates"></a>
+#### 기능 개선
+* 웹/TCP 모니터링 DR 리전 지원
+* 모니터링 히스토리 검색 시 DR 리전 옵션 추가
+* Service Monitoring의 DR(disaster recovery) 기능 지원
+
+<a id="september-9-2025"></a>
+### 2025. 09. 09. { #september-9-2025 }
+
+<a id="september-9-2025-feature-updates"></a>
+#### 기능 개선
+* 감시 준비 시간을 감시 응답 시간에서 제외
+  * 감시 준비 오류 시 감시 오류로 판단하지 않도록 개선
+
 <a id="may-28-2024"></a>
 ### 2024. 05. 28. { #may-28-2024 }
+
+<a id="may-28-2024-feature-updates"></a>
+#### 기능 개선
 * Service Monitoring 서비스의 노출 위치가 Management에서 Monitoring 카테고리로 변경되었습니다.
 
 <a id="november-15-2022"></a>
 ### 2022. 11. 15. { #november-15-2022 }
-* 장애 발생 시 전파 채널을 통해 제공하는 알람 페이지 URL의 도메인이 nh.nu로 변경되었습니다.
 
-<a id="monitoring-service-monitoring-release-notes-november-15-2022"></a>
-### 2022. 11. 15. { #monitoring-service-monitoring-release-notes-november-15-2022 }
+<a id="november-15-2022-feature-updates"></a>
+#### 기능 개선
 * 장애 발생 시 전파 채널을 통해 제공하는 알람 페이지 URL의 도메인이 nh.nu로 변경되었습니다.
 
 <a id="december-28-2021"></a>

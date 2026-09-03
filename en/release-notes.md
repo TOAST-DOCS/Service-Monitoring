@@ -3,16 +3,44 @@
 <a id="monitoring-service-monitoring-release-notes"></a>
 ## Monitoring > Service Monitoring > Release Notes { #monitoring-service-monitoring-release-notes }
 
+<a id="march-24-2026"></a>
+### March 24, 2026 { #march-24-2026 }
+
+<a id="march-24-2026-feature-updates"></a>
+#### Feature Updates
+* Modified the default error tolerance count for web monitoring and TCP monitoring scenarios to 1
+* Improved the web monitoring and TCP monitoring scenarios to prevent false positives by changing the default error tolerance count to 1
+* Removed all US region selection options due to the discontinuation of US region service
+
+<a id="november-11-2025"></a>
+### November 11, 2025 { #november-11-2025 }
+
+<a id="november-11-2025-feature-updates"></a>
+#### Feature Updates
+* Supported Web/TCP monitoring DR region
+* Added DR region option when searching monitoring history
+* Supported Disaster Recovery (DR) feature of Service Monitoring
+
+<a id="september-9-2025"></a>
+### September 9, 2025 { #september-9-2025 }
+
+<a id="september-9-2025-feature-updates"></a>
+#### Feature Updates
+* Exclude monitoring preparation time from monitoring response time
+  * Improved so that when a monitoring preparation error occurs, it is not judged as a monitoring error.
+
 <a id="may-28-2024"></a>
 ### May 28, 2024 { #may-28-2024 }
+
+<a id="may-28-2024-feature-updates"></a>
+#### Feature Updates
 * Changed the category for Service Monitoring from Management to Monitoring.
 
 <a id="november-15-2022"></a>
 ### November 15, 2022 { #november-15-2022 }
-* Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
 
-<a id="monitoring-service-monitoring-release-notes-november-15-2022"></a>
-### November 15, 2022 { #monitoring-service-monitoring-release-notes-november-15-2022 }
+<a id="november-15-2022-feature-updates"></a>
+#### Feature Updates
 * Changed the domain of a notification page URL to nh.nu that is provided via transmission channels in case of failure.
 
 <a id="december-28-2021"></a>
