@@ -83,7 +83,15 @@ HTTP、HTTPSでサービスを提供するすべてのウェブサービスを�
 <a id="scenario-verification-function-support-of-array-data-for-jsonpath-text-verification"></a>
 #### JsonPath を使用したテキスト検証時の配列データに対する関数サポート
 
-<!-- TODO: translate body -->
+| 関数 | 説明 | 出力タイプ |
+| -- | -- | -- |
+| min() | 配列データの最小値 | double | 
+| max() | 配列データの最大値 | double | 
+| sum() | 配列データの合計 | double | 
+| avg() | 配列データの平均値 | double | 
+| stddev() | 配列データの標準偏差 | double | 
+| length() | 配列データの件数 | integer | 
+> レスポンスボディに含まれる配列データのみ関数を使用できます。
 
 <a id="tcp-monitoring"></a>
 ## TCPモニタリング { #tcp-monitoring }
