@@ -89,7 +89,7 @@
 
 <a id="november-24-2020-functions-added"></a>
 #### 기능 추가
-* 시나리오 관리를 위한 [수정](/Monitoring/Service%20Monitoring/ko/api-guide/#_15) 오픈 Api 기능 추가
+* 시나리오 관리를 위한 [수정](/Monitoring/Service%20Monitoring/ko/api-guide/#scenario-modification) 오픈 Api 기능 추가
 * 웹훅 요청 파라미터 지원
 * **LINE**의 메시지 발송 웹훅 템플릿 추가
 
@@ -107,7 +107,7 @@
 
 <a id="september-22-2020-more-features"></a>
 #### 기능 추가
-* 시나리오 관리를 위한 [생성](/Monitoring/Service%20Monitoring/ko/api-guide/#_8), [조회](/Monitoring/Service%20Monitoring/ko/api-guide/#_11), [삭제](/Monitoring/Service%20Monitoring/ko/api-guide/#_13) 오픈 Api 기능 추가
+* 시나리오 관리를 위한 [생성](/Monitoring/Service%20Monitoring/ko/api-guide/#create-scenario), [조회](/Monitoring/Service%20Monitoring/ko/api-guide/#query-registered-scenario), [삭제](/Monitoring/Service%20Monitoring/ko/api-guide/#delete-registered-scenario) 오픈 Api 기능 추가
 
 <a id="august-25-2020"></a>
 ### 2020. 08. 25. { #august-25-2020 }
@@ -151,9 +151,9 @@
 
 <a id="march-24-2020-feature-updates"></a>
 #### 기능 개선
-* 웹 모니터링 데이터 검증 시 [JsonPath 메서드](/Monitoring/Service%20Monitoring/ko/console-guide/#_9) 제공
+* 웹 모니터링 데이터 검증 시 [JsonPath 메서드](/Monitoring/Service%20Monitoring/ko/console-guide/#scenario-verification-function-support-of-array-data-for-jsonpath-text-verification) 제공
 * 이메일 장애 메시지에 _조직명_, _프로젝트명_ 추가
-* [다중 배치 모니터링 검증 API](/Monitoring/Service%20Monitoring/ko/api-guide/#_5) 지원
+* [다중 배치 모니터링 검증 API](./api-guide/#_5) 지원
 * 배치 모니터링 내용 검증 결과 중 실패한 내용 강조 표시
 
 <a id="january-21-2020"></a>

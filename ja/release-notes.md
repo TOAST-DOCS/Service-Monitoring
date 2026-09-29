@@ -88,7 +88,7 @@
 
 <a id="november-24-2020-functions-added"></a>
 #### 機能追加
-* シナリオを管理するための[修正](/Monitoring/Service%20Monitoring/ja/api-guide/#_15)オープンApi機能を追加
+* シナリオを管理するための[修正](/Monitoring/Service%20Monitoring/ja/api-guide/#scenario-modification)オープンApi機能を追加
 * Webフックリクエストパラメータをサポート
 * **LINE**のメッセージ送信Webフックテンプレートを追加
 
@@ -106,7 +106,7 @@
 
 <a id="september-22-2020-more-features"></a>
 #### 機能追加
-* シナリオ管理用の[作成](/Monitoring/Service%20Monitoring/ja/api-guide/#_8)、[照会](/Monitoring/Service%20Monitoring/ja/api-guide/#_11)、[削除](/Monitoring/Service%20Monitoring/ja/api-guide/#_13) Open API機能を追加
+* シナリオ管理用の[作成](/Monitoring/Service%20Monitoring/ja/api-guide/#create-scenario)、[照会](/Monitoring/Service%20Monitoring/ja/api-guide/#query-registered-scenario)、[削除](/Monitoring/Service%20Monitoring/ja/api-guide/#delete-registered-scenario) Open API機能を追加
 
 <a id="august-25-2020"></a>
 ### 2020. 08. 25. { #august-25-2020 }
@@ -150,9 +150,9 @@
 <a id="march-24-2020-feature-updates"></a>
 #### 機能改善
 
-* Webモニタリングのデータ検証時に [JsonPath メソッド](/Monitoring/Service%20Monitoring/ja/console-guide/#_9) を提供
+* Webモニタリングのデータ検証時に [JsonPath メソッド](/Monitoring/Service%20Monitoring/ja/console-guide/#scenario-verification-function-support-of-array-data-for-jsonpath-text-verification) を提供
 * メール障害メッセージに _組織名_、_プロジェクト名_ を追加
-* [複数バッチモニタリング検証 API](/Monitoring/Service%20Monitoring/ja/api-guide/#_5) をサポート
+* [複数バッチモニタリング検証 API](./api-guide/#_5) をサポート
 * バッチモニタリングの内容検証結果のうち、失敗した内容を強調表示
 
 <a id="january-21-2020"></a>
