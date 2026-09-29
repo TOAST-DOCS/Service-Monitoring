@@ -92,7 +92,7 @@
 
 <a id="november-24-2020-functions-added"></a>
 ####  Functions added
-*  The open API function [Modification](/Monitoring/Service%20Monitoring/ko/api-guide/#_8) added for scenario management
+*  The open API function [Modification](./api-guide/#scenario-modification) added for scenario management
 *  Webhook request parameters now supported
 *  "LINE" message send webhook templates added
 
@@ -112,7 +112,7 @@
 
 <a id="september-22-2020-more-features"></a>
 #### More Features
-* Added open API functions for scenario management: [Create](/Monitoring/Service%20Monitoring/ko/api-guide/#_8), [Query](/Monitoring/Service%20Monitoring/ko/api-guide/#_19), [Delete](/Monitoring/Service%20Monitoring/ko/api-guide/#_25)
+* Added open API functions for scenario management: [Create](./api-guide/#create-scenario), [Query](./api-guide/#query-registered-scenario), [Delete](./api-guide/#delete-registered-scenario)
 
 <a id="august-25-2020"></a>
 ### August 25, 2020 { #august-25-2020 }
@@ -156,9 +156,9 @@
 
 <a id="march-24-2020-feature-updates"></a>
 #### Feature Updates 
-* Provides [JsonPath Method](/ko/Monitoring/Service%20Monitoring/ko/console-guide/#_9) to validate web monitoring data
+* Provides [JsonPath Method](./console-guide/#scenario-verification-function-support-of-array-data-for-jsonpath-text-verification) to validate web monitoring data
 * _Organization Name_ and _Project Name_ are added to an email error message
-* Supports [Validate Multiple Batch Monitoring API](/ko/Monitoring/Service%20Monitoring/ko/api-guide/) 
+* Supports [Validate Multiple Batch Monitoring API](./api-guide/) 
 * Emphasizes failures from batch monitoring validation results 
 
 <a id="january-21-2020"></a>
