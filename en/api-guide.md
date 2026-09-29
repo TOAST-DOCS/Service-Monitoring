@@ -234,8 +234,8 @@ Value | Type | Corresponding scenarioType | Assignable Value | Necessity | Defau
 ---|---|---|---|---|---|---
 url | String | API | http or url starting with https | Y |  | The URL of API to monitor
 headers | Map\<String, String\> | API |  | N |  | Header value to use to send the API
-httpMethod | Enum | API | GET, POST, DELETE, PUT | Y |  | API의 httpMethod
-requestBody | String | API |  | N |  | API의 requestBody
+httpMethod | Enum | API | GET, POST, DELETE, PUT | Y |  | The httpMethod of the API
+requestBody | String | API |  | N |  | The requestBody of the API
 browserOption | Map\<String, String\> | API | {"OPT_LOCALE" : "kr"} | N | {"OPT_LOCALE" : "kr"} | 
 [validation](#validation1) | Object | API |  | Y |  | Validation info of API
 scenarioType | Enum | API | API | Y |  | Scenario type
@@ -343,8 +343,8 @@ header.resultMessage | String | Failure message
 body.scenarioId | UUID | Scenario ID
 body.url  |  String  |  The URL of API to monitor
 headers  |  Map\<String, String\>  |  Header value to use to send the API
-body.httpMethod  |  Enum  |  API의 httpMethod
-body.requestBody  |  String  |  API의 requestBody
+body.httpMethod  |  Enum  |  HTTP method of the API
+body.requestBody  |  String  |  requestBody of the API
 body.browserOption  |  Map\<String, String\>  |  
 [body.validation](#validation2)  |  Object  |  Validation info of API
 body.scenarioType  |  Enum  |  Scenario type
@@ -462,9 +462,9 @@ header.resultMessage | String | - |Failure message
 body.scenarioId | UUID | - | Scenario ID
 body.url | String | API, WEB, MODULE | The URL of API to monitor
 body.headers | Map\<String, String\> | API, WEB, MODULE | Header value to use to send the API
-body.httpMethod | Enum | API, WEB, MODULE | API의 httpMethod
+body.httpMethod | Enum | API, WEB, MODULE | The httpMethod of the API
 [body.validation](#validation3) | Object | - | Scenario validation info
-body.requestBody | String | API, WEB, MODULE | API의 requestBody
+body.requestBody | String | API, WEB, MODULE | The requestBody of the API
 body.browserOption | Map\<String, String\> | API, WEB, MODULE | 
 body.ip | String | - | IP of monitoring target
 body.scenarioType | Enum | - | Scenario type
@@ -595,9 +595,9 @@ header.resultMessage | String | - |Failure message
 body.scenarioId | UUID | - | Scenario ID
 body.url | String | API, WEB, MODULE | The URL of API to monitor
 body.headers | Map\<String, String\> | API, WEB, MODULE | Header value to use to send the API
-body.httpMethod | Enum | API, WEB, MODULE | API의 httpMethod
+body.httpMethod | Enum | API, WEB, MODULE | HTTP method of the API
 [body.validation](#validation4) | Object | - | Scenario validation info
-body.requestBody | String | API, WEB, MODULE | API의 requestBody
+body.requestBody | String | API, WEB, MODULE | The request body of the API
 body.browserOption | Map\<String, String\> | API, WEB, MODULE | 
 body.ip | String | - | IP of monitoring target
 body.scenarioType | Enum | - | Scenario type
