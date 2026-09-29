@@ -147,12 +147,13 @@
 <a id="march-24-2020"></a>
 ### 2020. 03. 24. { #march-24-2020 }
 
-<!-- TODO: translate body -->
-
 <a id="march-24-2020-feature-updates"></a>
 #### 機能改善
 
-<!-- TODO: translate body -->
+* Webモニタリングのデータ検証時に [JsonPath メソッド](/Monitoring/Service%20Monitoring/ja/console-guide/#_9) を提供
+* メール障害メッセージに _組織名_、_プロジェクト名_ を追加
+* [複数バッチモニタリング検証 API](/Monitoring/Service%20Monitoring/ja/api-guide/#_5) をサポート
+* バッチモニタリングの内容検証結果のうち、失敗した内容を強調表示
 
 <a id="january-21-2020"></a>
 ### 2020. 01. 21. { #january-21-2020 }
